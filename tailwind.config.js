@@ -1,11 +1,41 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
+    './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+    './storage/framework/views/*.php',
+    './resources/views/**/*.blade.php',
   ],
+
   theme: {
+    fontFamily: {
+      sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+    },
+    fontSize: {
+      'tiny'    : ['10px', { lineHeight: '12px', lineSpacing: '0.4em' }],
+      'detail'  : ['13px', { lineHeight: '15.6px', lineSpacing: '0em' }],
+      'body'    : ['16px', { lineHeight: '19.2px', lineSpacing: '0em' }],
+      'subtitle': ['20px', { lineHeight: '24px', lineSpacing: '0em' }],
+      'headline': ['25px', { lineHeight: '30px', lineSpacing: '0em' }],
+      'h3'      : ['31px', { lineHeight: '37.2px', lineSpacing: '0em' }],
+      'h2'      : ['39px', { lineHeight: '58.5px', lineSpacing: '0.02em' }],
+      'h1'      : ['49px', { lineHeight: '73.5px', lineSpacing: '0.02em' }],
+      'display' : ['61px', { lineHeight: '91.5px', lineSpacing: '-0.02em' }],
+    },
+    borderRadius: {
+      'none': '0',
+      '2xs': '4px',
+      'xs': '8px',
+      'sm': '12px',
+      'md': '16px',
+      'lg': '24px',
+      'xl': '32px',
+      '2xl': '64px',
+      '3xl': '128px',
+      'full': '9999px',
+    },
     extend: {
       colors: {
         primary: {
@@ -34,8 +64,9 @@ export default {
           900: '#0F262A',
           950: '#021217',
         },
-      }
+      },
     },
   },
-  plugins: [],
-}
+
+  plugins: [forms],
+};
