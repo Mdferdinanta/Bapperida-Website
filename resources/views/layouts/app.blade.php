@@ -21,11 +21,11 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased text-neutral-900">
+<body class="font-sans antialiased text-body font-bodyNormal text-neutral-900">
     <div class="min-h-screen bg-white">
         <livewire:layout.navigation />
 
-        <!-- Page Heading -->
+        {{-- Page Heading --}}
         @if (isset($header))
             <header class="bg-white shadow">
                 <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -34,10 +34,13 @@
             </header>
         @endif
 
-        <!-- Page Content -->
+        {{-- Page Content --}}
         <main>
             {{ $slot }}
         </main>
+
+        {{-- Footer --}}
+        <livewire:layout.footer />
     </div>
 </body>
 
