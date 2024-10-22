@@ -1,27 +1,37 @@
 <?php
 
-use App\Livewire\Actions\Logout;
+// use App\Livewire\Actions\Logout;
 use Livewire\Volt\Component;
 
 ?>
 
-<nav x-data="{ open: false }" class="bg-white shadow-sm">
+<nav x-data="{ open: false }" class="bg-white">
     <!-- Primary Navigation Menu -->
-    <div class="container max-w-full px-16 py-2 flex items-center justify-between">
+    <div class="container flex items-center justify-between max-w-full px-16">
         <div class="flex justify-between w-full">
+            
             <!-- Logo -->
-            <div class="flex items-center shrink-0">
-                <a :href="{{ route('dashboard') }}" wire:navigate>
-                    <x-application-logo class="block w-auto fill-current h-9" />
+            <div class="flex items-center py-4 shrink-0">
+                <a :href="{{ route('home') }}" wire:navigate>
+                    <x-application-logo class="block fill-current h-11" />
                 </a>
             </div>
 
             <!-- Navigation Links -->
             <div class="hidden space-x-8 lg:-my-px lg:ms-10 lg:flex text-body">
                 <nav class="flex items-center space-x-4">
-                    <a class="hover:text-primary-600" href="{{ route('dashboard') }}" wire:navigate>
-                        Beranda
-                    </a>
+
+                    <div class="w-[65px] self-stretch border-b-2 border-primary-600 justify-center items-center flex">
+                        <div
+                            class="grow shrink basis-0 text-base font-normal font-['Plus Jakarta Sans'] leading-tight">
+                            Beranda</div>
+                    </div>
+
+                    <div class="content-center h-full border-b-2 border-transparent">
+                        <a class="hover:text-primary-600" href="{{ route('home') }}" wire:navigate>
+                            Beranda
+                        </a>
+                    </div>
                     <div class="hidden lg:flex lg:items-center lg:ms-6">
                         <x-dropdown>
                             <x-slot name="trigger">
@@ -103,7 +113,7 @@ use Livewire\Volt\Component;
                     <a class="hover:text-primary-500" href="{{ route('kontak') }}" wire:navigate>
                         Kontak
                     </a>
-                    <x-primary-button :href="route('dashboard')">{{ __('Form Kunjungan') }}</x-primary-button>
+                    <x-primary-button :href="route('home')">{{ __('Form Kunjungan') }}</x-primary-button>
                 </nav>
             </div>
         </div>
@@ -113,7 +123,7 @@ use Livewire\Volt\Component;
         <!-- Hamburger -->
         <div class="flex items-center -me-2 lg:hidden">
             <button @click="open = ! open"
-                class="inline-flex items-center justify-center p-2 text-neutral-600 transition duration-150 ease-in-out rounded-md hover:text-neutral-900 hover:bg-mist-100 focus:outline-none focus:bg-mist-100 focus:text-mist-500">
+                class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md text-neutral-600 hover:text-neutral-900 hover:bg-mist-100 focus:outline-none focus:bg-mist-100 focus:text-mist-500">
                 <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                     <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -127,28 +137,28 @@ use Livewire\Volt\Component;
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                {{ __('home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Profil') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Dokumen') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Buletin') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Galeri') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('video_inovasi')" :active="request()->routeIs('video_inovasi')" wire:navigate>
                 {{ __('Video') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Kontak') }}
             </x-responsive-nav-link>
-            <x-primary-button :href="route('dashboard')" class="ms-4 mt-4">{{ __('Form Kunjungan') }}</x-primary-button>
+            <x-primary-button :href="route('home')" class="mt-4 ms-4">{{ __('Form Kunjungan') }}</x-primary-button>
         </div>
 
 
