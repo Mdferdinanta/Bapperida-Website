@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('buletins', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('buletin_id')->constrained('documents')->
-                    onUpdate('cascade')->onDelete('cascade');
-            $table->string('img_cover');
+            $table->string('judul');
+            $table->dateTime('date_published');
+            $table->text('konten');
+            $table->string('thumbnail');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('buletins');
+        Schema::dropIfExists('news');
     }
 };

@@ -6,8 +6,7 @@
                     bg-white 
                     border-2 border-primary-200 
                     rounded-xs 
-                    font-semibold text-xs text-neutral-900 
-                    uppercase tracking-widest 
+                    font-semibold text-xs text-neutral-900  
                     hover:bg-primary-50 focus:bg-primary-200 
                     active:bg-primary-50 focus:border-primary-400 
                     active:ring-2 active:ring-primary-200 active:ring-offset-2 
