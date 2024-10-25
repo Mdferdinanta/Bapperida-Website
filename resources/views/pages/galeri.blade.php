@@ -29,13 +29,16 @@
 
         {{-- Grids --}}
         <div class="grid grid-cols-4 gap-16">
-            <div class="grid grid-cols-3 col-span-3 gap-4 h-svh">
-                <div class="p-4 bg-white border rounded-xs border-mist-300 h-60">
-                    <img src="{{ asset('assets/img/gallery-5.jpg') }}" class="object-cover w-full h-40 mb-2"
-                        height="200" alt="video thumbnail">
-                    <h3 class="text-subtitle font-h3Bold ">Judul Kegiatan</h3>
-                    <p class="mb-2 text-detail">Tanggal Berita</p>
-                </div>
+            <div class="col-span-3 grid grid-cols-3 gap-4 h-svh">
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
+                <x-foto-card></x-foto-card>
             </div>
 
             {{-- Berita Section --}}

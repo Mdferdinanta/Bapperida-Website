@@ -61,6 +61,18 @@ Route::view('video/video3', 'video/video3')
 Route::view('berita/bapperida', 'pages/list-berita')
     ->name('berita_bapperida');
 
+Route::view('foto-preview', 'preview/foto-preview')
+    ->name('foto-preview');
+
+Route::view('video-preview', 'preview/video-preview')
+    ->name('video-preview');
+
+Route::view('dokumen-preview', 'preview/dokumen-preview')
+    ->name('dokumen-preview');
+
+Route::view('berita-preview', 'preview/berita-preview')
+    ->name('berita-preview');
+
 Route::get('/', [NewsController::class, 'index']);
 
 
