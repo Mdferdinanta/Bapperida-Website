@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('buletin_id')->constrained('documents')->
                     onUpdate('cascade')->onDelete('cascade');
-            $table->string('cover_image');
+            $table->string('img_cover');
             $table->timestamps();
         });
     }

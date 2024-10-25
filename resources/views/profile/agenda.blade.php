@@ -1,9 +1,10 @@
 <x-app-layout>
-    
+
     {{-- Hero Section --}}
     <x-hero>
         <span>Agenda</span>
     </x-hero>
+    
         {{-- Content --}}
         <main class="container mx-auto py-8 px-6">
 
@@ -19,10 +20,6 @@
                     <div class="flex justify-start items-center mb-4">
                         <div class="relative">
                             <h2 class="text-headline font-semibold">Berita Terbaru</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
     
             <div class=" grid grid-cols-4 gap-16">
                 <div class="col-span-3 grid grid-col-3 gap-8">

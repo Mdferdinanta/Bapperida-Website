@@ -2,6 +2,10 @@
 
 <input @disabled($disabled)
     {{ $attributes->merge([
-        'type' => 'submit',
-        'class' => 'bg-mist-50 px-4 border border-mist-200 rounded-xs shadow-sm',
+        'type' => 'text',
+        'class' => 'px-4 py-3
+                    border border-mist-300
+                    rounded-xs shadow-sm
+                    focus:border-primary-300
+                    focus:ring-primary-300',
     ]) }}>

@@ -1,1 +1,1 @@
-<img src="{{ asset('assets/img/bapperida-logo.png') }}" class="h-[30px] lg:h-[50px]" alt="">
+<img src="{{ asset('assets/img/bapperida-logo.png') }}" {{ $attributes->merge(['class' => 'w-auto']) }}>
