@@ -1,18 +1,19 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'dashboard')
     ->name('home');
 
 Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile', 'profile')
+Route::view('admin', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
+require __DIR__.'/auth.php';
 
 // Pages
 Route::view('profil/struktur-organisasi', 'profile/struktur')
@@ -57,7 +58,10 @@ Route::view('video/video2', 'video/video2')
 Route::view('video/video3', 'video/video3')
     ->name('video_video3');
 
+Route::view('berita/bapperida', 'pages/list-berita')
+    ->name('berita_bapperida');
 
+Route::get('/', [NewsController::class, 'index']);
 
 
 

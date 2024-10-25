@@ -16,7 +16,7 @@
     {{-- Berita BAPPERIDA Section --}}
     <x-section-title>Berita</x-section-title>
 
-    <livewire:layout.news />
+    <livewire:layout.news-layout />
 
     {{-- Infografis Section --}}
     <x-section-title>Infografis</x-section-title>
@@ -26,12 +26,12 @@
     {{-- Berita Kota Bogor Section --}}
     <x-section-title>Berita Kota Bogor</x-section-title>
 
-    <livewire:layout.news />
+    <livewire:layout.bogor-news />
 
     {{-- Agenda Section --}}
     <x-section-title>Agenda</x-section-title>
 
-    <livewire:layout.agenda />
+    {{-- <livewire:layout.agenda /> --}}
 
     {{-- Kegiatan Section --}}
     <x-section-title>Kegiatan</x-section-title>
@@ -41,13 +41,13 @@
     {{-- Social Media Section --}}
     <x-section-title>Media Sosial</x-section-title>
 
-    <livewire:layout.home-media />
+    {{-- <livewire:layout.home-media /> --}}
 
     {{-- Contact Section --}}
     <x-section-title>Kontak</x-section-title>
 
     <livewire:layout.contact />
-    
+
     {{-- Maps Section --}}
     <x-map></x-map>
 
