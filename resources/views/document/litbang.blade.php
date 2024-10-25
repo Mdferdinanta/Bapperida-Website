@@ -70,37 +70,3 @@
 
 
 </x-app-layout>
-
-
-    {{-- <div class="col-span-1 col-start-2 flex items-center bg-red-600">
-            <div class="flex justify-end items-center mb-4">
-                <div class="w-full text-center">
-                    <x-dropdown>
-                        <x-slot name="trigger">
-                            <span class="hover:text-primary-500 ">
-                                Pilih kategori
-                                <i class="ri-arrow-down-s-line"></i>
-                            </span>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('dokumen_perencanaan')" wire:navigate>
-                                {{ __('Perencanaan Pembangunan') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('dokumen_litbang')" wire:navigate>
-                                {{ __('Penelitian Pengembangan') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('dokumen_pelayanan')" wire:navigate>
-                                {{ __('Standar Pelayanan') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('dokumen_peraturan')" wire:navigate>
-                                {{ __('Peraturan') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link :href="route('dokumen_rencana')" wire:navigate>
-                                {{ __('Rencana Kerja') }}
-                            </x-dropdown-link>
-                        </x-slot>
-                    </x-dropdown>
-                </div>
-            </div>
-        </div> --}}
