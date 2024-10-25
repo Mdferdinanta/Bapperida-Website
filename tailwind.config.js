@@ -1,12 +1,13 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     './storage/framework/views/*.php',
-    './resources/views/**/*.blade.php',
+    './resources/views//*.blade.php',
   ],
 
   theme: {
@@ -14,15 +15,44 @@ export default {
       sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
-      'tiny'    : ['10px', { lineHeight: '12px', lineSpacing: '0.4em' }],
-      'detail'  : ['13px', { lineHeight: '15.6px', lineSpacing: '0em' }],
-      'body'    : ['16px', { lineHeight: '19.2px', lineSpacing: '0em' }],
-      'subtitle': ['20px', { lineHeight: '24px', lineSpacing: '0em' }],
+      'display': ['61px', { lineHeight: '91.5px', lineSpacing: '-0.02em' }],
+      'h1': ['49px', { lineHeight: '73.5px', lineSpacing: '0.02em' }],
+      'h2': ['39px', { lineHeight: '58.5px', lineSpacing: '0.02em' }],
+      'h3': ['31px', { lineHeight: '37.2px', lineSpacing: '0em' }],
       'headline': ['25px', { lineHeight: '30px', lineSpacing: '0em' }],
-      'h3'      : ['31px', { lineHeight: '37.2px', lineSpacing: '0em' }],
-      'h2'      : ['39px', { lineHeight: '58.5px', lineSpacing: '0.02em' }],
-      'h1'      : ['49px', { lineHeight: '73.5px', lineSpacing: '0.02em' }],
-      'display' : ['61px', { lineHeight: '91.5px', lineSpacing: '-0.02em' }],
+      'subtitle': ['20px', { lineHeight: '24px', lineSpacing: '0em' }],
+      'body': ['16px', { lineHeight: '19.2px', lineSpacing: '0em' }],
+      'detail': ['13px', { lineHeight: '15.6px', lineSpacing: '0em' }],
+      'tiny': ['10px', { lineHeight: '12px', lineSpacing: '0.4em' }],
+    },
+    fontWeight: {
+      displayBold: '800',
+      displayNormal: '500',
+      displayLight: '200',
+      h1Bold: '800',
+      h1Normal: '500',
+      h1Light: '200',
+      h2Bold: '700',
+      h2Normal: '400',
+      h2Light: '200',
+      h3Bold: '700',
+      h3Normal: '400',
+      h3Light: '300',
+      headlineBold: '700',
+      headlineNormal: '400',
+      headlineLight: '300',
+      subtitleBold: '700',
+      subtitleNormal: '400',
+      subtitleLight: '300',
+      bodyBold: '700',
+      bodyNormal: '400',
+      bodyLight: '300',
+      detailBold: '600',
+      detailNormal: '400',
+      detailLight: '300',
+      tinyBold: '600',
+      tinyNormal: '400',
+      tinyLight: '300',
     },
     borderRadius: {
       'none': '0',
@@ -37,6 +67,11 @@ export default {
       'full': '9999px',
     },
     extend: {
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
       colors: {
         primary: {
           50: '#EEFAFA',
@@ -68,5 +103,17 @@ export default {
     },
   },
 
-  plugins: [forms],
+  plugins: [
+    forms,
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 };
