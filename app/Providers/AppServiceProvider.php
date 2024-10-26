@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\News;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,7 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $latestNews = News::orderBy('created_at', 'desc')->take(3)->get();
-        View::share('latestNews', $latestNews);
+        //
     }
 }

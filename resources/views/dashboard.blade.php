@@ -1,54 +1,17 @@
 <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
 
-    {{-- Hero Section --}}
-    <x-hero-home>
-        <h1 class="text-display font-displayBold text-shadow-lg shadow-black">
-            SELAMAT DATANG
-        </h1>
-        <h3 class="tracking-widest font-subtitleNormal text-subtitle text-shadow shadow-black">
-            Website resmi Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah (BAPPERIDA) Kota Bogor ini memuat
-            profil dan informasi penting terkini mengenai berita, program dan kegiatan organisasi.
-            Pengguna dapat mengakses dan mengunduh langsung dan memanfaatkan publikasi data dan informasi yang tersedia
-            sesuai dengan keinginan dan kebutuhan.
-        </h3>
-    </x-hero-home>
-
-    {{-- Berita BAPPERIDA Section --}}
-    <x-section-title>Berita</x-section-title>
-
-    <livewire:layout.news-layout />
-
-    {{-- Infografis Section --}}
-    <x-section-title>Infografis</x-section-title>
-
-    <livewire:layout.infografis />
-
-    {{-- Berita Kota Bogor Section --}}
-    <x-section-title>Berita Kota Bogor</x-section-title>
-
-    <livewire:layout.bogor-news />
-
-    {{-- Agenda Section --}}
-    <x-section-title>Agenda</x-section-title>
-
-    {{-- <livewire:layout.agenda /> --}}
-
-    {{-- Kegiatan Section --}}
-    <x-section-title>Kegiatan</x-section-title>
-
-    <livewire:layout.home-gallery />
-
-    {{-- Social Media Section --}}
-    <x-section-title>Media Sosial</x-section-title>
-
-    {{-- <livewire:layout.home-media /> --}}
-
-    {{-- Contact Section --}}
-    <x-section-title>Kontak</x-section-title>
-
-    <livewire:layout.contact />
-
-    {{-- Maps Section --}}
-    <x-map></x-map>
-
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    {{ __("You're logged in!") }}
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>
