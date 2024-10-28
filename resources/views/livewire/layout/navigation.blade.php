@@ -23,7 +23,7 @@ new class extends Component {
                 <!-- Logo -->
                 <div class="flex items-center shrink-0">
                     <a href="{{ route('dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9" />
+                        <x-application-logo class="block h-7 sm:h-9" />
                     </a>
                 </div>
 

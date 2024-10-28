@@ -6,7 +6,7 @@
                 <span class="ms-4">BAPPERIDA KOTA BOGOR</span>
             </div>
             <div
-                class="hidden sm:flex items-center gap-2 pb-4 font-thin sm:gap-8 sm:pb-8 sm:text-headline lg:text-h3 text-subtitle">
+                class="items-center hidden gap-2 pb-4 font-thin sm:flex sm:gap-8 sm:pb-8 sm:text-headline lg:text-h3 text-subtitle">
                 <a href="mailto: bapperida@kotabogor.go.id"><i class="ri-mail-line"></i></a>
                 <a href=""><i class="ri-global-line"></i></a>
                 <a href="https://www.instagram.com/bapperida.kotabogor"><i class="ri-instagram-line"></i></a>
@@ -15,9 +15,9 @@
             </div>
         </div>
         <div
-            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-8 sm:my-8 justify-between w-full text-primary-800 text-tiny sm:text-detail">
+            class="grid justify-between w-full grid-cols-2 mb-8 md:grid-cols-3 xl:grid-cols-5 sm:my-8 text-primary-800 text-tiny sm:text-detail">
             {{-- Location --}}
-            <div class="col-span-2 sm:max-lg:col-span-3 pr-8 lg:pr-40">
+            <div class="col-span-2 pr-8 sm:max-xl:col-span-3 lg:pr-40">
                 <a href="https://maps.app.goo.gl/GY68wtjF6ypcNiJE8">
                     Jl. Kapten Muslihat No.21 RT/RW 01/01 Kelurahan Pabaton, Kecamatan Bogor Tengah Kota Bogor
                     16121
@@ -26,7 +26,7 @@
 
             {{-- Media --}}
             <div>
-                <h5 class="text-body font-bold max-lg:mt-4 mb-2">Media</h5>
+                <h5 class="mb-2 font-bold text-body max-xl:mt-8">Media</h5>
                 <ul class="space-y-2">
                     <li>0251-8338052</li>
                     <li>bapperida@kotabogor.go.id</li>
@@ -38,8 +38,8 @@
             </div>
 
             {{-- Site Map --}}
-            <div>
-                <h5 class="text-body font-bold max-lg:mt-4 mb-2">Site Map</h5>
+            <div class="justify-self-center">
+                <h5 class="mb-2 font-bold text-body max-xl:mt-8">Site Map</h5>
                 <ul class="space-y-2">
                     <li><i class="ri-arrow-right-s-line text-primary-500"></i><a href="">Beranda</a></li>
                     <li><i class="ri-arrow-right-s-line text-primary-500"></i><a href="">Profil</a></li>
@@ -52,8 +52,8 @@
             </div>
 
             {{-- Stats --}}
-            <div>
-                <h5 class="text-body font-bold max-lg:mt-4 mb-2">Statistik Pengunjung</h5>
+            <div class="sm:justify-self-end">
+                <h5 class="mb-2 font-bold text-body max-xl:mt-8">Statistik Pengunjung</h5>
                 <div class="flex space-x-2">
                     <ul class="space-y-2">
                         <li>Hari ini</li>
@@ -71,13 +71,13 @@
                         <li>305713</li>
                     </ul>
                 </div>
-                <h5 class="text-body font-bold mt-2"><i class="ri-line-chart-line mr-2"></i>1933711</h5>
+                <h5 class="mt-2 font-bold text-body"><i class="mr-2 ri-line-chart-line"></i>1933711</h5>
             </div>
         </div>
     </div>
     {{-- Copyright --}}
-    <div class="text-tiny bg-primary-100 py-4 px-4 sm:px-16 text-center">
-        <span><i class="ri-copyright-line font-light"> 2024</i></span>
+    <div class="px-20 py-4 text-center text-tiny md:text-detail bg-primary-100 sm:px-16">
+        <span><i class="font-light ri-copyright-line"> 2024</i></span>
         <span class="font-semibold"> Badan Perencanaan Pembangunan Riset dan Inovasi Daerah Kota Bogor.</span>
         <span class="font-light"> All rights reserved</span>
     </div>
