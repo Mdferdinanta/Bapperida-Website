@@ -6,18 +6,13 @@
             ? 'inline-flex items-center
             px-1 pt-1
             border-b-2 border-primary-400
-            text-body font-medium
-            leading-5 text-neutral-900
-            focus:outline-none focus:border-indigo-700
+            font-medium text-primary-800
             transition duration-150 ease-in-out'
             : 'inline-flex items-center
             px-1 pt-1
             border-b-2 border-transparent
-            text-body font-normal
-            leading-5 text-gray-500
-            hover:text-gray-700 hover:border-gray-300
-            focus:outline-none focus:text-gray-700
-            focus:border-gray-300
+            font-normal text-neutral-700
+            hover:text-neutral-950 hover:border-neutral-300
             transition duration-150 ease-in-out';
 @endphp
 
