@@ -17,12 +17,16 @@
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 
+    {{-- <!-- Components -->
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> --}}
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans antialiased text-body font-bodyNormal text-neutral-900">
-    <div class="min-h-screen bg-white">
+    <div class="min-h-screen bg-mist-50">
         <livewire:layout.navigation />
 
         {{-- Page Heading --}}
@@ -42,6 +46,12 @@
         {{-- Footer --}}
         <livewire:layout.footer />
     </div>
+
+
+    {{-- Script --}}
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    {{-- <script src="jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script> --}}
 </body>
 
 </html>

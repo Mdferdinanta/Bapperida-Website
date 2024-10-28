@@ -5,7 +5,7 @@
                     px-4 py-2 
                     bg-primary-500 rounded-sm  
                     border border-transparent 
-                    font-bodyBold text-neutral-50
+                    text-neutral-50
                     tracking-widest 
                     hover:bg-primary-700 focus:bg-primary-900 
                     active:bg-primary-500 focus:outline-none 

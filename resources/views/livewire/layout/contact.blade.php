@@ -1,5 +1,7 @@
 <div class="container max-w-full py-8 justify-center items-center inline-flex">
     <div class="justify-between gap-20 items-start flex">
+
+        {{-- Info --}}
         <div class="flex-col justify-start items-start gap-6 inline-flex">
             <div class="justify-start items-center gap-4 inline-flex">
                 <div class="p-4 bg-primary-100 rounded-full justify-center items-center">
@@ -12,7 +14,7 @@
                 </div>
             </div>
             <div class="justify-start items-center gap-4 inline-flex">
-                <div class="p-4 bg-[#d8f4f4] rounded-[999px] justify-center items-center">
+                <div class="p-4 bg-primary-100 rounded-full justify-center items-center">
                     <i class="ri-mail-line ri-xl text-primary-800"></i>
                 </div>
                 <div>
@@ -21,7 +23,7 @@
                 </div>
             </div>
             <div class="justify-start items-center gap-4 inline-flex">
-                <div class="p-4 bg-[#d8f4f4] rounded-[999px] justify-center items-center">
+                <div class="p-4 bg-primary-100 rounded-full justify-center items-center">
                     <i class="ri-phone-line ri-xl text-primary-800"></i>
                 </div>
                 <div>
@@ -30,6 +32,8 @@
                 </div>
             </div>
         </div>
+
+        {{-- Form --}}
         <form action="" method="post" role="">
             <div class="w-[664px] flex-col justify-center items-center gap-6 inline-flex">
                 <div class="w-[664px] items-center justify-between gap-6 inline-flex">

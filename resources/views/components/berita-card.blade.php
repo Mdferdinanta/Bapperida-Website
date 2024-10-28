@@ -1,8 +1,10 @@
-<a href="{{ route('berita-preview') }}">
-    <div class="p-4 bg-white rounded-xs border border-mist-300">
-        <img src="{{ asset('assets/img/gallery-5.jpg') }}" class="w-full h-40 object-cover mb-4"
-            height="100" alt="video thumbnail">
-        <h3 class="text-subtitle font-semibold">Judul Berita</h3>
-        <p class="text-detail mt-2">Tanggal Berita</p>
-    </div>
-</a>
+@foreach ($latestNews as $news)
+    <a href="{{ route('berita-preview') }}">
+        <div class="border rounded-xs border-mist-100">
+            <img src="{{ asset('storage/' . $news->thumbnail) }}" class="object-cover w-full h-40 mb-4" height="100"
+                alt="berita thumbnail">
+            <h3 class="font-semibold text-subtitle">{{ $news->judul }}</h3>
+            <p class="mt-2 text-detail">{{ $news->created_at }}</p>
+        </div>
+    </a>
+@endforeach

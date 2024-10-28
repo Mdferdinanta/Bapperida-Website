@@ -12,9 +12,16 @@
         <div class="grid grid-cols-4 gap-16">
 
             <div class="col-span-3 justify-end flex items-center">
-            
-                <div class="col-span-1 col-start-2 flex">
+
+                {{-- <div class="col-span-1 col-start-2 flex">
                     <div class="flex justify-end items-center mb-4 mr-4">
+                        <div class="relative">
+                            <x-dropdown-select>Dokumen</x-dropdown-select>
+                        </div>
+                    </div>
+                </div> --}}
+                <div class="col-span-1 flex">
+                    <div class="flex justify-end items-center mb-4">
                         <div class="relative">
                             <x-dropdown-select></x-dropdown-select>
                         </div>
@@ -50,17 +57,13 @@
                 <x-dokumen-card></x-dokumen-card>
                 <x-dokumen-card></x-dokumen-card>
                 <x-dokumen-card></x-dokumen-card>
-                
+
             </div>
 
             {{-- Berita Section --}}
             <div class="col-span-1 grid grid-rows-3 gap-4">
                 <x-berita-card></x-berita-card>
-                <x-berita-card></x-berita-card>
-                <x-berita-card></x-berita-card>
             </div>
-        </div>
-        </div>
         </div>
 
         {{-- Footer --}}

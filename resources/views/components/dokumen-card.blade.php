@@ -1,13 +1,14 @@
 <a href="{{ route('dokumen-preview') }}">
     <div class="space-y-4">
-        <div class="flex justify-between items-center bg-white p-4 shadow-md rounded-md mb-2">
+        <div class="flex items-center justify-between p-4 mb-2 bg-white rounded-md shadow-md">
             <div>
-            <span class="text-blue-600 text-body ">Laporan Akhir Penyusunan Evaluasi Dokumen Kajian Risiko Bencana Dan Rencana Penanggulangan Bencana di Kota Bogor</span>
-            <p class="text-tiny mt-2">Tanggal Unggah</p>
+                <span class="text-primary-800 text-body font-bodyBold">Judul Lengkap Dokumen</span>
+                <p class="mt-2 text-tiny">00 Bulan 0000</p>
             </div>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-md flex items-center text-detail ">
-                Download <i class="ri-download-2-line ml-2"></i>
-            </button>
+            <x-primary-button class="text-detail font-detailBold">
+                Download
+                <i class="ml-2 font-detailNormal ri-download-2-line"></i>
+            </x-primary-button>
         </div>
     </div>
 </a>

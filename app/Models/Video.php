@@ -2,9 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = [
+        'judul', 'embed_link', 'deskripsi'
+    ];
+
+    public function idex()
+    {
+        
+    }
 }

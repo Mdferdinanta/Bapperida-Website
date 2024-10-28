@@ -4,8 +4,8 @@ use Livewire\Volt\Component;
 
 ?>
 
-<div class="inline-flex flex-col items-start justify-start container max-w-full">
-    <div class="inline-flex items-start self-stretch justify-between px-16 py-8">
+<div class="container inline-flex flex-col items-start justify-start max-w-full">
+    <div class="inline-flex items-start self-stretch justify-between mx-auto gap-80 py-8">
         <div class="inline-flex flex-col items-start justify-center gap-5">
             <div class="inline-flex items-center justify-start gap-4">
                 <img class="w-auto h-20" src="{{ asset('assets/img/bapperida.png') }}" />
@@ -44,28 +44,33 @@ use Livewire\Volt\Component;
             </div>
         </div>
         <div class="flex items-center justify-end">
-            <div class="inline-flex flex-col items-end justify-start w-auto gap-2">
-                <div class="flex gap-4 items-center">
-                    <p>0251-8338052</p><i class="ri-lg ri-phone-line p-2 rounded-full bg-primary-100"></i>
+            <div class="inline-flex flex-col items-start justify-start w-auto gap-4">
+                <div class="flex items-center gap-4">
+                    <a href="#">0251-8338052</a>
+                    {{-- <i class="p-2 rounded-full ri-lg ri-phone-line bg-primary-100"></i> --}}
                 </div>
-                <div class="flex gap-4 items-center">
-                    <p>bapperida@kotabogor.go.id</p><i class="ri-lg ri-mail-line p-2 rounded-full bg-primary-100"></i>
+                <div class="flex items-center gap-4">
+                    <a href= "mailto: bapperida@kotabogor.go.id">Email</a>
+                    {{-- <i class="p-2 rounded-full ri-lg ri-mail-line bg-primary-100"></i> --}}
                 </div>
-                <div class="flex gap-4 items-center">
-                    <p>@bapperida.kotabogor</p><i class="ri-lg ri-instagram-line p-2 rounded-full bg-primary-100"></i>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/bapperida.kotabogor">Instagram</a>
+                    {{-- <i class="p-2 rounded-full ri-lg ri-instagram-line bg-primary-100"></i> --}}
                 </div>
-                <div class="flex gap-4 items-center">
-                    <p>@bappeda3271</p><i class="ri-lg ri-twitter-line p-2 rounded-full bg-primary-100"></i>
+                <div class="flex items-center gap-4">
+                    <a href="https://x.com/bappeda3271">Twitter</a>
+                    {{-- <i class="p-2 rounded-full ri-lg ri-twitter-line bg-primary-100"></i> --}}
                 </div>
-                <div class="flex gap-4 items-center">
-                    <p>Portal Bapperida</p><i class="ri-lg ri-global-line p-2 rounded-full bg-primary-100"></i>
+                <div class="flex items-center gap-4">
+                    <p>Portal Bapperida</p>
+                    {{-- <i class="p-2 rounded-full ri-lg ri-global-line bg-primary-100"></i> --}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="self-stretch py-6 bg-primary-50 text-detail justify-center items-center gap-1 inline-flex">
+    <div class="inline-flex items-center self-stretch justify-center gap-1 py-6 bg-primary-50 text-detail">
         <div>
-            <span><i class="ri-copyright-line"></i> Copyright 2024</span>
+            <span><i class="ri-copyright-line"></i> 2024</span>
             <span class="font-detailBold">Badan Perencanaan Pembangunan Riset dan Inovasi Daerah Kota Bogor. </span>
             <span>All rights Reserved</span>
         </div>
