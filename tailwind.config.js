@@ -106,7 +106,6 @@ export default {
 
   plugins: [
     forms,
-    require('flowbite/plugin'),
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {

@@ -6,7 +6,7 @@
         <div class="h-full p-4">
             <a href="{{ route('berita_bapperida') }}"></a>
             <div class="flex h-2/3">
-                <img src="{{ asset('storage/' . $latestNews->thumbnail) }}" alt="{{ $latestNews->judul }}" 
+                <img src="{{ asset('storage/' . $latestNews->thumbnail) }}" alt="{{ $latestNews->judul }}"
                     class="object-cover w-full border border-mist-200 rounded-xs">
             </div>
             <div class="mt-4 h-1/3">
