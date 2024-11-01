@@ -6,7 +6,7 @@
     </x-slot> --}}
 
     <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="max-w-full">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="flex p-6">
                     {{ __("You're logged in!") }}
@@ -15,17 +15,23 @@
         </div>
     </div>
 
-    {{-- Social Media --}}
-    <div class="">
-        <div class="max-w-full mx-20 sm:px-6 lg:px-8">
-            <div class="flex justify-center px-64 py-8 overflow-hidden bg-white shadow-sm">
-                <iframe src="https://snapwidget.com/embed/1066641" class="snapwidget-widget post-ig border-0 overflow-hidden bg-red-200 w-full xl:h-[800px] lg:h-[200px] md:h-[200px]"
-                    allowtransparency="true" frameborder="0" scrolling="no" title="Posts from Instagram">
-                </iframe>
-            </div>
-        </div>
-    </div>
+    {{-- Bogor City News --}}
+    <livewire:layout.home.news-bapperida />
 
+    {{-- Bogor City News --}}
+    <livewire:layout.home.infographics />
+
+    {{-- Bogor City News --}}
+    <livewire:layout.home.news-bogor />
+
+    {{-- Schedule --}}
+    <livewire:layout.home.schedules />
+
+    {{-- Activity Gallery --}}
+    <livewire:layout.home.activities />
+
+    {{-- Social Media --}}
+    <livewire:layout.home.media />
 
     {{-- Contact --}}
     <livewire:layout.home.contact />

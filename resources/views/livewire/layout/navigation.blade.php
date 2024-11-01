@@ -136,7 +136,7 @@ new class extends Component {
 
                 {{-- Form Button --}}
                 <x-primary-button href="route('dashboard')"
-                    class="my-3 font-semibold me-2 lg:me-0 ms-auto xl:ms-20 text-detail lg:text-body">
+                    class="sm:my-3 my-4 font-medium me-2 lg:me-0 ms-auto xl:ms-20 text-detail md:text-body">
                     {{ __('Form Kunjungan') }}
                 </x-primary-button>
             </div>

@@ -1,6 +1,10 @@
-<div class="">
-    <div class="max-w-full mx-20 sm:px-6 lg:px-8">
-        <div class="flex justify-center overflow-hidden bg-white shadow-sm">
+<div>
+    <div class="max-w-full">
+        <div class="flex flex-col items-center justify-center px-8 py-4 mx-auto overflow-hidden bg-white shadow-sm">
+
+            {{-- Section Title --}}
+            <x-section-title>{{ __('Kontak') }}</x-section-title>
+
             <div class="inline-flex flex-col items-center gap-16 p-8 lg:flex-row">
 
                 {{-- Information --}}
@@ -11,7 +15,8 @@
                         </div>
                         <div class="w-80">
                             <h4 class="font-bold text-body">Lokasi</h4>
-                            <span class="font-medium text-tiny md:text-detail">Jl. Kapten Muslihat No. 21 RT/RW 01/01, Kelurahan
+                            <span class="font-medium text-tiny md:text-detail">Jl. Kapten Muslihat No. 21 RT/RW 01/01,
+                                Kelurahan
                                 Pabaton,
                                 Kecamatan Bogor Tengah, Kota Bogor 16121</span>
                         </div>
@@ -39,13 +44,13 @@
                 {{-- Forms --}}
                 <form action="" method="post"
                     class="inline-flex flex-col items-center justify-center w-full gap-4">
-                    <h3 class="mb-4 font-bold text-center text-subtitle md:text-headline text-primary-800">
+                    <h3 class="block mb-4 font-bold text-center lg:hidden text-subtitle text-primary-800">
                         Form Pengaduan
                     </h3>
                     <div
-                        class="inline-flex flex-col items-center justify-between gap-4 max-lg:self-stretch lg:flex-row">
-                        <x-text-input placeholder="Nama" class="xl:w-64 max-lg:self-stretch"></x-text-input>
-                        <x-text-input placeholder="Email" class="xl:w-64 max-lg:self-stretch"></x-text-input>
+                        class="inline-flex flex-col items-center self-stretch gap-4 lg:flex-row">
+                        <x-text-input placeholder="Nama" class="lg:w-1/2 max-lg:self-stretch"></x-text-input>
+                        <x-text-input placeholder="Email" class="lg:w-1/2 max-lg:self-stretch"></x-text-input>
                     </div>
                     <div class="flex flex-col items-start self-stretch justify-start">
                         <x-text-input placeholder="Judul" class="self-stretch"></x-text-input>

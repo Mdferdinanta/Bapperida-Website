@@ -2,7 +2,7 @@
     {{ $attributes->merge([
         'type' => 'submit',
         'class' => 'inline-flex items-center
-                    px-4 py-2
+                    px-3 py-2
                     bg-primary-500 rounded-xs
                     border border-transparent
                     text-white tracking-widest
