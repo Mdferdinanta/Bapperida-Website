@@ -17,7 +17,10 @@
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <!-- Scripts -->
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -42,6 +45,10 @@
 
         <livewire:layout.footer />
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>
