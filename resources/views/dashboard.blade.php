@@ -5,15 +5,8 @@
         </h2>
     </x-slot> --}}
 
-    <div class="py-12">
-        <div class="max-w-full">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="flex p-6">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
+    {{-- Hero --}}
+    <livewire:layout.home.hero>
 
     {{-- Bogor City News --}}
     <livewire:layout.home.news-bapperida />

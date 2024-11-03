@@ -2,7 +2,7 @@
 
     {{-- Thumbnail --}}
     <div class="overflow-hidden h-52 rounded-xs">
-        <img src="{{ $thumbnail }}" alt="" class="object-cover w-full h-full">
+        <img src={{ $thumbnail }} alt="" class="object-cover w-full h-full">
     </div>
 
     {{-- Details --}}

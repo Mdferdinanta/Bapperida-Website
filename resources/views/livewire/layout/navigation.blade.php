@@ -15,7 +15,7 @@ new class extends Component {
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="fixed w-full bg-white shadow-lg lg:top-0 lg:z-10">
+<nav x-data="{ open: false }" class="fixed top-0 z-10 w-full bg-white shadow-lg">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto w-s sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -136,7 +136,7 @@ new class extends Component {
 
                 {{-- Form Button --}}
                 <x-primary-button href="route('dashboard')"
-                    class="sm:my-3 my-4 font-medium me-2 lg:me-0 ms-auto xl:ms-20 text-detail md:text-body">
+                    class="my-4 font-medium sm:my-3 me-2 lg:me-0 ms-auto xl:ms-20 text-detail md:text-body">
                     {{ __('Form Kunjungan') }}
                 </x-primary-button>
             </div>

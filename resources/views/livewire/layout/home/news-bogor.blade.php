@@ -6,7 +6,7 @@
             {{-- Section Title --}}
             <x-section-title>{{ __('Berita Kota Bogor') }}</x-section-title>
 
-            <div class="container justify-center w-full text-justify bg-green-200 lg:grid max-lg:divide-y-2 lg:px-4 divide-neutral-300 lg:gap-8 lg:grid-cols-2">
+            <div class="container justify-center w-full text-justify lg:grid max-lg:divide-y-2 lg:px-4 divide-neutral-300 lg:gap-8 lg:grid-cols-2">
 
                 {{-- Left Card --}}
                 {{-- Main Card --}}
@@ -18,7 +18,7 @@
                 </x-news-main-card>
 
                 {{-- Right Cards --}}
-                <div class="grid max-md:divide-y-2 md:gap-8 md:grid-rows-2 md:grid-cols-2 divide-neutral-300">
+                <div class="grid max-md:divide-y-2 md:gap-x-8 md:grid-rows-2 md:grid-cols-2 divide-neutral-300">
 
                     {{-- Cards --}}
                     <x-news-small-card>
