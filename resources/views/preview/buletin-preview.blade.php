@@ -2,7 +2,7 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Penelitian Pengembangan</span>
+        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Buletin Pembangunan</span>
     </x-hero>
 
     {{-- Content --}}
@@ -37,7 +37,7 @@
         </div>
 
         {{-- Berita --}}
-        <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
+        <div class="lg:w-1/4 h-full lg:pl-8  lg:border-l-2 border-misty-300">
             {{-- Judul --}}
             <div class="max-lg:my-8 ">
                 <h3 class="text-subtitle lg:text-headline font-subtitleBold">

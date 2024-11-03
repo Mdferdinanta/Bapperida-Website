@@ -73,6 +73,9 @@ Route::view('dokumen-preview', 'preview/dokumen-preview')
 Route::view('berita-preview', 'preview/berita-preview')
     ->name('berita-preview');
 
+Route::view('buletin-preview', 'preview/buletin-preview')
+    ->name('buletin-preview');
+
 Route::get('/', [NewsController::class, 'index']);
 
 
