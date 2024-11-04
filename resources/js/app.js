@@ -1,37 +1,27 @@
 import './bootstrap';
 
-const swiper = new Swiper('.slider-wrapper', {
-    // Optional parameters
-    // direction: 'vertical',
-    loop: true,
-    spaceBetween: 30,
-
-    // If we need pagination
-    // pagination: {
-    //     el: '.swiper-pagination',
-    // },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //     el: '.swiper-scrollbar',
-    // },
-
-    // Responsive breakpoints
-    breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
-        640: {
-            slidesPerView: 2
-        },
-        1024: {
-            slidesPerView: 3
-        },
-    }
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: false,
+        center: true,
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            620: {
+                items: 2,
+                nav: false
+            },
+            1280: {
+                items: 3,
+                nav: false,
+            }
+        }
+    })
 });

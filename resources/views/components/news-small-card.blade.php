@@ -1,7 +1,7 @@
 <a class="flex flex-col w-full gap-4 py-4">
 
     {{-- Thumbnail --}}
-    <div class="overflow-hidden h-52 rounded-xs">
+    <div class="overflow-hidden cursor-pointer h-52 rounded-xs">
         <img src={{ $thumbnail }} alt="" class="object-cover w-full h-full">
     </div>
 

@@ -1,7 +1,13 @@
-<a class="flex flex-col w-full gap-4 py-4">
+@php
+
+    $classes = 'flex flex-col w-full gap-4 py-4';
+
+@endphp
+
+<a {{ $attributes->merge(['class' => $classes]) }}>
 
     {{-- Thumbnail --}}
-    <div class="overflow-hidden rounded-xs h-52 md:h-80 lg:h-[440px]">
+    <div class="overflow-hidden rounded-xs h-52 md:h-80 lg:h-[440px] cursor-pointer">
         <img src={{ $thumbnail }} alt="" class="object-cover w-full h-full">
     </div>
 
