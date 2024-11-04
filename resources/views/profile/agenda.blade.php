@@ -1,50 +1,47 @@
-
 <x-app-layout>
 
+    {{-- Hero Section --}}
     <x-hero>
-        <span>Agenda</span>
+        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Agenda</span>
     </x-hero>
 
-
-    <main class="container mx-auto py-8 px-6">
-
-        {{-- Search --}}
-        <div class="grid grid-cols-4 gap-16">
-            <div class="col-span-3">
-                <div class="flex justify-end items-center mb-4">
-                    <div class="relative">
-                        <x-search-input></x-search-input>
-                    </div>
-                </div>
+    {{-- Content --}}
+    <main class="container flex flex-col lg:flex-row mx-auto py-8 px-6">
+    <div class ="lg:w-3/4 flex gap-8 flex-col md:flex-row lg:pr-8">
+        
+            {{-- Section Tanggal --}}
+            <div class="flex-none rounded-xs md:w-72 bg-teal-100 p-4 lg:h-[480px] h-[240px]">
+                <h2 class="text-lg font-semibold"></h2>
             </div>
-            <div class="col-auto">
-                <div class="flex justify-start items-center mb-4">
-                    <div class="relative">
-                        <h2 class="text-headline font-semibold">Berita Terbaru</h2>
-                    </div>
-                </div>
+
+            {{-- Jadwal Harian --}}
+            <div class="flex flex-col rounded-xs py-2 w-full bg-teal-100 divide-y-2 divide-neutral-500">
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
             </div>
+    </div>
+
+    {{-- Berita --}}
+    <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
+        {{-- Judul --}}
+        <div class="max-lg:my-8">
+            <h3 class="text-subtitle lg:text-headline font-subtitleBold">
+                <i class="ri-arrow-right-s-line"></i>
+                Berita Terbaru
+            </h3>
         </div>
 
-
-
-        <div class="grid grid-cols-4 gap-16">
-            <div class="col-span-3 gap-4 h-svh">
-               
-
-                </div>
-
-
-            <div class="col-auto grid grid-rows-3 gap-4">
-                <x-berita-card></x-berita-card>
-            </div>
-            </div>
-            </div>
+        {{-- Konten --}}
+        <div>
+            <x-berita-card></x-berita-card>
         </div>
-
-
-        <div></div>
-
-    </main>
-
-</x-app-layout> 
+    </div>
+</x-app-layout>
