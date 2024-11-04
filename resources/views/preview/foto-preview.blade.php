@@ -96,7 +96,7 @@
         <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
             {{-- Judul --}}
             <div class="max-lg:my-8 ">
-                <h3 class="text-subtitle lg:text-headline font-subtitleBold">
+                <h3 class="text-subtitle font-subtitleBold lg:text-headline ">
                     <i class="ri-arrow-right-s-line"></i>
                     Berita Terbaru
                 </h3>
