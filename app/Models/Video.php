@@ -10,10 +10,10 @@ class Video extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'embed_link', 'deskripsi'
+        'judul', 'embed_link', 'deskripsi', 'thumbnail'
     ];
 
-    public function idex()
+    public function index()
     {
         
     }
