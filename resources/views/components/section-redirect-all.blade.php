@@ -1,6 +1,17 @@
-<div>
-    <a class="inline-block py-2 mt-2 font-medium text-detail text-primary-500 hover:text-primary-800">
-        {{ $slot }}
-        <i class="ri-arrow-right-s-line"></i>
-    </a>
-</div>
+@php
+
+    $classes = 'inline-block
+                py-2 mt-2
+                font-medium
+                cursor-pointer
+                text-detail
+                text-primary-500
+                hover:underline
+                hover:text-primary-800';
+
+@endphp
+
+<a {{ $attributes->merge(['class' => $classes]) }}>
+    {{ $slot }}
+    &raquo
+</a>

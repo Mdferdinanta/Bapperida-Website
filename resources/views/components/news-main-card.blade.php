@@ -9,7 +9,7 @@
     <div>
         <h3 class="font-bold lg:text-headline">{{ $title }}</h3>
         <h6 class="mt-2 font-light text-detail">{{ $datetime }}</h6>
-        <p class="mt-4 font-light leading-normal lg:text-subtitle">{{ $slot }}</p>
+        <p class="mt-2 font-light leading-normal lg:text-subtitle">{{ $slot }}</p>
     </div>
 
 </a>
