@@ -1,4 +1,10 @@
-<a class="flex flex-col w-full gap-4 py-4">
+@php
+
+    $classes = 'flex flex-col w-full gap-4 py-4';
+
+@endphp
+
+<a {{ $attributes->merge(['class' => $classes]) }}>
 
     {{-- Thumbnail --}}
     <div class="overflow-hidden cursor-pointer h-52 rounded-xs">

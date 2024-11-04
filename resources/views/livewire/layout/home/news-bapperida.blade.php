@@ -10,7 +10,7 @@
 
                 {{-- Main Left Card --}}
                 @if ($latestNews)
-                    <x-news-main-card :href="route('news-preview')">
+                    <x-news-main-card :href="route('news-preview', ['id' => $latestNews->id])" wire:navigate>
                         <x-slot:thumbnail>{{ asset('storage/' . $latestNews->thumbnail) }}</x-slot:thumbnail>
                         <x-slot:title>{{ $latestNews->judul }}</x-slot:title>
                         <x-slot:datetime>{{ $latestNews->created_at->format('d M Y | H:i') }}</x-slot:datetime>
@@ -23,7 +23,7 @@
 
                     {{-- Cards --}}
                     @foreach ($otherNews as $news)
-                        <x-news-small-card>
+                        <x-news-small-card :href="route('news-preview', ['id' => $news->id])" wire:navigate>
                             <x-slot:thumbnail>{{ asset('storage/' . $news->thumbnail) }}</x-slot:thumbnail>
                             <x-slot:title>{{ $news->judul }}</x-slot:title>
                             <x-slot:datetime>{{ $news->created_at->format('d M Y | H:i') }}</x-slot:datetime>
