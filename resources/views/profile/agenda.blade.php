@@ -1,19 +1,18 @@
-
 <x-app-layout>
 
+    {{-- Hero Section --}}
     <x-hero>
         <span>Agenda</span>
     </x-hero>
+    
+        {{-- Content --}}
+        <main class="container mx-auto py-8 px-6">
 
-
-    <main class="container mx-auto py-8 px-6">
-
-        {{-- Search --}}
+            {{-- Search --}}
         <div class="grid grid-cols-4 gap-16">
             <div class="col-span-3">
                 <div class="flex justify-end items-center mb-4">
                     <div class="relative">
-                        <x-search-input></x-search-input>
                     </div>
                 </div>
             </div>
@@ -26,25 +25,31 @@
             </div>
         </div>
 
+        <div class="grid grid-cols-4 gap-8">
+            {{-- Section Tanggal --}}
+            <div class="col-span-1 rounded-lg bg-teal-100 p-4 h-[480px]">
+                <h2 class="text-lg font-semibold"></h2>
+            </div>
 
-
-        <div class="grid grid-cols-4 gap-16">
-            <div class="col-span-3 gap-4 h-svh">
-               
-
+            {{-- Jadwal Harian --}}
+            <div class="col-span-2">
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+                <x-kegiatan-card></x-kegiatan-card>
+            </div>
+              
+                {{-- Berita Section --}}
+                <div class="col-auto grid grid-rows-3 gap-4">
+                    <x-berita-card></x-berita-card>
+                    <x-berita-card></x-berita-card>
+                    <x-berita-card></x-berita-card>
                 </div>
-
-
-            <div class="col-auto grid grid-rows-3 gap-4">
-                <x-berita-card></x-berita-card>
             </div>
-            </div>
-            </div>
-        </div>
-
-
-        <div></div>
-
-    </main>
-
-</x-app-layout> 
+</x-app-layout>
