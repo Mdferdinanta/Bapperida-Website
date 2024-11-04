@@ -2,72 +2,53 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        <span>Penelitian Pengembangan</span>
+        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Penelitian Pengembangan</span>
     </x-hero>
 
     {{-- Content --}}
-    <main class="container mx-auto py-8 px-6">
+    <main class="container flex flex-col lg:flex-row mx-auto py-8 px-6">
 
-        {{-- Search --}}
-        <div class="grid grid-cols-4 gap-16">
+        {{-- dokumen --}}
+        <div class="lg:w-3/4 flex flex-col">
 
-            <div class="col-span-3 justify-end flex items-center">
-
-                {{-- <div class="col-span-1 col-start-2 flex">
-                    <div class="flex justify-end items-center mb-4 mr-4">
-                        <div class="relative">
-                            <x-dropdown-select>Dokumen</x-dropdown-select>
-                        </div>
-                    </div>
-                </div> --}}
-                <div class="col-span-1 flex">
-                    <div class="flex justify-end items-center mb-4">
-                        <div class="relative">
-                            <x-dropdown-select></x-dropdown-select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-1 col-start-3 flex">
-                    <div class="flex justify-end items-center mb-4">
-                        <div class="relative">
-                            <x-search-input></x-search-input>
-                        </div>
-                    </div>
-                </div>
+            {{-- Search Kategori --}}
+            <div class="flex flex-col md:flex-row gap-4 mx-8 ml-auto min-md:items-end">
+                <x-dropdown-select></x-dropdown-select>
+                <x-search-input></x-search-input>
             </div>
 
-            <div class="col-span 1">
-                <div class="flex justify-start items-center mb-4">
-                    <div class="relative">
-                        <h2 class="text-headline font-semibold">Berita Terbaru</h2>
-                    </div>
-                </div>
+            {{-- Content --}}
+            <div class="m-8">
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
+                <x-dokumen-card></x-dokumen-card>
             </div>
+
+
         </div>
 
-
-        {{-- Grids --}}
-        <div class="grid grid-cols-4 gap-16">
-            <div class="col-span-3">
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-                <x-dokumen-card></x-dokumen-card>
-
+        {{-- Berita --}}
+        <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
+            {{-- Judul --}}
+            <div class="max-lg:my-8">
+                <h3 class="text-subtitle lg:text-headline font-subtitleBold">
+                    <i class="ri-arrow-right-s-line"></i>
+                    Berita Terbaru
+                </h3>
             </div>
 
-            {{-- Berita Section --}}
-            <div class="col-span-1 grid grid-rows-3 gap-4">
+            {{-- Konten --}}
+            <div>
                 <x-berita-card></x-berita-card>
             </div>
         </div>
-
-        {{-- Footer --}}
-        <div></div>
 
     </main>
 
