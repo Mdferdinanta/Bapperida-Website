@@ -1,13 +1,10 @@
 <section>
-    <header>
-        <h2 class="font-bold text-subtitle">
+    <x-form-title>
+        <x-slot:title>
             {{ __('Upload Berita baru') }}
-        </h2>
-
-        <p class="mt-1 text-neutral-500">
-            {{ __('Upload berita baru dengan isi sebagai berikut') }}
-        </p>
-    </header>
+        </x-slot:title>
+        {{ __('Upload berita terbaru untuk ditampilkan di halaman berita.') }}
+    </x-form-title>
 
     <form wire:submit.prevent="uploadBerita" class="mt-6 space-y-6">
         {{-- Judul Berita --}}
@@ -24,9 +21,9 @@
             <x-input-error class="mt-2" :messages="$errors->get('artikel')" />
         </div>
 
-        {{-- Thumbnail --}}
+        {{-- Thumbnail Berita--}}
         <div>
-            <x-input-label for="thumbnail" :value="__('Thumbnail')" />
+            <x-input-label for="thumbnail" :value="__('Thumbnail Berita')" />
             <input type="file" wire:model="thumbnail" id="thumbnail" class="block w-full mt-1" />
             <x-input-error class="mt-2" :messages="$errors->get('thumbnail')" />
         </div>

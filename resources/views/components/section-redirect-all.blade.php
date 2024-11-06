@@ -1,7 +1,7 @@
 @php
 
     $classes = 'inline-block
-                py-2 mt-2
+                py-2 my-2
                 font-medium
                 cursor-pointer
                 text-detail

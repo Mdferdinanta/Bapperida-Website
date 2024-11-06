@@ -2,7 +2,7 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Berita</span>
+        {{ __('Berita') }}
     </x-hero>
 
     {{-- Content --}}

@@ -21,7 +21,7 @@
             </div>
 
             {{-- Link --}}
-            <x-section-redirect-all>Lihat Semua</x-section-redirect-all>
+            <x-section-redirect-all>{{ __('Lihat Semua') }}</x-section-redirect-all>
 
         </div>
     </div>

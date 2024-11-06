@@ -38,7 +38,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('dashboard')">
+                                <x-nav-link class="h-full" :active="request()->routeIs('page-structure', 'page-profile', 'page-schedules')">
                                     {{ __('Profil') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
@@ -46,13 +46,13 @@ new class extends Component {
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('page-structure')" :active="request()->routeIs('page-structure')" wire:navigate>
                                     {{ __('Struktur Organisasi') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('page-profile')" :active="request()->routeIs('page-profile')" wire:navigate>
                                     {{ __('Pejabat') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('page-schedules')" :active="request()->routeIs('page-schedules')" wire:navigate>
                                     {{ __('Agenda') }}
                                 </x-dropdown-link>
                             </x-slot>
@@ -63,7 +63,14 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('dashboard')">
+                                <x-nav-link class="h-full" :active="request()->routeIs(
+                                    'doc-1-list',
+                                    'doc-2-list',
+                                    'doc-3-list',
+                                    'doc-4-list',
+                                    'doc-5-list',
+                                    'doc-6-list',
+                                )">
                                     {{ __('Dokumen') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
@@ -71,22 +78,22 @@ new class extends Component {
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-1-list')" :active="request()->routeIs('doc-1-list')" wire:navigate>
                                     {{ __('Perencanaan Pembangunan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-2-list')" :active="request()->routeIs('doc-2-list')" wire:navigate>
                                     {{ __('Penelitian Pengembangan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-3-list')" :active="request()->routeIs('doc-3-list')" wire:navigate>
                                     {{ __('Indeks') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-4-list')" :active="request()->routeIs('doc-4-list')" wire:navigate>
                                     {{ __('Standar Pelayanan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-5-list')" :active="request()->routeIs('doc-5-list')" wire:navigate>
                                     {{ __('Peraturan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-6-list')" :active="request()->routeIs('doc-6-list')" wire:navigate>
                                     {{ __('Rencana Kerja') }}
                                 </x-dropdown-link>
                             </x-slot>
@@ -94,12 +101,12 @@ new class extends Component {
                     </div>
 
                     {{-- Buletin --}}
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link :href="route('page-buletin')" :active="request()->routeIs('page-buletin')" wire:navigate>
                         {{ __('Buletin') }}
                     </x-nav-link>
 
                     {{-- Gallery --}}
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link :href="route('page-gallery')" :active="request()->routeIs('page-gallery')" wire:navigate>
                         {{ __('Galeri Kegiatan') }}
                     </x-nav-link>
 
@@ -107,7 +114,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('dashboard')">
+                                <x-nav-link class="h-full" :active="request()->routeIs('video-list')">
                                     {{ __('Video') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
@@ -115,13 +122,13 @@ new class extends Component {
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
                                     {{ __('Inovasi') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
                                     {{ __('Video 2') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
                                     {{ __('Video 3') }}
                                 </x-dropdown-link>
                             </x-slot>
@@ -129,9 +136,10 @@ new class extends Component {
                     </div>
 
                     {{-- Contact --}}
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link href="{{ request()->is('/') ? '#contact' : route('dashboard') . '#contact' }}" id="contact-link">
                         {{ __('Kontak') }}
                     </x-nav-link>
+
                 </div>
 
                 {{-- Form Button --}}
@@ -148,5 +156,34 @@ new class extends Component {
 
     {{-- Responsive Navigation Menu --}}
     <x-nav-responsive />
+
+    {{-- Script --}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLink = document.getElementById('contact-link');
+
+            contactLink.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                // Check if we are currently on the homepage
+                if (window.location.pathname === '/') {
+                    // Smooth scroll to the "kontak" section if we are on the homepage
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    // Redirect to the homepage with the anchor if we are not on the homepage
+                    window.location.href = `/${targetId ? '#' + targetId : ''}`;
+                }
+            });
+        });
+    </script>
 
 </nav>

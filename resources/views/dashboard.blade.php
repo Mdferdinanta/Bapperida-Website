@@ -32,4 +32,20 @@
     {{-- Map Section --}}
     <x-gmaps />
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the URL contains the #contact anchor
+            if (window.location.hash === '#contact') {
+                const targetElement = document.getElementById('contact');
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    </script>
+
+
 </x-app-layout>

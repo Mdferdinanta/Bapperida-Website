@@ -1,4 +1,4 @@
-<div>
+<div id="contact">
     <div class="max-w-full">
         <div class="flex flex-col items-center justify-center px-8 py-4 mx-auto overflow-hidden bg-white shadow-sm">
 

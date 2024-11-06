@@ -1,12 +1,11 @@
 <div>
-    <div
-        class="flex flex-col items-center justify-center w-full mx-auto divide-y-2 divide-neutral-600">
+    <div class="flex flex-col items-center justify-center w-full px-8 pt-12 mx-auto xl:px-40">
         {{-- Container --}}
-        <div class="flex flex-col justify-center w-full lg:flex-row">
+        <div class="flex flex-col justify-between border-b lg:gap-40 2xl:gap-80 lg:flex-row border-mist-500">
 
             <div class="flex flex-row gap-4 max-lg:justify-between lg:flex-col">
                 {{-- Logo --}}
-                <div class="flex items-center gap-8 p-4">
+                <div class="flex items-center gap-4 p-4">
                     <img src="{{ asset('assets/logo/bapperida.png') }}" alt="" class="h-16">
                     <h3 class="font-black tracking-wide text-sky-900">BAPPERIDA KOTA BOGOR</h3>
                 </div>
@@ -15,26 +14,23 @@
                 <div class="flex flex-col items-end justify-center p-4 lg:items-start">
                     <h5 class="mb-4 font-bold uppercase">Media Sosial</h5>
                     <ul class="flex gap-2">
-                        <li><i
-                                class="p-1 text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-youtube-line"></i>
+                        <li><a href="https://youtube.com/@bapperidakotabogor?si=mv2YUYsbGHLiKKay"><i
+                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-youtube-line"></i></a>
                         </li>
-                        <li><i
-                                class="p-1 text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-instagram-line"></i>
+                        <li><a href="https://www.instagram.com/bapperida.kotabogor"><i
+                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-instagram-line"></i></a>
                         </li>
-                        <li><i
-                                class="p-1 text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-facebook-line"></i>
+                        <li><a href="https://x.com/bappeda3271"><i
+                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-twitter-x-line"></i></a>
                         </li>
-                        <li><i
-                                class="p-1 text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-twitter-x-line"></i>
-                        </li>
-                        <li><i
-                                class="p-1 text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-global-line"></i>
+                        <li><a href="https://bapperida.kotabogor.go.id/"><i
+                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-global-line"></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="flex justify-between">
+            <div class="flex justify-between gap-20">
                 {{-- Links --}}
                 <div class="m-4">
                     <h5 class="mb-4 font-bold uppercase">Statistik Pengunjung</h5>

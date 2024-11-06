@@ -1,12 +1,12 @@
 <div>
     <div class="max-w-full">
-        <div
-            class="flex flex-col items-center justify-center px-4 py-4 mx-auto overflow-hidden bg-white shadow-sm">
+        <div class="flex flex-col items-center justify-center px-4 py-4 mx-auto overflow-hidden bg-white shadow-sm">
 
             {{-- Section Title --}}
             <x-section-title>{{ __('Berita Kota Bogor') }}</x-section-title>
 
-            <div class="container justify-center w-full text-justify lg:grid max-lg:divide-y-2 lg:px-4 divide-neutral-300 lg:gap-8 lg:grid-cols-2">
+            <div
+                class="container justify-center w-full text-justify lg:grid max-lg:divide-y-2 lg:px-4 divide-neutral-300 lg:gap-8 lg:grid-cols-2">
 
                 {{-- Left Card --}}
                 {{-- Main Card --}}
@@ -49,6 +49,9 @@
                 </div>
 
             </div>
+
+            {{-- Link --}}
+            <x-section-redirect-all href="https://kotabogor.go.id/index.php/show_post/allpostbycategory/1" >{{ __('Lihat Semua') }}</x-section-redirect-all>
 
         </div>
     </div>

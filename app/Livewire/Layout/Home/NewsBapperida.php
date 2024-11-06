@@ -12,10 +12,9 @@ class NewsBapperida extends Component
 
     public function mount()
     {
-        $this->latestNews = Berita::latest()->first();
+        $this->latestNews = Berita::orderBy('id', 'desc')->first();
 
-        $this->otherNews = Berita::latest()
-                                ->when($this->latestNews, function($query) {
+        $this->otherNews = Berita::when($this->latestNews, function($query) {
                                     return $query->where('id', '!=', $this->latestNews->id);
                                 })
                                 ->take(4)
