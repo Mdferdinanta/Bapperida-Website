@@ -1,0 +1,67 @@
+<section>
+    <x-form-title>
+        <x-slot:title>
+            {{ __('Upload Dokumen') }}
+        </x-slot:title>
+        {{ __('Upload dokumen dengan ketentuan berikut.') }}
+    </x-form-title>
+
+    <form wire:submit.prevent="uploadDokumen" class="mt-6 space-y-6" enctype="multipart/form-data">
+        {{-- Nama Dokumen --}}
+        <div>
+            <x-input-label for="nama" :value="__('Nama Dokumen')" />
+            <x-text-input wire:model="nama" id="nama" type="text" class="block w-full mt-1" required />
+            <x-input-error class="mt-2" :messages="$errors->get('nama')" />
+        </div>
+
+        {{-- Dokumen PDF --}}
+        <div>
+            <x-input-label for="dokumen" :value="__('Dokumen PDF')" />
+            <input type="file" wire:model="dokumen" id="dokumen" accept=".pdf" class="block w-full mt-1" />
+            <div wire:loading wire:target="dokumen">Uploading...</div>
+            <x-input-error class="mt-2" :messages="$errors->get('dokumen')" />
+        </div>
+
+        {{-- Kategori Dokumen --}}
+        <div x-data="{ kategori: @entangle('kategori') }">
+            <div>
+                <x-input-label for="kategori" :value="__('Kategori Dokumen')" />
+                <select wire:model.blur="kategori" x-model="kategori" name="kategori" id="kategori"
+                    class="mt-1 bg-transparent border shadow-sm border-mist-300 rounded-xs focus:border-mist-300 focus:ring-primary-200 focus:bg-mist-50">
+                    <option value="" disabled selected>Kategori</option>
+                    <option value="perencanaan">Perencanaan Pembangunan</option>
+                    <option value="penelitian">Penelitian Pengembangan</option>
+                    <option value="indeks">Indeks</option>
+                    <option value="pelayanan">Standar Pelayanan</option>
+                    <option value="peraturan">Peraturan</option>
+                    <option value="rencana">Rencana Kerja</option>
+                    <option value="buletin">Buletin</option>
+                </select>
+                <x-input-error class="mt-2" :messages="$errors->get('kategori')" />
+            </div>
+
+            <div x-show="kategori === 'buletin'" id="coverBuletin">
+                <x-input-label for="coverBuletin" :value="__('Cover Buletin')" class="mt-4" />
+                <input type="file" wire:model="coverBuletin" id="coverBuletin" name="coverBuletin"
+                    class="block w-full mt-1" accept=".jpg,.jpeg,.png" />
+                <div wire:loading wire:target="coverBuletin">Uploading...</div>
+                <x-input-error class="mt-2" :messages="$errors->get('coverBuletin')" />
+            </div>
+        </div>
+
+        {{-- Tanggal Publikasi --}}
+        <div>
+            <x-input-label class="text-neutral-500" :value="__('Tanggal akan terisi otomatis setelah terkirim.')" />
+        </div>
+
+        <x-primary-button>
+            {{ __('Upload Dokumen') }}
+        </x-primary-button>
+
+        @if (session()->has('message'))
+            <div class="mt-4 text-green-500">
+                {{ session('message') }}
+            </div>
+        @endif
+    </form>
+</section>

@@ -25,6 +25,7 @@
         <div>
             <x-input-label for="thumbnail" :value="__('Thumbnail Berita')" />
             <input type="file" wire:model="thumbnail" id="thumbnail" class="block w-full mt-1" />
+            <div wire:loading wire:target="thumbnail">Uploading...</div>
             <x-input-error class="mt-2" :messages="$errors->get('thumbnail')" />
         </div>
 

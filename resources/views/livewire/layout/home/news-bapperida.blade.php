@@ -13,7 +13,7 @@
                     <x-news-main-card :href="route('news-preview', ['id' => $latestNews->id])" wire:navigate>
                         <x-slot:thumbnail>{{ asset('storage/' . $latestNews->thumbnail) }}</x-slot:thumbnail>
                         <x-slot:title>{{ $latestNews->judul }}</x-slot:title>
-                        <x-slot:datetime>{{ $latestNews->created_at->format('d M Y | H:i') }}</x-slot:datetime>
+                        <x-slot:datetime>{{ $latestNews->created_at->format('d F Y | H:i') }}</x-slot:datetime>
                         {{ Str::limit($latestNews->artikel, 100) }}
                     </x-news-main-card>
                 @endif
@@ -26,7 +26,7 @@
                         <x-news-small-card :href="route('news-preview', ['id' => $news->id])" wire:navigate>
                             <x-slot:thumbnail>{{ asset('storage/' . $news->thumbnail) }}</x-slot:thumbnail>
                             <x-slot:title>{{ $news->judul }}</x-slot:title>
-                            <x-slot:datetime>{{ $news->created_at->format('d M Y | H:i') }}</x-slot:datetime>
+                            <x-slot:datetime>{{ $news->created_at->format('d F Y | H:i') }}</x-slot:datetime>
                             {{ Str::limit($news->artikel, 100) }}
                         </x-news-small-card>
                     @endforeach
