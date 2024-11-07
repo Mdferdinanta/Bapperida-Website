@@ -29,28 +29,28 @@
         {{-- Documents --}}
         <div x-data="{ dropdownOpen: false }">
             <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
-                class="flex items-center justify-between w-full" :active="request()->routeIs('doc-1-list', 'doc-2-list', 'doc-3-list', 'doc-4-list', 'doc-5-list', 'doc-6-list')">
+                class="flex items-center justify-between w-full" :active="request()->routeIs('doc-category')">
                 <span>{{ __('Dokumen') }}</span>
                 <i :class="{ 'rotate-180': dropdownOpen }"
                     class="transition-transform ri-arrow-down-s-line"></i>
             </x-responsive-nav-link>
             <div x-show="dropdownOpen" class="text-detail">
-                <x-responsive-nav-link class="pl-12" :href="route('doc-1-list')" :active="request()->routeIs('doc-1-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Perencanaan Pembangunan'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Perencanaan Pembangunan') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('doc-2-list')" :active="request()->routeIs('doc-2-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Penelitian Pengembangan'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Penelitian Pengembangan') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('doc-3-list')" :active="request()->routeIs('doc-3-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Indeks'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Indeks') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('doc-4-list')" :active="request()->routeIs('doc-4-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Standar Pelayanan'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Standar Pelayanan') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('doc-5-list')" :active="request()->routeIs('doc-5-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Peraturan'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Peraturan') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('doc-6-list')" :active="request()->routeIs('doc-6-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('doc-category', ['category' => 'Rencana Kerja'])" :active="request()->routeIs('doc-category')" wire:navigate>
                     {{ __('Rencana Kerja') }}
                 </x-responsive-nav-link>
             </div>

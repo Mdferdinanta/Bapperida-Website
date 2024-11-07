@@ -6,24 +6,24 @@
     </x-hero>
 
     {{-- Content --}}
-    <main class="container flex flex-col lg:flex-row mx-auto py-8 px-6">
+    <main class="container flex flex-col px-6 py-8 mx-auto lg:flex-row">
 
         {{-- dokumen --}}
-        <div class="lg:w-3/4 flex flex-col 0">
+        <div class="flex flex-col lg:w-3/4 0">
 
             {{-- Search Kategori --}}
-            <div class="flex flex-col  md:flex-row gap-4 mx-8 ml-auto min-md:items-end">
+            <div class="flex flex-col gap-4 mx-8 ml-auto md:flex-row min-md:items-end">
                 <x-search-input></x-search-input>
             </div>
 
             {{-- Content --}}
             <div class="m-8 ">
                 <article>
-                    <div class="flex flex-col mt-1 max-md:mt-10 max-md:max-w-full text-justify">
-                        <h2 class="text-subtitle font-h3Bold  md:text-headline lg:text-headline xl:text-h3 ">
+                    <div class="flex flex-col mt-1 text-justify max-md:mt-10 max-md:max-w-full">
+                        <h2 class="text-subtitle font-h3Bold md:text-headline lg:text-headline xl:text-h3 ">
                           Selamat datang di situs resmi BAPPERIDA Kota Bogor
                         </h2>
-                        <p class="text-tiny font-h3Light md:text-detail lg:text-detail xl:text-body mt-8">
+                        <p class="mt-8 text-tiny font-h3Light md:text-detail lg:text-detail xl:text-body">
                           Website Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah (BAPPERIDA) Kota Bogor ini memuat Profil dan informasi penting berbagai program dan kegiatan BAPPERIDA Kota Bogor, Kami harap website ini dapat bermanfaat dalam memberikan data dan informasi yang dapat dimanfaatkan oleh masyarakat luas.
                           <br /><br />
                           Pengguna website dapat mengakses dan mengunduh langsung publikasi data dan informasi, peraturan perundangan terkait perencanaan dan pembangunan daerah Kota Bogor sesuai dengan kebutuhan. Kami berusaha untuk menyajikan informasi yang terkini sehingga dapat memenuhi keinginan dan kebutuhan para stakeholder dan masyarakat Kota Bogor, pada khususnya serta masyarakat Indonesia pada umumnya.
@@ -39,20 +39,7 @@
         </div>
 
         {{-- Berita --}}
-        <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
-            {{-- Judul --}}
-            <div class="max-lg:my-8 ">
-                <h3 class="text-subtitle lg:text-headline font-subtitleBold">
-                    <i class="ri-arrow-right-s-line"></i>
-                    Berita Terbaru
-                </h3>
-            </div>
-
-            {{-- Konten --}}
-            <div>
-                {{-- <x-berita-card></x-berita-card> --}}
-            </div>
-        </div>
+        <x-news-side-layout></x-news-side-layout>
 
     </main>
 

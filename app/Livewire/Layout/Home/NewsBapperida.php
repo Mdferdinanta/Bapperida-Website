@@ -25,7 +25,7 @@ class NewsBapperida extends Component
     public function show($id)
     {
         $news = Berita::findOrFail($id);
-        return view('livewire.layout.pages.news.preview', compact('news'));
+        return view('livewire.layout.pages.news.news-preview', compact('news'));
     }
 
     public function render()

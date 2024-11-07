@@ -1,12 +1,9 @@
 @props(['disabled' => false])
 
-<div
-    {{ $attributes->merge([
-        'class' => 'px-4 bg-white border shadow-sm border-mist-200 rounded-xs focus:border-mist-300 focus:ring-0 focus:bg-primary-50',
-    ]) }}>
+<div class="relative w-full">
     <input @disabled($disabled) type="text" placeholder="Search"
-        class="bg-transparent border-0 focus:border-0 focus:ring-0">
-    <button type="submit">
+        class="w-full px-4 border shadow-sm border-mist-300 rounded-xs focus:border-primary-300 focus:ring-primary-300">
+    <x-secondary-button class="absolute top-0 right-0 h-full rounded-l-none">
         <i class="ri-search-2-line"></i>
-    </button>
+    </x-secondary-button>
 </div>

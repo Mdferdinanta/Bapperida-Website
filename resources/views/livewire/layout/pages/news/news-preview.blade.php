@@ -40,20 +40,7 @@
         </div>
 
         {{-- Berita --}}
-        <div class="h-full lg:w-1/4 lg:pl-8 lg:border-l-2 border-misty-300">
-            {{-- Judul --}}
-            <div class="max-lg:my-8 ">
-                <h3 class="text-subtitle lg:text-headline font-subtitleBold">
-                    <i class="ri-arrow-right-s-line"></i>
-                    Berita Terbaru
-                </h3>
-            </div>
-
-            {{-- Konten --}}
-            <div>
-                {{-- <x-berita-card></x-berita-card> --}}
-            </div>
-        </div>
+        <x-news-side-layout></x-news-side-layout>
 
     </main>
 

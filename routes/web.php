@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Layout\Home\NewsBapperida;
 use App\Livewire\Layout\Pages\Videos\VideoList;
@@ -32,40 +33,24 @@ Route::view('profil-anggota', 'livewire.layout.pages.profiles.profile-list')
 Route::view('video/inovasi', 'livewire.layout.pages.videos.video-list')
     ->name('video-list');
 
-Route::view('dokumen/pembangunan', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-1-list');
-
-Route::view('dokumen/litbang', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-2-list');
-
-Route::view('dokumen/indeks', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-3-list');
-
-Route::view('dokumen/pelayanan', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-4-list');
-
-Route::view('dokumen/peraturan', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-5-list');
-
-Route::view('dokumen/rencana-kerja', 'livewire.layout.pages.documents.doc-list')
-    ->name('doc-6-list');
-
-
 // Get Routes
 
-Route::get('/berita/{id}', [NewsBapperida::class, 'show'])->name('news-preview');
+Route::get('berita/{id}', [NewsBapperida::class, 'show'])
+    ->name('news-preview');
 
-Route::get('/video/inovasi/{id}', [VideoList::class, 'show'])->name('video-preview');
+Route::get('video/inovasi/{id}', [VideoList::class, 'show'])
+    ->name('video-preview');
 
-Route::get('/galeri-kegiatan/id', [VideoList::class, 'show'])->name('gallery-preview');
+Route::get('galeri-kegiatan/id', [VideoList::class, 'show'])
+    ->name('gallery-preview');
 
-Route::get('/buletin/id', [VideoList::class, 'show'])->name('buletin-preview');
+Route::get('buletin/id', [VideoList::class, 'show'])
+    ->name('buletin-preview');
 
-Route::get('/dokumen/id', [VideoList::class, 'show'])->name('doc-preview');
+Route::get('dokumen/{category}/{id}', [DocumentController::class, 'showPreview'])
+    ->name('doc-preview');
 
-
-
-
-
+Route::get('dokumen/{category}', [DocumentController::class, 'showByCategory'])
+    ->name('doc-category');
 
 require __DIR__.'/auth.php';

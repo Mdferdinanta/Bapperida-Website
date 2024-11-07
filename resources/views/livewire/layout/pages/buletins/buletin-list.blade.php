@@ -6,18 +6,18 @@
     </x-hero>
 
     {{-- Content --}}
-    <main class="container flex flex-col lg:flex-row mx-auto py-8 px-6">
+    <main class="container flex flex-col px-6 py-8 mx-auto lg:flex-row">
 
         {{-- dokumen --}}
-        <div class="lg:w-3/4 flex flex-col">
+        <div class="flex flex-col lg:w-3/4">
 
             {{-- Search Kategori --}}
-            <div class="flex flex-col lg:flex-row gap-4 mx-8 ml-auto min-md:items-end">
+            <div class="flex flex-col gap-4 mx-8 ml-auto lg:flex-row min-md:items-end">
                 <x-search-input></x-search-input>
             </div>
 
             {{-- Content --}}
-            <div class="m-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 gap-4 m-8 md:grid-cols-3 xl:grid-cols-4">
                 <livewire:layout.pages.buletins.buletin-card />
             </div>
 
@@ -25,20 +25,7 @@
         </div>
 
         {{-- Berita --}}
-        <div class="lg:w-1/4 h-full lg:pl-8 lg:border-l-2 border-misty-300">
-            {{-- Judul --}}
-            <div class="max-lg:my-8">
-                <h3 class="text-subtitle lg:text-headline font-subtitleBold">
-                    <i class="ri-arrow-right-s-line"></i>
-                    Berita Terbaru
-                </h3>
-            </div>
-
-            {{-- Konten --}}
-            <div>
-                {{-- <x-berita-card></x-berita-card> --}}
-            </div>
-        </div>
+        <x-news-side-layout></x-news-side-layout>
 
     </main>
 

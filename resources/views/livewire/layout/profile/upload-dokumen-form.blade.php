@@ -29,13 +29,13 @@
                 <select wire:model.blur="kategori" x-model="kategori" name="kategori" id="kategori"
                     class="mt-1 bg-transparent border shadow-sm border-mist-300 rounded-xs focus:border-mist-300 focus:ring-primary-200 focus:bg-mist-50">
                     <option value="" disabled selected>Kategori</option>
-                    <option value="perencanaan">Perencanaan Pembangunan</option>
-                    <option value="penelitian">Penelitian Pengembangan</option>
-                    <option value="indeks">Indeks</option>
-                    <option value="pelayanan">Standar Pelayanan</option>
-                    <option value="peraturan">Peraturan</option>
-                    <option value="rencana">Rencana Kerja</option>
-                    <option value="buletin">Buletin</option>
+                    <option value="Perencanaan Pembangunan">Perencanaan Pembangunan</option>
+                    <option value="Penelitian Pengembangan">Penelitian Pengembangan</option>
+                    <option value="Indeks">Indeks</option>
+                    <option value="Standar Pelayanan">Standar Pelayanan</option>
+                    <option value="Peraturan">Peraturan</option>
+                    <option value="Rencana Kerja">Rencana Kerja</option>
+                    <option value="Buletin">Buletin</option>
                 </select>
                 <x-input-error class="mt-2" :messages="$errors->get('kategori')" />
             </div>

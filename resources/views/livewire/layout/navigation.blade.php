@@ -63,14 +63,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs(
-                                    'doc-1-list',
-                                    'doc-2-list',
-                                    'doc-3-list',
-                                    'doc-4-list',
-                                    'doc-5-list',
-                                    'doc-6-list',
-                                )">
+                                <x-nav-link class="h-full" :active="request()->routeIs('doc-category')">
                                     {{ __('Dokumen') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
@@ -78,22 +71,22 @@ new class extends Component {
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('doc-1-list')" :active="request()->routeIs('doc-1-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Perencanaan Pembangunan'])" :active="request()->is('dokumen/Perencanaan Pembangunan*')" wire:navigate>
                                     {{ __('Perencanaan Pembangunan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('doc-2-list')" :active="request()->routeIs('doc-2-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Penelitian Pengembangan'])" :active="request()->is('dokumen/Penelitian Pengembangan*')" wire:navigate>
                                     {{ __('Penelitian Pengembangan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('doc-3-list')" :active="request()->routeIs('doc-3-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Indeks'])" :active="request()->is('dokumen/Indeks*')" wire:navigate>
                                     {{ __('Indeks') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('doc-4-list')" :active="request()->routeIs('doc-4-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Standar Pelayanan'])" :active="request()->is('dokumen/Standar Pelayanan*')" wire:navigate>
                                     {{ __('Standar Pelayanan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('doc-5-list')" :active="request()->routeIs('doc-5-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Peraturan'])" :active="request()->is('dokumen/Peraturan*')" wire:navigate>
                                     {{ __('Peraturan') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('doc-6-list')" :active="request()->routeIs('doc-6-list')" wire:navigate>
+                                <x-dropdown-link :href="route('doc-category', ['category' => 'Rencana Kerja'])" :active="request()->is('dokumen/Rencana Kerja*')" wire:navigate>
                                     {{ __('Rencana Kerja') }}
                                 </x-dropdown-link>
                             </x-slot>
@@ -136,7 +129,8 @@ new class extends Component {
                     </div>
 
                     {{-- Contact --}}
-                    <x-nav-link href="{{ request()->is('/') ? '#contact' : route('dashboard') . '#contact' }}" id="contact-link">
+                    <x-nav-link href="{{ request()->is('/') ? '#contact' : route('dashboard') . '#contact' }}"
+                        id="contact-link">
                         {{ __('Kontak') }}
                     </x-nav-link>
 

@@ -36,7 +36,7 @@
 
             {{-- Konten --}}
             <div>
-                {{-- <x-berita-card></x-berita-card> --}}
+                <livewire:layout.pages.news.news-side-card />
             </div>
         </div>
 

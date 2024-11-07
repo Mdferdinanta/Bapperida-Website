@@ -11,7 +11,7 @@ class Dokumen extends Model
 
     protected $fillable = [
         'nama',
-        'kategori',
+        'kategori', // fillable with [Perencanaan Pembangunan, Penelitian Pengembangan, Indeks, Standar Pelayanan, Peraturan, Rencana Kerja, Buletin]
         'dokumen',
         'cover_buletin',
     ];

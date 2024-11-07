@@ -31,7 +31,7 @@
 </head>
 
 <body class="font-sans antialiased text-black text-body">
-    <div class="min-h-screen bg-white">
+    <div class="min-h-screen bg-mist-50">
         <livewire:layout.navigation />
 
 
