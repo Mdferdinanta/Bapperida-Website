@@ -9,15 +9,10 @@
     <main class="container flex flex-col px-6 py-8 mx-auto lg:flex-row">
 
         {{-- dokumen --}}
-        <div class="flex flex-col lg:w-3/4 0">
-
-            {{-- Search Kategori --}}
-            <div class="flex flex-col gap-4 mx-8 ml-auto md:flex-row min-md:items-end">
-                <x-search-input></x-search-input>
-            </div>
+        <div class="flex flex-col lg:w-3/4">
 
             {{-- Content --}}
-            <div class="m-8 ">
+            <div class="m-8">
                 <article>
                     <div class="flex flex-col mt-1 text-justify max-md:mt-10 max-md:max-w-full">
                         <h2 class="text-subtitle font-h3Bold md:text-headline lg:text-headline xl:text-h3 ">

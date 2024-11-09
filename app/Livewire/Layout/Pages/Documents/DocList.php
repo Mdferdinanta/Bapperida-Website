@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Layout\Pages\Documents;
 
-use App\Models\Dokumen;
 use Livewire\Component;
 
 class DocList extends Component

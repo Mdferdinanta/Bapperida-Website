@@ -13,36 +13,35 @@ class UploadDokumenForm extends Component
     public $nama;
     public $kategori;
     public $dokumen;
-    public $coverBuletin;
-
-    protected $rules = [
-        'nama' => 'required|string|max:255',
-        'kategori' => 'required|string',
-        'dokumen' => 'required|mimes:pdf|max:1024576',
-        'coverBuletin' => 'nullable|image|max:2048',
-    ];
+    public $thumbnail;
 
     public function uploadDokumen()
     {
-        // dd($this->dokumen);
-        $this->validate();
+        $this->validate([
+            'nama' => ['required', 'string', 'max:255'],
+            'kategori' => ['required', 'string'],
+            'dokumen' => ['required', 'file', 'mimes:pdf', 'max:1024576'],
+            'thumbnail' => ['nullable', 'image', 'max:2048'],
+        ]);
 
         if ($this->dokumen) {
-            $this->dokumen = $this->dokumen->store('dokumen', 'public');
+            $originalName = $this->dokumen->getClientOriginalName();
+            $this->dokumen = $this->dokumen->store('file/dokumen', 'public');
         }
 
-        if ($this->coverBuletin) {
-            $this->coverBuletin = $this->coverBuletin->store('thumbnail/buletin', 'public');
+        if ($this->thumbnail) {
+            $this->thumbnail = $this->thumbnail->store('thumbnail/dokumen', 'public');
         }
 
         Dokumen::create([
             'nama' => $this->nama,
             'kategori' => $this->kategori,
             'dokumen' => $this->dokumen,
-            'coverBuletin' => $this->coverBuletin,
+            'original_name' => $originalName,
+            'thumbnail' => $this->thumbnail,
         ]);
 
-        $this->reset(['nama', 'kategori', 'dokumen', 'coverBuletin']);
+        $this->reset(['nama', 'kategori', 'dokumen', 'thumbnail']);
 
         session()->flash('message', 'Dokumen berhasil diunggah!');
     }

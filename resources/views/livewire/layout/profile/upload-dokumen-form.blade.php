@@ -28,7 +28,7 @@
                 <x-input-label for="kategori" :value="__('Kategori Dokumen')" />
                 <select wire:model.blur="kategori" x-model="kategori" name="kategori" id="kategori"
                     class="mt-1 bg-transparent border shadow-sm border-mist-300 rounded-xs focus:border-mist-300 focus:ring-primary-200 focus:bg-mist-50">
-                    <option value="" disabled selected>Kategori</option>
+                    <option value="" @readonly(true) class="bg-neutral-300 text-neutral-500">Kategori</option>
                     <option value="Perencanaan Pembangunan">Perencanaan Pembangunan</option>
                     <option value="Penelitian Pengembangan">Penelitian Pengembangan</option>
                     <option value="Indeks">Indeks</option>
@@ -40,12 +40,12 @@
                 <x-input-error class="mt-2" :messages="$errors->get('kategori')" />
             </div>
 
-            <div x-show="kategori === 'buletin'" id="coverBuletin">
-                <x-input-label for="coverBuletin" :value="__('Cover Buletin')" class="mt-4" />
-                <input type="file" wire:model="coverBuletin" id="coverBuletin" name="coverBuletin"
+            <div x-show="kategori === 'Buletin'" id="thumbnail">
+                <x-input-label for="thumbnail" :value="__('Cover Buletin')" class="mt-4" />
+                <input type="file" wire:model="thumbnail" id="thumbnail" name="thumbnail"
                     class="block w-full mt-1" accept=".jpg,.jpeg,.png" />
-                <div wire:loading wire:target="coverBuletin">Uploading...</div>
-                <x-input-error class="mt-2" :messages="$errors->get('coverBuletin')" />
+                <div wire:loading wire:target="thumbnail">Uploading...</div>
+                <x-input-error class="mt-2" :messages="$errors->get('thumbnail')" />
             </div>
         </div>
 

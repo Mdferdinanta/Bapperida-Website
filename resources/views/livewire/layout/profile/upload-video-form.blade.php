@@ -7,7 +7,7 @@
     </x-form-title>
 
     <form wire:submit.prevent="uploadVideo" class="mt-6 space-y-6">
-        {{-- Judul Dokumen --}}
+        {{-- Judul Video --}}
         <div>
             <x-input-label for="judul" :value="__('Judul Video')" />
             <x-text-input wire:model="judul" id="judul" name="judul" type="text" class="block w-full mt-1"

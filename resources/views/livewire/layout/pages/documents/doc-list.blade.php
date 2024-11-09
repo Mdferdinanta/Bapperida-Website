@@ -2,7 +2,9 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        Penelitian Pengembangan
+        @if($category)
+            {{ $category }}
+        @endif
     </x-hero>
 
     {{-- Content --}}
@@ -12,7 +14,7 @@
         <div class="flex flex-col lg:w-3/4 lg:pr-8">
 
             {{-- Search Kategori --}}
-            <div class="flex flex-col w-full gap-4 sm:flex-row min-sm:items-end">
+            <div class="flex flex-col w-full gap-4 sm:flex-row sm:justify-end">
                 <x-dropdown-select></x-dropdown-select>
                 <x-search-input></x-search-input>
             </div>

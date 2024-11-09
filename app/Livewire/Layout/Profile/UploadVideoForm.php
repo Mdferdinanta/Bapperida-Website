@@ -15,16 +15,14 @@ class UploadVideoForm extends Component
     public $deskripsi;
     public $thumbnail;
 
-    protected $rules = [
-        'judul' => 'required|string|max:255',
-        'embed' => 'required|string|max:255',
-        'deskripsi' => 'required|string',
-        'thumbnail' => 'required|image|max:2048',
-    ];
-
     public function uploadVideo()
     {
-        $this->validate();
+        $this->validate([
+            'judul' => ['required', 'string', 'max:255'],
+            'embed' => ['required', 'string', 'max:255'],
+            'deskripsi' => ['required', 'string'],
+            'thumbnail' => ['required', 'image', 'max:2048'],
+        ]);
 
         if ($this->thumbnail) {
             $this->thumbnail = $this->thumbnail->store('thumbnail/video', 'public');

@@ -13,6 +13,7 @@ class Dokumen extends Model
         'nama',
         'kategori', // fillable with [Perencanaan Pembangunan, Penelitian Pengembangan, Indeks, Standar Pelayanan, Peraturan, Rencana Kerja, Buletin]
         'dokumen',
-        'cover_buletin',
+        'original_name',
+        'thumbnail',
     ];
 }

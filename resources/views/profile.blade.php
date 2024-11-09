@@ -15,10 +15,17 @@
                 </div>
             </div>
 
-            {{-- Upload Berita --}}
+            {{-- Upload Dokumen --}}
             <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     <livewire:layout.profile.upload-dokumen-form />
+                </div>
+            </div>
+
+            {{-- Upload Foto --}}
+            <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    <livewire:layout.profile.upload-galeri-form />
                 </div>
             </div>
 

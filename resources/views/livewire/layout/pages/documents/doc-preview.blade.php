@@ -2,7 +2,9 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        Penelitian Pengembangan
+        @if($category)
+            {{ $category }}
+        @endif
     </x-hero>
 
     {{-- Content --}}
@@ -20,19 +22,18 @@
             {{-- Content --}}
             <div class="m-8 ">
                 <div>
-                    <div class="p-2 bg-white border rounded-xs border-mist-300">
-                        <h1 class="text-center text-body font-h1Bold md:text-subtitle lg:text-subtitle xl:text-headline ">SmartWaste: Inovasi Pengelolaan Sampah Berbasis Teknologi AI</h1>
-                            {{-- Iframe for PDF preview --}}
-                            <div class="relative mt-4 overflow-hidden">
-                                <iframe
-                                    src="{{ asset('assets/doc/doc-1.pdf') }}"
-                                    class="w-full h-[60vh] md:h-[95vh] lg:h-[100vh]">
-                                </iframe>
-                            </div>
+                    <div class="p-4 bg-white border rounded-xs border-mist-300">
+                        <h1 class="font-bold text-center text-body md:text-subtitle lg:text-subtitle xl:text-headline ">
+                            {{ $document->nama }}</h1>
+                        {{-- Iframe for PDF preview --}}
+                        <div class="relative mt-4 overflow-hidden">
+                            <iframe src="{{ $fileUrl }}" class="w-full h-[60vh] md:h-[95vh] lg:h-[100vh]"
+                                frameborder="0">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-
 
         </div>
 
@@ -40,6 +41,5 @@
         <x-news-side-layout></x-news-side-layout>
 
     </main>
-
 
 </x-app-layout>

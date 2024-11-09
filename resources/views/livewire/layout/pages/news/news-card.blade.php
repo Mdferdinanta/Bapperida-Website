@@ -1,4 +1,4 @@
-<div class="flex flex-col w-auto p-4 mx-8 my-2 bg-white border md:flex-row rounded-xs border-mist-300">
+<div class="flex flex-col w-auto p-4 my-8 bg-white border md:flex-row rounded-xs border-mist-300">
     <img src="{{ asset('assets/img/gallery-5.jpg') }}"
          class="object-cover w-full h-40 mb-2 md:h-60 md:w-80 md:mb-0"
          alt="video thumbnail">

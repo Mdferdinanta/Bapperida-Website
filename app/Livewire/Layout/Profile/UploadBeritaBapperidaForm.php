@@ -14,18 +14,16 @@ class UploadBeritaBapperidaForm extends Component
     public $artikel;
     public $thumbnail;
 
-    protected $rules = [
-        'judul' => 'required|string|max:255',
-        'artikel' => 'required|string',
-        'thumbnail' => 'required|image|max:2048',
-    ];
-
     public function uploadBerita()
     {
-        $this->validate();
+        $this->validate([
+            'judul' => ['required', 'string', 'max:255'],
+            'artikel' => ['required', 'string'],
+            'thumbnail' => ['required', 'image', 'max:2048'],
+        ]);
 
         if ($this->thumbnail) {
-            $this->thumbnail = $this->thumbnail->store('thumbnail', 'public');
+            $this->thumbnail = $this->thumbnail->store('thumbnail/berita', 'public');
         }
 
         Berita::create([

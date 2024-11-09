@@ -8,7 +8,7 @@
         {{-- Profiles --}}
         <div x-data="{ dropdownOpen: false }">
             <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
-                class="flex items-center justify-between w-full" :active="request()->routeIs('dashboard')">
+                class="flex items-center justify-between w-full" :active="request()->routeIs('page-structure', 'page-profile', 'page-schedules')">
                 <span>{{ __('Profil') }}</span>
                 <i :class="{ 'rotate-180': dropdownOpen }"
                     class="transition-transform ri-arrow-down-s-line"></i>
@@ -57,19 +57,19 @@
         </div>
 
         {{-- Buletin --}}
-        <x-responsive-nav-link :href="route('page-buletin')" :active="request()->routeIs('page-buletin')" wire:navigate>
+        <x-responsive-nav-link :href="route('buletin')" :active="request()->routeIs('buletin')" wire:navigate>
             {{ __('Buletin') }}
         </x-responsive-nav-link>
 
         {{-- Gallery --}}
-        <x-responsive-nav-link :href="route('page-gallery')" :active="request()->routeIs('page-gallery')" wire:navigate>
+        <x-responsive-nav-link :href="route('galeri')" :active="request()->routeIs('galeri')" wire:navigate>
             {{ __('Galeri Kegiatan') }}
         </x-responsive-nav-link>
 
         {{-- Videos --}}
         <div x-data="{ dropdownOpen: false }">
             <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
-                class="flex items-center justify-between w-full" :active="request()->routeIs('dashboard')">
+                class="flex items-center justify-between w-full" :active="request()->routeIs('video-list')">
                 <span>{{ __('Video') }}</span>
                 <i :class="{ 'rotate-180': dropdownOpen }"
                     class="transition-transform ri-arrow-down-s-line"></i>

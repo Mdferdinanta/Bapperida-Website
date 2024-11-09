@@ -94,12 +94,12 @@ new class extends Component {
                     </div>
 
                     {{-- Buletin --}}
-                    <x-nav-link :href="route('page-buletin')" :active="request()->routeIs('page-buletin')" wire:navigate>
+                    <x-nav-link :href="route('buletin')" :active="request()->routeIs('buletin')" wire:navigate>
                         {{ __('Buletin') }}
                     </x-nav-link>
 
                     {{-- Gallery --}}
-                    <x-nav-link :href="route('page-gallery')" :active="request()->routeIs('page-gallery')" wire:navigate>
+                    <x-nav-link :href="route('galeri')" :active="request()->routeIs('galeri')" wire:navigate>
                         {{ __('Galeri Kegiatan') }}
                     </x-nav-link>
 
