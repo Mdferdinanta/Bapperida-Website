@@ -5,11 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Infografis extends Model
+class Staff extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'thumbnail'
+        'nip',
+        'nama',
+        'foto',
+        'jabatan'
     ];
 }

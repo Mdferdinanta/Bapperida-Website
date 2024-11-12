@@ -16,7 +16,7 @@ class AgendaFactory extends Factory
      * @return array<string, mixed>
      */
 
-     protected $model = Agenda::class;
+    protected $model = Agenda::class;
     public function definition(): array
     {
         return [

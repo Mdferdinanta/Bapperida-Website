@@ -2,7 +2,7 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Pejabat BAPPERIDA</span>
+        {{ __('Pejabat BAPPERIDA') }}
     </x-hero>
 
     {{-- Content --}}
@@ -17,15 +17,14 @@
             </div>
 
             {{-- Content --}}
-            <div class="grid items-center grid-cols-2 gap-4 my-8 md:grid-cols-3 xl:grid-cols-4">
-                <livewire:layout.pages.profiles.profile-card />
-                <livewire:layout.pages.profiles.profile-card />
-                <livewire:layout.pages.profiles.profile-card />
-                <livewire:layout.pages.profiles.profile-card />
-                <livewire:layout.pages.profiles.profile-card />
-                <livewire:layout.pages.profiles.profile-card />
+            <div class="grid items-end grid-cols-2 gap-4 my-8 md:grid-cols-3 xl:grid-cols-4">
+                @foreach ($staffs as $staff)
+                    <livewire:layout.pages.profiles.profile-card :staff="$staff" />
+                @endforeach
+
             </div>
 
+            {{ $staffs->links() }}
 
         </div>
 

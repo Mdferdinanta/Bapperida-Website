@@ -7,6 +7,32 @@ use Livewire\Component;
 
 class VideoList extends Component
 {
+    public $videos;
+
+    public function showInovasi()
+    {
+        $this->videos = Video::where('kategori', 'inovasi')->get();
+        return view('livewire.layout.pages.videos.video-list', [
+            'videos' => $this->videos,
+        ]);
+    }
+
+    public function showTwo()
+    {
+        $this->videos = Video::where('kategori', 'two')->get();
+        return view('livewire.layout.pages.videos.video-list', [
+            'videos' => $this->videos,
+        ]);
+    }
+
+    public function showThree()
+    {
+        $this->videos = Video::where('kategori', 'three')->get();
+        return view('livewire.layout.pages.videos.video-list', [
+            'videos' => $this->videos,
+        ]);
+    }
+
     public function show($id)
     {
         $video = Video::findOrFail($id);

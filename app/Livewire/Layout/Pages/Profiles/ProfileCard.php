@@ -6,8 +6,12 @@ use Livewire\Component;
 
 class ProfileCard extends Component
 {
+    public $staff;
+
     public function render()
     {
-        return view('livewire.layout.pages.profiles.profile-card');
+        return view('livewire.layout.pages.profiles.profile-card', [
+            'staff' => $this->staff
+        ]);
     }
 }

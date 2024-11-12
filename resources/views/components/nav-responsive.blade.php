@@ -21,7 +21,7 @@
                     {{ __('Pejabat') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link class="pl-12" :href="route('page-schedules')" :active="request()->routeIs('page-schedules')" wire:navigate>
-                    {{ __('Agenda') }}
+                    {{ __('Agenda Kegiatan') }}
                 </x-responsive-nav-link>
             </div>
         </div>
@@ -69,19 +69,19 @@
         {{-- Videos --}}
         <div x-data="{ dropdownOpen: false }">
             <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
-                class="flex items-center justify-between w-full" :active="request()->routeIs('video-list')">
+                class="flex items-center justify-between w-full" :active="request()->routeIs('video-inovasi', 'video-2', 'video-3')">
                 <span>{{ __('Video') }}</span>
                 <i :class="{ 'rotate-180': dropdownOpen }"
                     class="transition-transform ri-arrow-down-s-line"></i>
             </x-responsive-nav-link>
             <div x-show="dropdownOpen" class="text-detail">
-                <x-responsive-nav-link class="pl-12" :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('video-inovasi')" :active="request()->routeIs('video-inovasi')" wire:navigate>
                     {{ __('Inovasi') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('video-2')" :active="request()->routeIs('video-2')" wire:navigate>
                     {{ __('Video 2') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link class="pl-12" :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                <x-responsive-nav-link class="pl-12" :href="route('video-3')" :active="request()->routeIs('video-3')" wire:navigate>
                     {{ __('Video 3') }}
                 </x-responsive-nav-link>
             </div>

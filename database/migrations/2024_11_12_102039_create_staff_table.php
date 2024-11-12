@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('staff', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('embed');
-            $table->string('kategori');
-            $table->text('deskripsi');
-            $table->string('thumbnail');
+            $table->bigInteger('nip')->unique();
+            $table->string('nama');
+            $table->string('foto');
+            $table->unique('jabatan')->where('jabatan', '!=', 'staff lainnya');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('staff');
     }
 };

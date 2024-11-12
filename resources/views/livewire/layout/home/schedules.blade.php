@@ -9,15 +9,16 @@
             <div class="w-full mt-4 sm:mt-8">
                 <div class="grid w-full gap-4 lg:grid-cols-3">
 
-                    <x-schedule-card />
-                    <x-schedule-card />
-                    <x-schedule-card />
+                    @foreach ($schedules as $schedule)
+                        <x-schedule-card :schedule="$schedule" />
+                    @endforeach
 
                 </div>
             </div>
 
             {{-- Link --}}
-            <x-section-redirect-all :href="route('page-schedules')" class="flex justify-center px-16 bg-white rounded-sm shadow-md hover:bg-primary-50"
+            <x-section-redirect-all :href="route('page-schedules')"
+                class="flex justify-center px-16 bg-white rounded-sm shadow-md hover:bg-primary-100"
                 wire:navigate>{{ __('Lihat Semua') }}</x-section-redirect-all>
 
         </div>

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleriController;
 use App\Livewire\Layout\Home\NewsBapperida;
 use App\Http\Controllers\DocumentController;
@@ -22,16 +24,22 @@ Route::view('struktur-organisasi', 'livewire.layout.pages.profiles.structure')
 Route::view('agenda', 'livewire.layout.pages.profiles.schedules')
     ->name('page-schedules');
 
-Route::view('profil-anggota', 'livewire.layout.pages.profiles.profile-list')
-    ->name('page-profile');
-
-Route::view('video/inovasi', 'livewire.layout.pages.videos.video-list')
-    ->name('video-list');
 
 // Get Routes
+Route::get('pejabat-bapperida', [StaffController::class, 'show'])
+    ->name('page-profile');
 
 Route::get('berita/{id}', [NewsBapperida::class, 'show'])
     ->name('news-preview');
+
+Route::get('video/inovasi', [VideoList::class, 'showInovasi'])
+    ->name('video-inovasi');
+
+Route::get('video/2', [VideoList::class, 'showTwo'])
+    ->name('video-2');
+
+Route::get('video/3', [VideoList::class, 'showThree'])
+    ->name('video-3');
 
 Route::get('video/inovasi/{id}', [VideoList::class, 'show'])
     ->name('video-preview');

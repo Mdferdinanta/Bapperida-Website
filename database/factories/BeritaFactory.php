@@ -17,7 +17,7 @@ class BeritaFactory extends Factory
      */
 
     protected $model = Berita::class;
-     public function definition(): array
+    public function definition(): array
     {
         return [
             'judul' => fake()->sentence(),

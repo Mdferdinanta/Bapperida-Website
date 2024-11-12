@@ -16,7 +16,7 @@
                 <h1 class="mb-2 font-bold text-justify text-subtitle font-h3Bold md:text-headline xl:text-h3">
                     {{ $news->judul }}</h1>
                 <p class="mb-4 text-detail md:text-body lg:text-body xl:text-subtitle ">
-                    {{ $news->created_at->format('d M Y | H:i') }}</p>
+                    {{ $news->created_at->translatedFormat('d F Y | H:i') }}</p>
                 <div class="text-white ">
                     <div class="container py-2 mx-auto">
                         <div class="relative">

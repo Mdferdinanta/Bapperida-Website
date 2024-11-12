@@ -53,7 +53,7 @@ new class extends Component {
                                     {{ __('Pejabat') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('page-schedules')" :active="request()->routeIs('page-schedules')" wire:navigate>
-                                    {{ __('Agenda') }}
+                                    {{ __('Agenda Kegiatan') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
@@ -107,7 +107,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('video-list')">
+                                <x-nav-link class="h-full" :active="request()->routeIs('video-inovasi', 'video-2', 'video-3')">
                                     {{ __('Video') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
@@ -115,13 +115,13 @@ new class extends Component {
                             </x-slot>
 
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                                <x-dropdown-link :href="route('video-inovasi')" :active="request()->routeIs('video-inovasi')" wire:navigate>
                                     {{ __('Inovasi') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                                <x-dropdown-link :href="route('video-2')" :active="request()->routeIs('video-2')" wire:navigate>
                                     {{ __('Video 2') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('video-list')" :active="request()->routeIs('video-list')" wire:navigate>
+                                <x-dropdown-link :href="route('video-3')" :active="request()->routeIs('video-3')" wire:navigate>
                                     {{ __('Video 3') }}
                                 </x-dropdown-link>
                             </x-slot>

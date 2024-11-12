@@ -27,7 +27,7 @@
 </div> --}}
 
 <div>
-    <h2 class="p-2 mb-4 text-lg font-bold text-center">
+    <h2 class="p-2 my-2 text-lg font-bold text-center">
         {{ \Carbon\Carbon::parse($selectedDate)->translatedFormat('l, j F Y') }}
     </h2>
 
@@ -48,7 +48,7 @@
             </div>
         </div>
     @empty
-        <p class="text-center text-gray-500">Tidak ada jadwal kegiatan untuk tanggal ini.</p>
+        <p class="my-4 text-center text-gray-500">Tidak ada jadwal kegiatan untuk tanggal ini.</p>
     @endforelse
 
 </div>

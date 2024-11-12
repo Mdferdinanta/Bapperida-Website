@@ -22,7 +22,21 @@
                 </div>
             </div>
 
-            {{-- Upload Foto --}}
+            {{-- Upload Infografis --}}
+            <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    <livewire:layout.profile.upload-infografis-form />
+                </div>
+            </div>
+
+            {{-- Upload Staff --}}
+            <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    <livewire:layout.profile.upload-staff-form />
+                </div>
+            </div>
+
+            {{-- Upload Foto Kegiatan --}}
             <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">
                     <livewire:layout.profile.upload-galeri-form />
