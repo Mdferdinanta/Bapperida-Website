@@ -2,10 +2,10 @@
     <div class="space-y-4">
         <div class="flex items-center justify-between p-4 mb-2 bg-white border shadow-sm border-mist-200 rounded-xs">
             <div>
-                <span class="font-bold text-primary-800 text-body">
+                <span class="font-bold text-primary-800 hover:text-primary-600 text-body md:text-subtitle">
                     {{ $document->nama }}
                 </span>
-                <p class="mt-2 text-tiny">{{ $document->created_at->format('d F Y') }}</p>
+                <p class="mt-2 text-tiny md:text-detail text-stone-500">{{ $document->created_at->format('d F Y') }}</p>
             </div>
             <a href="{{ route('doc-download', ['category' => $document->kategori, 'id' => $document->id]) }}">
                 <x-primary-button class="rounded-2xs">

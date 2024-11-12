@@ -21,7 +21,7 @@
             <div class="m-8 ">
                 <div>
                     <div class="p-4 bg-white border rounded-xs border-mist-300">
-                        <h1 class="font-bold text-center text-body md:text-subtitle lg:text-subtitle xl:text-headline ">
+                        <h1 class="font-bold text-center text-body md:text-subtitle lg:text-subtitle xl:text-headline text-primary-600">
                             {{ $document->nama }}</h1>
                         {{-- Iframe for PDF preview --}}
                         <div class="relative mt-4 overflow-hidden">
