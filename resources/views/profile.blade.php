@@ -29,6 +29,13 @@
                 </div>
             </div>
 
+            {{-- Upload Agenda Kegiatan --}}
+            <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
+                <div class="max-w-xl">
+                    <livewire:layout.profile.upload-agenda-form />
+                </div>
+            </div>
+
             {{-- Upload Video --}}
             <div class="p-4 bg-white shadow-lg sm:p-8 sm:rounded-lg">
                 <div class="max-w-xl">

@@ -14,6 +14,7 @@ export default {
     theme: {
         fontFamily: {
             sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+            display: ['Playfair Display', ...defaultTheme.fontFamily.serif],
         },
         fontSize: {
             'display': ['61px', { lineHeight: '91.5px' }],
