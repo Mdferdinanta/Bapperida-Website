@@ -27,10 +27,10 @@
 
                     <div class="album-cover">
                         <a href="{{ route('galeri-preview', ['id' => $coverImage->id]) }}">
-                            <div class="p-4 bg-white border rounded-xs border-mist-300 h-60">
+                            <div class="p-2 bg-white  hover:bg-primary-100 border rounded-xs border-mist-300 h-60">
                                 <img src="{{ asset('storage/' . $coverImage->foto) }}" class="object-cover w-full h-40 mb-2" alt="album cover">
-                                <h3 class="mb-2 text-body font-h3Bold">{{ $albumName }}</h3>
-                                <p class="text-sm text-gray-500">{{ $images->count() }} Images</p>
+                                <h3 class="mb-2 text-body md:text-subtitle font-bold text-primary-800">{{ $albumName }}</h3>
+                                <p class="text-detail text-gray-500">{{ $images->count() }} Images</p>
                             </div>
                         </a>
                     </div>

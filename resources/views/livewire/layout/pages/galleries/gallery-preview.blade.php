@@ -20,9 +20,9 @@
             <div class="m-8 ">
                 <div>
                     <div class="p-2 bg-white border rounded-xs border-mist-300">
-                        <h1 class="mb-2 text-body font-h1Bold md:text-subtitle lg:text-subtitle xl:text-headline">
+                        <h1 class="mb-2 font-bold text-body md:text-subtitle lg:text-subtitle xl:text-headline text-primary-600">
                             {{ $image->nama }}</h1>
-                        <p class="text-tiny md:text-detail lg:text-detail xl:text-body">
+                        <p class="text-tiny md:text-detail lg:text-detail xl:text-body text-stone-500">
                             {{ $image->created_at->format('d F Y') }}</p>
                         <div class="text-white ">
                             <div class="container py-8 mx-auto">

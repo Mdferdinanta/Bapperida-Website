@@ -15,10 +15,10 @@
             <div class="m-8">
                 <article>
                     <div class="flex flex-col mt-1 text-justify max-md:mt-10 max-md:max-w-full">
-                        <h2 class="text-subtitle font-h3Bold md:text-headline lg:text-headline xl:text-h3 ">
+                        <h2 class="text-subtitle font-black text-primary-800 md:text-headline lg:text-headline xl:text-h3 ">
                           Selamat datang di situs resmi BAPPERIDA Kota Bogor
                         </h2>
-                        <p class="mt-8 text-tiny font-h3Light md:text-detail lg:text-detail xl:text-body">
+                        <p class="mt-8 text-tiny font-h3Light text-stone-800 md:text-detail lg:text-detail xl:text-body">
                           Website Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah (BAPPERIDA) Kota Bogor ini memuat Profil dan informasi penting berbagai program dan kegiatan BAPPERIDA Kota Bogor, Kami harap website ini dapat bermanfaat dalam memberikan data dan informasi yang dapat dimanfaatkan oleh masyarakat luas.
                           <br /><br />
                           Pengguna website dapat mengakses dan mengunduh langsung publikasi data dan informasi, peraturan perundangan terkait perencanaan dan pembangunan daerah Kota Bogor sesuai dengan kebutuhan. Kami berusaha untuk menyajikan informasi yang terkini sehingga dapat memenuhi keinginan dan kebutuhan para stakeholder dan masyarakat Kota Bogor, pada khususnya serta masyarakat Indonesia pada umumnya.
