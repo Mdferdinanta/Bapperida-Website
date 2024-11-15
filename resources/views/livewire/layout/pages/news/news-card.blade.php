@@ -1,13 +1,14 @@
-<div class="flex flex-col w-auto p-4 my-8 bg-white border md:flex-row rounded-xs border-mist-300">
-    <img src="{{ asset('assets/img/gallery-5.jpg') }}"
-         class="object-cover w-full h-40 mb-2 md:h-60 md:w-80 md:mb-0"
-         alt="video thumbnail">
+<div class="flex flex-col w-full cursor-pointer lg:flex-row rounded-xs lg:bg-white lg:shadow-md">
+    <div class="overflow-hidden h-52 lg:h-full lg:w-1/3 rounded-xs lg:rounded-r-none">
+        <img src="{{ asset('storage/' . $news->thumbnail) }}"
+            class="object-cover w-full h-full" alt="berita thumbnail">
+    </div>
 
-    <div class="flex flex-col justify-center ml-4 md:w-auto max-md:ml-0">
-        <h3 class="mb-1 text-headline font-h2Bold md:text-h3">Judul Berita</h3>
-        <p class="mb-2 text-body md:text-subtitle">deskripsi singkat</p>
-        <p class="text-detail font-subtitleBold md:text-body">
-            Hari, 00 Bulan 0000 | 00:00 WIB
+    <div class="flex flex-col justify-center w-auto p-4 text-justify lg:w-2/3 lg:ml-4 max-md:ml-0">
+        <h3 class="font-bold text-subtitle lg:text-headline">{{ $news->judul }}</h3>
+        <p class="mt-2 font-light leading-normal lg:text-subtitle">{{ Str::limit($news->artikel, 200) }}</p>
+        <p class="mt-2 font-light text-detail text-primary-600">
+            {{ $news->created_at->translatedFormat('l, j F Y | H:i') }}
         </p>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <section>
     <x-form-title>
         <x-slot:title>
-            {{ __('Upload Jadwal Agenda kegiatan') }}
+            {{ __('Tambah Agenda kegiatan') }}
         </x-slot:title>
         {{ __('Isi form berikut untuk menambahkan jadwal kegiatan baru.') }}
     </x-form-title>

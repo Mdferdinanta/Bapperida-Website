@@ -1,15 +1,18 @@
 <x-app-layout>
+
     {{-- Hero Section --}}
     <x-hero>
         {{ __('Agenda Kegiatan') }}
     </x-hero>
 
     {{-- Content --}}
-    <main class="container flex flex-col px-6 py-8 mx-auto lg:flex-row">
-        <div class="flex flex-col gap-8 lg:w-3/4 md:flex-row lg:pr-8">
+    <main class="container flex flex-col py-8 mx-auto lg:flex-row">
+
+        {{-- Cards --}}
+        <div class="flex flex-col gap-8 lg:w-3/4 md:flex-row">
 
             {{-- Calendar Card --}}
-            <div class="flex-none rounded-xs md:w-72 bg-white shadow-md p-4 h-fit">
+            <div class="flex-none p-4 bg-white shadow-md rounded-xs md:w-72 h-fit">
                 <livewire:layout.pages.profiles.calendar />
             </div>
 

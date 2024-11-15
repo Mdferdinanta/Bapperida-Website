@@ -11,6 +11,8 @@ class UploadVideoForm extends Component
     use WithFileUploads;
 
     public $judul;
+    public $kategori;
+    public $type;
     public $embed;
     public $deskripsi;
     public $thumbnail;
@@ -19,9 +21,11 @@ class UploadVideoForm extends Component
     {
         $this->validate([
             'judul' => ['required', 'string', 'max:255'],
+            'kategori' => ['required', 'string', 'max:255'],
+            'type' => ['required', 'string', 'max:255'],
             'embed' => ['required', 'string', 'max:255'],
             'deskripsi' => ['required', 'string'],
-            'thumbnail' => ['required', 'image', 'max:2048'],
+            'thumbnail' => ['nullable', 'image', 'max:2048'],
         ]);
 
         if ($this->thumbnail) {
@@ -30,12 +34,14 @@ class UploadVideoForm extends Component
 
         Video::create([
             'judul' => $this->judul,
+            'kategori' => $this->kategori,
+            'type' => $this->type,
             'embed' => $this->embed,
             'deskripsi' => $this->deskripsi,
             'thumbnail' => $this->thumbnail,
         ]);
 
-        $this->reset(['judul', 'embed', 'deskripsi', 'thumbnail']);
+        $this->reset(['judul', 'kategori', 'type', 'embed', 'deskripsi', 'thumbnail']);
 
         session()->flash('message', 'Video berhasil diunggah!');
     }

@@ -14,7 +14,7 @@
         <div class="flex flex-col lg:w-3/4 lg:pr-8">
 
             {{-- Search Kategori --}}
-            <div class="flex flex-col w-full gap-4 sm:flex-row sm:justify-end">
+            <div class="flex flex-col w-full gap-4 sm:flex-row lg:justify-end">
                 <x-dropdown-select></x-dropdown-select>
                 <x-search-input></x-search-input>
             </div>

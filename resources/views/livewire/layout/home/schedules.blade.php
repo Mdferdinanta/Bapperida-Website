@@ -7,7 +7,7 @@
             <x-section-title href="">{{ __('Agenda Kegiatan') }}</x-section-title>
 
             <div class="w-full mt-4 sm:mt-8">
-                <div class="grid w-full gap-4 lg:grid-cols-3">
+                <div class="grid w-full gap-4 lg:gap-8 lg:grid-cols-3">
 
                     @foreach ($schedules as $schedule)
                         <x-schedule-card :schedule="$schedule" />
@@ -18,16 +18,9 @@
 
             {{-- Link --}}
             <x-section-redirect-all :href="route('page-schedules')"
-                class="flex justify-center px-16 bg-white rounded-sm shadow-md hover:bg-primary-100"
+                class="flex justify-center px-16 mt-4 md:shadow-md md:bg-white rounded-xs md:hover:bg-primary-100"
                 wire:navigate>{{ __('Lihat Semua') }}</x-section-redirect-all>
 
         </div>
     </div>
 </div>
-
-
-{{-- <div class="w-full mt-4">
-    @foreach ($schedules as $schedule)
-        <x-schedule-card :schedule="$schedule" />
-    @endforeach
-</div> --}}

@@ -2,14 +2,14 @@
 
     {{-- Hero Section --}}
     <x-hero>
-        <span class="text-h3 md:text-h2 lg:text-h1 xl:text-display">Berita</span>
+        {{ __('Berita BAPPERIDA') }}
     </x-hero>
 
     {{-- Content --}}
-    <main class="container flex flex-col px-6 py-8 mx-auto lg:flex-row">
+    <main class="container flex flex-col py-8 mx-auto lg:flex-row">
 
-        {{-- dokumen --}}
-        <div class="flex flex-col lg:w-3/4 lg:pr-8">
+        {{-- Cards --}}
+        <div class="flex flex-col maxlg:mx-4 lg:w-3/4 lg:pr-4">
 
             {{-- Search Kategori --}}
             <div class="flex flex-col w-full gap-4 sm:flex-row sm:justify-end">
@@ -17,9 +17,11 @@
             </div>
 
             {{-- Content --}}
-            <livewire:layout.pages.news.news-card />
-            <livewire:layout.pages.news.news-card />
-            <livewire:layout.pages.news.news-card />
+            <div class="flex flex-col gap-4 my-8">
+                @foreach ($news as $item)
+                    <livewire:layout.pages.news.news-card :news="$item" />
+                @endforeach
+            </div>
         </div>
 
         {{-- Berita --}}

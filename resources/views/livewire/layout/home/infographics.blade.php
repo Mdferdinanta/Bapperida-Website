@@ -6,7 +6,7 @@
             {{-- Section Title --}}
             <x-section-title href="">{{ __('Infografis') }}</x-section-title>
 
-            <div class="w-full my-4 sm:my-8 owl-carousel owl-theme">
+            <div class="w-full my-8 sm:my-8 owl-carousel owl-theme">
                 <!-- Slides -->
                 @foreach ($infographics as $infographic)
                     <div class="p-2 sm:p-4">
@@ -21,5 +21,33 @@
 
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: false,
+                center: true,
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    620: {
+                        items: 2,
+                        nav: false
+                    },
+                    1280: {
+                        items: 3,
+                        nav: false,
+                    }
+                }
+            })
+        });
+    </script>
 
 </div>

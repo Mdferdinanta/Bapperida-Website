@@ -16,7 +16,7 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
             <div class="flex justify-between flex-1 sm:hidden">
                 <span>
                     @if ($paginator->onFirstPage())
-                        <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium leading-5 bg-white border rounded-md cursor-default border-mist-300 text-neutral-500">
+                        <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium leading-5 border rounded-md cursor-default border-mist-300 text-neutral-500">
                             {!! __('pagination.previous') !!}
                         </span>
                     @else

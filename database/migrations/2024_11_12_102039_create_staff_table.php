@@ -16,6 +16,7 @@ return new class extends Migration
             $table->bigInteger('nip')->unique();
             $table->string('nama');
             $table->string('foto');
+            $table->string('jabatan');
             $table->unique('jabatan')->where('jabatan', '!=', 'staff lainnya');
             $table->timestamps();
         });

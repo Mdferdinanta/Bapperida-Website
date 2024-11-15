@@ -1,14 +1,14 @@
-<div class="h-full lg:w-1/4 max-lg:px-4 lg:pl-8 lg:border-l border-mist-500 ">
+<div class="h-full lg:w-1/4 lg:ml-8 max-lg:mx-4">
     {{-- Judul --}}
-    <div class="max-lg:my-8">
-        <h3 class="text-subtitle lg:text-headline font-subtitleBold">
-            <i class="ri-arrow-right-s-line font-bold text-primary-500"></i>
+    <div class="max-lg:my-8 lg:mb-6">
+        <h3 class="font-bold text-subtitle lg:text-headline">
+            <i class="font-bold ri-arrow-right-s-line text-primary-500"></i>
             Berita Terbaru
         </h3>
     </div>
 
     {{-- Konten --}}
-    <div>
+    <div class="flex flex-col">
         <livewire:layout.pages.news.news-side-card />
     </div>
 </div>

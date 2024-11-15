@@ -18,6 +18,7 @@ export default {
         fontFamily: {
             sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
             display: ['Playfair Display', ...defaultTheme.fontFamily.serif],
+            logo: ['Lovelo', ...defaultTheme.fontFamily.sans],
         },
         fontSize: {
             'display': ['61px', { lineHeight: '91.5px' }],

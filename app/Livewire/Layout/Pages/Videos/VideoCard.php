@@ -7,17 +7,17 @@ use Livewire\Component;
 
 class VideoCard extends Component
 {
-    public $videos;
+    public $video;
 
-    public function mount()
+    public function mount($video)
     {
-        $this->videos = Video::orderBy('id', 'desc')->take(6)->get();
+        $this->video = $video;
     }
 
     public function render()
     {
         return view('livewire.layout.pages.videos.video-card', [
-            'videos' => $this->videos,
+            'video' => $this->video,
         ]);
     }
 }

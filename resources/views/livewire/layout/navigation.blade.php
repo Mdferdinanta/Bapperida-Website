@@ -50,7 +50,7 @@ new class extends Component {
                                     {{ __('Struktur Organisasi') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('page-profile')" :active="request()->routeIs('page-profile')" wire:navigate>
-                                    {{ __('Pejabat') }}
+                                    {{ __('Pejabat BAPPERIDA') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link :href="route('page-schedules')" :active="request()->routeIs('page-schedules')" wire:navigate>
                                     {{ __('Agenda Kegiatan') }}
@@ -108,7 +108,7 @@ new class extends Component {
                         <x-dropdown>
                             <x-slot name="trigger">
                                 <x-nav-link class="h-full" :active="request()->routeIs('video-inovasi', 'video-2', 'video-3')">
-                                    {{ __('Video') }}
+                                    {{ __('Etalase Inovasi') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-2 ri-arrow-down-s-line"></i>
                                 </x-nav-link>

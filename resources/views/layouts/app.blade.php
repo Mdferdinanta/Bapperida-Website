@@ -22,6 +22,9 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
 
+    <!-- Lovelo -->
+    <link href="https://fonts.cdnfonts.com/css/lovelo" rel="stylesheet">
+
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet" />
 

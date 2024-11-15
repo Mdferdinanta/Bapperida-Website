@@ -1,4 +1,4 @@
-<div class="inline-flex items-center justify-start w-full px-4 py-4 bg-white rounded-md shadow-lg lg:flex-col lg:px-8 lg:py-16 lg:h-auto lg:rounded-lg">
+<div class="inline-flex items-center justify-start w-full px-4 py-4 bg-white shadow-md rounded-xs lg:flex-col lg:px-8 lg:py-16 lg:h-auto lg:rounded-md">
     <div class="flex items-center justify-center h-full lg:w-full rounded-xs">
         <img src="{{ asset('assets/vectors/CalendarIcon.svg') }}" alt="" class="w-8 md:w-16 lg:w-20 xl:w-32">
     </div>

@@ -11,7 +11,7 @@ class Video extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'embed', 'kategori', 'deskripsi', 'thumbnail'
+        'judul', 'embed', 'type', 'kategori', 'deskripsi', 'thumbnail', 'click_count'
     ];
 
     protected static function newFactory()

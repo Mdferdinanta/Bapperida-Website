@@ -18,7 +18,7 @@
                     {{ __('Struktur Organisasi') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link class="pl-12" :href="route('page-profile')" :active="request()->routeIs('page-profile')" wire:navigate>
-                    {{ __('Pejabat') }}
+                    {{ __('Pejabat BAPPERIDA') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link class="pl-12" :href="route('page-schedules')" :active="request()->routeIs('page-schedules')" wire:navigate>
                     {{ __('Agenda Kegiatan') }}

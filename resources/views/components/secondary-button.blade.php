@@ -6,7 +6,6 @@
                     px-4 py-2
                     bg-transparent border
                     border-mist-300
-                    rounded-xs
                     font-semibold
                     text-xs text-gray-700
                     uppercase tracking-widest

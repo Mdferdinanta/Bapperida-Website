@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\VideoController;
 use App\Http\Controllers\GaleriController;
 use App\Livewire\Layout\Home\NewsBapperida;
 use App\Http\Controllers\DocumentController;
@@ -15,9 +15,6 @@ Route::view('admin', 'profile')
     ->middleware(['auth', 'verified'])
     ->name('profile');
 
-Route::view('berita-bapperida', 'livewire.layout.pages.news.news-list')
-    ->name('page-news-bapperida');
-
 Route::view('struktur-organisasi', 'livewire.layout.pages.profiles.structure')
     ->name('page-structure');
 
@@ -26,6 +23,10 @@ Route::view('agenda', 'livewire.layout.pages.profiles.schedules')
 
 
 // Get Routes
+
+Route::get('berita-bapperida', [NewsController::class, 'show'])
+    ->name('page-news-bapperida');
+
 Route::get('pejabat-bapperida', [StaffController::class, 'show'])
     ->name('page-profile');
 

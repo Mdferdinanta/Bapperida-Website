@@ -7,13 +7,13 @@
 <a {{ $attributes->merge(['class' => $classes]) }}>
 
     {{-- Thumbnail --}}
-    <div class="overflow-hidden cursor-pointer h-52 rounded-xs">
+    <div class="overflow-hidden rounded-sm cursor-pointer h-52 md:rounded-xs">
         <img src={{ $thumbnail }} alt="" class="object-cover w-full h-full">
     </div>
 
     {{-- Details --}}
     <div>
-        <h3 class="font-bold">{{ $title }}</h3>
+        <h3 class="font-bold text-subtitle">{{ $title }}</h3>
         <h6 class="mt-2 font-light text-detail">{{ $datetime }}</h6>
         <p class="mt-4 font-light leading-normal md:hidden">{{ $slot }}</p>
     </div>

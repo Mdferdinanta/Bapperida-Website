@@ -21,7 +21,7 @@ class UploadStaffForm extends Component
         'nip' => 'required|integer|unique:staff,nip',
         'nama' => 'required|string|max:255',
         'foto' => 'required|image|mimes:jpeg,png,jpg|max:102400',
-        'jabatan' => ['required', Rule::unique('staff')->ignore('staff lainnya', 'jabatan')]
+        'jabatan' => 'required|string|max:255',
     ];
 
     // Handle form submission

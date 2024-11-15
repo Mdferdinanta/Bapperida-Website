@@ -22,6 +22,8 @@ class StaffController extends Controller
             'Kepala Bidang Penelitian dan Pengembangan',
             'Kasubag Umum dan Kepegawaian',
             'Perencana Ahli Muda',
+            'Perencana Ahli Madya',
+            'Analis Kebijakan Ahli Muda',
             'Analis Keuangan Pusat dan Daerah Ahli Muda',
             'Staff lainnya',
         ];

@@ -32,21 +32,19 @@
     </h2>
 
     @forelse ($events as $event)
-        <div class="p-4 mb-2 rounded bg-primary-50 hover:bg-primary-100 rounded-xs">
+        <div class="p-4 mb-2 rounded border-b last:border-none rounded-xs">
             <div class="flex items-center justify-between">
                 <div class="space-y-2">
                     <h3 class="font-semibold tracking-wide xl:text-subtitle text-primary-800 ">{{ $event->title }}</h3>
-                    <p class=" mr-4 max-xl:text-detail text-stone-600">{{ $event->description }}</p>
+                    <p class="mr-4 max-xl:text-detail text-stone-600">{{ $event->description }}</p>
                     <p class="mr-4 tracking-wider text-tiny xl:text-detail text-stone-600">{{ $event->location }}</p>
                 </div>
-                <div class="p-4 mb-2 rounded bg-primary-400 rounded-xs">
-                    <div class="flex flex-col gap-2 font-semibold text-center max-xl:text-detail xl:flex-row text-white">
+                <div class="flex flex-col gap-1 font-semibold text-center text-primary-600 max-xl:text-detail xl:flex-row">
                     <span>{{ \Carbon\Carbon::parse($event->time_start)->format('H:i') }}</span>
                     <span>-</span>
                     <span>{{ $event->time_finish ? \Carbon\Carbon::parse($event->time_finish)->format('H:i') : 'selesai' }}</span>
                 </div>
-                </div>
-                
+
 
             </div>
         </div>

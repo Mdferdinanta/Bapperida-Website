@@ -18,7 +18,14 @@
 
             {{-- Content --}}
             <div class="grid grid-cols-1 gap-4 my-8 md:grid-cols-2 xl:grid-cols-3">
-                <livewire:layout.pages.videos.video-card />
+                @foreach ($videos as $video)
+                    <livewire:layout.pages.videos.video-card :video="$video" />
+                @endforeach
+            </div>
+
+            {{-- Pagination --}}
+            <div>
+                {{ $videos->links() }}
             </div>
 
         </div>

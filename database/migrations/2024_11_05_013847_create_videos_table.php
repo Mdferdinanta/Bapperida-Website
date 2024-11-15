@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('type');
             $table->string('embed');
             $table->string('kategori');
             $table->text('deskripsi');

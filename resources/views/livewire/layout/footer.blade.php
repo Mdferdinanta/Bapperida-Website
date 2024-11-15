@@ -1,14 +1,14 @@
 <div>
     <div class="flex flex-col items-center justify-center w-full px-8 pt-12 mx-auto bg-white xl:px-40">
         {{-- Container --}}
-        <div class="flex flex-col justify-between border-b lg:gap-40 2xl:gap-80 lg:flex-row border-mist-500">
+        <div class="flex flex-col justify-between border-b lg:gap-40 2xl:gap-72 lg:flex-row border-mist-500">
 
             <div class="flex flex-row max-lg:justify-between lg:flex-col">
                 {{-- Logo --}}
                 <div>
                     <div class="flex items-center gap-4 p-4">
                         <img src="{{ asset('assets/logo/bapperida.png') }}" alt="" class="h-16">
-                        <h3 class="font-black tracking-wide text-sky-900">BAPPERIDA KOTA BOGOR</h3>
+                        <h3 class="font-black tracking-wide lg:text-headline font-logo text-sky-900">BAPPERIDA KOTA BOGOR</h3>
                     </div>
                     <ul class="px-4 space-y-2 text-tiny lg:text-detail">
                         <li><a><i class="mr-2 ri-government-fill"></i>Jl. Kapten Muslihat No.21 - Bogor 16121</a></li>
