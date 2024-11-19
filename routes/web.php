@@ -28,6 +28,11 @@ Route::view('profil-anggota', 'livewire.layout.pages.profiles.profile-list')
 Route::view('video/inovasi', 'livewire.layout.pages.videos.video-list')
     ->name('video-list');
 
+Route::view('indeks-list', 'livewire.layout.pages.indeks-list')
+    ->name('indeks-list');
+
+Route::view('list-inovasi', 'livewire.layout.pages.list-inovasi')
+    ->name('list-inovasi');
 // Get Routes
 
 Route::get('berita/{id}', [NewsBapperida::class, 'show'])
