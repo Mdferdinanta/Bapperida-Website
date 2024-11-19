@@ -3,6 +3,6 @@
         <p class="mb-2 text-detail">{{ $album->created_at->format('d F Y') }}</p>
         <img src="{{ asset('storage/' . $album->foto) }}" class="object-cover w-full h-40 mb-2"
             alt="video thumbnail">
-        <h3 class="mb-2 text-body font-h3Bold  text-primary-800 hover:text-primary-600">{{ $album->nama }}</h3>
+        <h3 class="mb-2 text-body font-h3Bold ">{{ $album->nama }}</h3>
     </div>
 </a>

@@ -22,6 +22,11 @@ Route::view('agenda', 'livewire.layout.pages.profiles.schedules')
     ->name('page-schedules');
 
 
+Route::view('indeks-list', 'livewire.layout.pages.indeks-list')
+    ->name('indeks-list');
+
+Route::view('list-inovasi', 'livewire.layout.pages.list-inovasi')
+    ->name('list-inovasi');
 // Get Routes
 
 Route::get('berita-bapperida', [NewsController::class, 'show'])
