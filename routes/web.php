@@ -1,8 +1,8 @@
 <?php
 
-use App\Livewire\Pages\Profiles\Schedule;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\Profiles\Staff;
+use App\Livewire\Pages\Profiles\Schedule;
 
 Route::view('/', 'dashboard')
     ->name('dashboard');

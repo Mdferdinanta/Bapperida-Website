@@ -14,7 +14,7 @@
                         <i class="ri-map-pin-2-line mr-2"></i>{{ $event->location }}</p>
                 </div>
                 <div
-                    class="flex flex-col lg:flex-row w-1/4 text-center justify-center items-center p-2 rounded-2xs text-primary-500 font-semibold">
+                    class="flex flex-col lg:flex-row w-1/4 text-center justify-center items-center p-2 rounded-2xs font-semibold {{ $loop->odd ? 'text-primary-600' : 'text-primary-500' }}">
                     <span>{{ \Carbon\Carbon::parse($event->time_start)->format('H:i') }}</span>
                     <span class="mx-2">-</span>
                     <span>{{ $event->time_finish ? \Carbon\Carbon::parse($event->time_finish)->format('H:i') : 'selesai' }}</span>

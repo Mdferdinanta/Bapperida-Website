@@ -69,7 +69,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('structure', 'staff', 'schedule')">
+                                <x-nav-link class="h-full" :active="request()->routeIs('structure', 'schedule')">
                                     {{ __('Dokumen') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-1 ri-arrow-down-s-line"></i>
@@ -83,7 +83,7 @@ new class extends Component {
                                 </x-dropdown-link>
 
                                 {{-- Penelitian Pengembangan --}}
-                                <x-dropdown-link :href="route('staff')" :active="request()->routeIs('staff')" wire:navigate>
+                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
                                     {{ __('Penelitian Pengembangan') }}
                                 </x-dropdown-link>
 
