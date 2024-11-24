@@ -1,15 +1,23 @@
 <?php
 
+use App\Livewire\Pages\Profiles\Schedule;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Pages\Profiles\Staff;
 
-Route::view('/', 'welcome');
-
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
+Route::view('/', 'dashboard')
     ->name('dashboard');
 
 Route::view('profile', 'profile')
-    ->middleware(['auth'])
+    ->middleware(['auth', 'verified'])
     ->name('profile');
 
+Route::view('structure', 'livewire.pages.profiles.structure')
+    ->name('structure');
+
 require __DIR__.'/auth.php';
+
+Route::get('staff', [Staff::class, 'render'])
+    ->name('staff');
+
+Route::get('schedule', [Schedule::class, 'render'])
+    ->name('schedule');

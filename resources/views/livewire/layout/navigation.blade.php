@@ -3,8 +3,7 @@
 use App\Livewire\Actions\Logout;
 use Livewire\Volt\Component;
 
-new class extends Component
-{
+new class extends Component {
     /**
      * Log the current user out of the application.
      */
@@ -16,62 +15,157 @@ new class extends Component
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-white sticky top-0 z-50 w-full shadow-md">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
+    <div class="px-4 mx-auto max-w-7xl sm:px-6">
+        <div class="flex justify-between">
+            <!-- Logo -->
+            <div class="flex items-center shrink-0 py-4">
+                <a href="{{ route('dashboard') }}" wire:navigate>
+                    <x-application-logo class="block w-auto text-gray-800 fill-current" />
+                </a>
+            </div>
 
+            <div class="flex">
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-4 lg:flex">
+                    {{-- Dashboard --}}
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Beranda') }}
+                    </x-nav-link>
+
+                    {{-- Profiles --}}
+                    <div class="hidden lg:flex lg:items-center">
+                        <x-dropdown>
+                            <x-slot name="trigger">
+                                <x-nav-link class="h-full" :active="request()->routeIs('structure', 'staff', 'schedule')">
+                                    {{ __('Profil') }}
+                                    <i :class="{ 'rotate-180': open }"
+                                        class="transition-transform ms-1 ri-arrow-down-s-line"></i>
+                                </x-nav-link>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                {{-- Structure --}}
+                                <x-dropdown-link :href="route('structure')" :active="request()->routeIs('structure')" wire:navigate>
+                                    {{ __('Struktur Organisasi') }}
+                                </x-dropdown-link>
+
+                                {{-- BAPPERIDA Staffs --}}
+                                <x-dropdown-link :href="route('staff')" :active="request()->routeIs('staff')" wire:navigate>
+                                    {{ __('Pejabat BAPPERIDA') }}
+                                </x-dropdown-link>
+
+                                {{-- Schedules --}}
+                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                    {{ __('Agenda Kegiatan') }}
+                                </x-dropdown-link>
+
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+
+                    {{-- Documents --}}
+                    <div class="hidden lg:flex lg:items-center">
+                        <x-dropdown>
+                            <x-slot name="trigger">
+                                <x-nav-link class="h-full" :active="request()->routeIs('structure', 'staff', 'schedule')">
+                                    {{ __('Dokumen') }}
+                                    <i :class="{ 'rotate-180': open }"
+                                        class="transition-transform ms-1 ri-arrow-down-s-line"></i>
+                                </x-nav-link>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                {{-- Perencanaan Pembangunan --}}
+                                <x-dropdown-link :href="route('structure')" :active="request()->routeIs('structure')" wire:navigate>
+                                    {{ __('Perencanaan Pembangunan') }}
+                                </x-dropdown-link>
+
+                                {{-- Penelitian Pengembangan --}}
+                                <x-dropdown-link :href="route('staff')" :active="request()->routeIs('staff')" wire:navigate>
+                                    {{ __('Penelitian Pengembangan') }}
+                                </x-dropdown-link>
+
+                                {{-- Standar Pelayanan --}}
+                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                    {{ __('Standar Pelayanan') }}
+                                </x-dropdown-link>
+
+                                {{-- Peraturan --}}
+                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                    {{ __('Peraturan') }}
+                                </x-dropdown-link>
+
+                                {{-- Rencana Kerja --}}
+                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                    {{ __('Rencana Kerja') }}
+                                </x-dropdown-link>
+
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+
+                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                        {{ __('Dashboard') }}
+                    </x-nav-link> --}}
                 </div>
-            </div>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
+                <!-- Interchangeable Options -->
+                @auth
 
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
+                    <!-- Admin's Option -->
+                    <div class="hidden lg:flex lg:-my-px lg:items-center lg:ms-6">
+                        <x-dropdown>
+                            <x-slot name="trigger">
+                                <x-nav-link class="h-full" :active="request()->routeIs('profile')">
+                                    <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
+                                        x-on:profile-updated.window="name = $event.detail.name"></div>
 
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile')" wire:navigate>
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
+                                    <i :class="{ 'rotate-180': open }"
+                                        class="transition-transform ms-1 ri-arrow-down-s-line"></i>
+                                </x-nav-link>
+                            </x-slot>
 
-                        <!-- Authentication -->
-                        <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link>
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </button>
-                    </x-slot>
-                </x-dropdown>
+                            <x-slot name="content">
+                                <x-dropdown-link :href="route('profile')" wire:navigate>
+                                    {{ __('Admin Page') }}
+                                </x-dropdown-link>
+
+                                <!-- Authentication -->
+                                <button wire:click="logout" class="w-full text-start">
+                                    <x-dropdown-link class="hover:bg-red-100">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </button>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
+                @else
+                    <!-- Button -->
+                    <x-primary-button class="my-4 ms-6">
+                        {{ __('Form Kunjungan') }}
+                    </x-primary-button>
+
+                @endauth
             </div>
 
             <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            <div class="flex items-center -me-2 lg:hidden">
+                <button @click="open = ! open"
+                    class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500">
+                    <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -79,32 +173,38 @@ new class extends Component
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+
+
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
 
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
-                <div class="font-medium text-sm text-gray-500">{{ auth()->user()->email }}</div>
-            </div>
+        @auth
+            <!-- Responsive Settings Options -->
+            <div class="pt-4 pb-1 border-t border-gray-200">
+                <div class="px-4">
+                    <div class="text-base font-medium text-gray-800" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name"
+                        x-on:profile-updated.window="name = $event.detail.name"></div>
+                    <div class="text-sm font-medium text-gray-500">{{ auth()->user()->email }}</div>
+                </div>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile')" wire:navigate>
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <button wire:click="logout" class="w-full text-start">
-                    <x-responsive-nav-link>
-                        {{ __('Log Out') }}
+                <div class="mt-3 space-y-1">
+                    <x-responsive-nav-link :href="route('profile')" wire:navigate>
+                        {{ __('Admin Page') }}
                     </x-responsive-nav-link>
-                </button>
+
+                    <!-- Authentication -->
+                    <button wire:click="logout" class="w-full text-start">
+                        <x-responsive-nav-link>
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </button>
+                </div>
             </div>
-        </div>
+        @endauth
     </div>
+
 </nav>
