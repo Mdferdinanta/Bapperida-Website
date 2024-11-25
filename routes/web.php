@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Pages\News\BogorNews;
 use App\Livewire\Pages\Profiles\Staff;
 use App\Livewire\Pages\Profiles\Schedule;
 
@@ -21,3 +22,6 @@ Route::get('staff', [Staff::class, 'render'])
 
 Route::get('schedule', [Schedule::class, 'render'])
     ->name('schedule');
+
+Route::get('news', [BogorNews::class, 'render'])
+    ->name('news');

@@ -1,11 +1,11 @@
 @props(['disabled' => false])
 
-<input @disabled($disabled)
+<textarea @disabled($disabled)
     {{ $attributes->merge([
         'type' => 'text',
-        'class' => 'px-4 py-3
+        'class' => 'px-4 py-3 resize-y
                     border border-mist-300
                     rounded-xs shadow-sm
                     focus:border-primary-300
                     focus:ring-primary-300',
-    ]) }}>
+    ]) }}></textarea>

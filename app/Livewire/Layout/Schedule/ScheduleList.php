@@ -6,10 +6,11 @@ use Carbon\Carbon;
 use Livewire\Component;
 use App\Models\Schedule;
 use Livewire\WithPagination;
+use Livewire\WithoutUrlPagination;
 
 class ScheduleList extends Component
 {
-    use WithPagination;
+    use WithPagination, WithoutUrlPagination;
 
     public $selectedDate;
 
