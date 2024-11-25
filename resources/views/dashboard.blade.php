@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Tabs') }}
                 </div>
             </div>
@@ -15,21 +15,13 @@
     </div>
 
     {{-- Bapperida News --}}
-    <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden max-w-7xl xl:rounded-md">
-            <div class="">
-                <div class="p-6 text-gray-900">
-                    {{ __('Bapperida News') }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <livewire:layout.news.home-news />
 
     {{-- Infographics --}}
     <div class="py-12">
         <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Infographics') }}
                 </div>
             </div>
@@ -38,9 +30,9 @@
 
     {{-- Bogor News --}}
     <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden max-w-7xl xl:rounded-md">
+        <div class="mx-auto overflow-hidden bg-red-200 max-w-7xl">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Bogor News') }}
                 </div>
             </div>
@@ -51,7 +43,7 @@
     <div class="py-12">
         <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Schedules') }}
                 </div>
             </div>
@@ -60,9 +52,9 @@
 
     {{-- Activity Gallery --}}
     <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden max-w-7xl xl:rounded-md">
+        <div class="mx-auto overflow-hidden bg-red-200 max-w-7xl">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Activity Gallery') }}
                 </div>
             </div>
@@ -73,7 +65,7 @@
     <div class="py-12">
         <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Social Media') }}
                 </div>
             </div>
@@ -82,9 +74,9 @@
 
     {{-- Contact --}}
     <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden max-w-7xl xl:rounded-md">
+        <div class="mx-auto overflow-hidden bg-red-200 max-w-7xl">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Contact') }}
                 </div>
             </div>
@@ -95,7 +87,7 @@
     <div class="py-12">
         <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __('Maps') }}
                 </div>
             </div>
@@ -104,9 +96,9 @@
 
     {{-- Bapperida News --}}
     <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden max-w-7xl xl:rounded-md">
+        <div class="mx-auto overflow-hidden bg-red-200 max-w-7xl">
             <div class="">
-                <div class="p-6 text-gray-900">
+                <div class="p-6">
                     {{ __("You're logged in!") }}
                 </div>
             </div>

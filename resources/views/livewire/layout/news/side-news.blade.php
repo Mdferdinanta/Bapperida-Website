@@ -13,9 +13,9 @@
                 <div class="relative w-full h-64 overflow-hidden bg-gray-300 rounded-xs xl:h-48">
                     <img src="{{ asset('storage/' . $item->image) }}" class="object-cover w-full h-full">
                     <div class="absolute bottom-0 flex flex-col w-full gap-2 p-4 bg-gray-900 bg-opacity-80">
-                        <span class="tracking-wide text-yellow-200 text-detail">{{ $item->created_at->format('d F Y | H:i') }}</span>
+                        <small class="tracking-wide text-yellow-200 text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small>
                         <span
-                            class="font-semibold text-justify text-white truncate">{{ $item['title'] }}</span>
+                            class="font-semibold text-justify text-white truncate">{{ $item->title }}</span>
                     </div>
                 </div>
             @endforeach
