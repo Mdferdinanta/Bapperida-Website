@@ -15,8 +15,23 @@
                 </div>
             </div>
 
-            {{-- Content Cards --}}
-            <livewire:layout.news.news-content-card />
+            {{-- Content --}}
+            <div class="w-full">
+                @if ($news)
+                {{-- Title --}}
+                <div class="flex justify-center p-4">
+                    <h3 class="font-bold tracking-wider capitalize text-h3">{{ $news->title }}</h3>
+                </div>
+                    {{-- Image --}}
+                    <div class="w-full px-24">
+                        <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}" class="object-cover w-full rounded-xs aspect-video">
+                    </div>
+                    {{-- Text --}}
+                    <div class="mt-4 tracking-wide text-justify text-wrap">
+                        {!! $news->content !!}
+                    </div>
+                @endif
+            </div>
         </div>
 
     </x-container>

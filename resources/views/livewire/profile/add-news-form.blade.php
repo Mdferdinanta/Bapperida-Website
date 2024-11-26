@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\News;
+use App\Livewire\Quill;
 use Livewire\Volt\Component;
 use Livewire\WithFileUploads;
 
@@ -16,6 +17,15 @@ new class extends Component {
         'news_image' => 'required|image|max:102400',
         'news_content' => 'required|string',
     ];
+
+    /**
+     * Quill Editor Event Listener.
+     */
+    public $listeners = [Quill::EVENT_VALUE_UPDATED];
+    public function quill_value_updated($value)
+    {
+        $this->news_content = $value;
+    }
 
     /**
      * Form Function to Add Input Into Database.
@@ -63,8 +73,9 @@ new class extends Component {
 
         <div>
             <x-input-label for="news_content" :value="__('Konten Berita')" />
-            <x-textarea-input wire:model="news_content" id="news_content" name="news_content"
-                class="block w-full mt-1" />
+            <div wire:ignore>
+                <livewire:quill :value="$news_content">
+            </div>
             <x-input-error :messages="$errors->get('news_content')" class="mt-2" />
         </div>
 
@@ -76,4 +87,7 @@ new class extends Component {
             </x-action-message>
         </div>
     </form>
+
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </section>

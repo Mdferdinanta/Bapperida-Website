@@ -18,15 +18,7 @@
     <livewire:layout.news.home-news />
 
     {{-- Infographics --}}
-    <div class="py-12">
-        <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
-            <div class="">
-                <div class="p-6">
-                    {{ __('Infographics') }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <livewire:layout.home.infographics />
 
     {{-- Bogor News --}}
     <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
