@@ -56,17 +56,17 @@ new class extends Component {
         {{ __('Isi form berikut untuk unggah berita BAPPERIDA terbaru') }}
     </x-form-title>
 
-    <form wire:submit="addNews" class="mt-6 space-y-6">
+    <form wire:submit.prevent="addNews" enctype="multipart/form-data" class="mt-6 space-y-6">
         <div>
             <x-input-label for="news_title" :value="__('Judul Berita')" />
-            <x-text-input wire:model="news_title" id="news_title" name="news_title" type="text"
+            <x-text-input wire:model="news_title" id="news_title" name="news_title" type="text" required
                 class="block w-full mt-1" />
             <x-input-error :messages="$errors->get('news_title')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="news_image" :value="__('Gambar')" />
-            <x-file-input wire:model="news_image" id="news_image" name="news_image" class="block w-full mt-1" />
+            <x-file-input wire:model="news_image" id="news_image" name="news_image" required class="block w-full mt-1" />
             <div wire:loading wire:target="news_image">Uploading...</div>
             <x-input-error :messages="$errors->get('news_image')" class="mt-2" />
         </div>

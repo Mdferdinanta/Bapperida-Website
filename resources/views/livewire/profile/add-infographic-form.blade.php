@@ -44,17 +44,17 @@ new class extends Component
         {{ __('Tambahkan infografis baru pada form berikut!') }}
     </x-form-title>
 
-    <form wire:submit="addInfo" class="mt-6 space-y-6">
+    <form wire:submit.prevent="addInfo" enctype="multipart/form-data" class="mt-6 space-y-6">
         <div>
             <x-input-label for="name" :value="__('Judul Gambar')" />
-            <x-text-input wire:model="name" id="name" name="name" type="text"
+            <x-text-input wire:model="name" id="name" name="name" type="text" required
                 class="block w-full mt-1" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="image" :value="__('Gambar')" />
-            <x-file-input wire:model="image" id="image" name="image" class="block w-full mt-1" />
+            <x-file-input wire:model="image" id="image" name="image" required class="block w-full mt-1" />
             <div wire:loading wire:target="image">Uploading...</div>
             <x-input-error :messages="$errors->get('image')" class="mt-2" />
         </div>

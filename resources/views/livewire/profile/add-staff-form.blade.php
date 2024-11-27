@@ -37,17 +37,17 @@ new class extends Component
         {{ __('Tambahkan nama dan jabatan staff pada form berikut!') }}
     </x-form-title>
 
-    <form wire:submit="addStaff" class="mt-6 space-y-6">
+    <form wire:submit.prevent="addStaff" enctype="multipart/form-data" class="mt-6 space-y-6">
         <div>
             <x-input-label for="staff_name" :value="__('Nama Lengkap')" />
-            <x-text-input wire:model="staff_name" id="staff_name" name="staff_name" type="text"
+            <x-text-input wire:model="staff_name" id="staff_name" name="staff_name" type="text" required
                 class="block w-full mt-1" />
             <x-input-error :messages="$errors->get('staff_name')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="staff_role" :value="__('Jabatan')" />
-            <x-text-input wire:model="staff_role" id="staff_role" name="staff_role" type="text"
+            <x-text-input wire:model="staff_role" id="staff_role" name="staff_role" type="text" required
                 class="block w-full mt-1" />
             <x-input-error :messages="$errors->get('staff_role')" class="mt-2" />
         </div>

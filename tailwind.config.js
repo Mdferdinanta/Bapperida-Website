@@ -90,6 +90,7 @@ export default {
 
     plugins: [
         forms,
+        require('@tailwindcss/forms'),
         plugin(function ({ matchUtilities, theme }) {
             matchUtilities(
                 {
