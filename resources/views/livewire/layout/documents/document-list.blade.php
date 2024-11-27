@@ -1,7 +1,7 @@
 <div class="p-6 space-y-4 bg-white xl:w-3/4 lg:space-y-6 max-xl:shadow-md shadow-slate-300">
     <div class="flex flex-col items-end justify-end gap-6 md:flex-row">
         {{-- Subcategory Selector --}}
-        <div>
+        <div class="max-sm:w-full">
             <select wire:model.live='cat_filter' name="cat_filter" id="cat_filter"
                 class="w-full shadow-sm rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
                 <option value="" @readonly(true) class="text-gray-600 bg-gray-200">-- Pilih Kategori --</option>

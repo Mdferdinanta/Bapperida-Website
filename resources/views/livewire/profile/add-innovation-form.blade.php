@@ -50,7 +50,7 @@ new class extends Component
             'index_information'
         ]);
 
-        $this->dispatch('new-staff-added');
+        $this->dispatch('new-innovation-added');
     }
 }; ?>
 
@@ -113,8 +113,8 @@ new class extends Component
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
-            <x-action-message class="me-3" on="new-staff-added">
-                {{ __('Staff telah ditambahkan.') }}
+            <x-action-message class="me-3" on="new-innovation-added">
+                {{ __('Indeks Inovasi telah ditambahkan.') }}
             </x-action-message>
         </div>
     </form>

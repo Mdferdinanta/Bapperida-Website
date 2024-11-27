@@ -28,7 +28,7 @@ Route::view('agenda-kegiatan', 'livewire.pages.profiles.schedule')
 Route::view('berita-bapperida', 'livewire.pages.news.bogor-news')
     ->name('news');
 
-Route::view('indeks', 'livewire.pages.news.bogor-news')
+Route::view('indeks', 'livewire.pages.documents.index-page')
     ->name('index');
 
 require __DIR__.'/auth.php';
