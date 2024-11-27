@@ -48,12 +48,12 @@
                 </div>
             </div> --}}
 
-            {{-- Documents Form --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- Innovations Index Form --}}
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-innovation-form />
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Infographics Form --}}
             {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
@@ -61,6 +61,13 @@
                     <livewire:profile.add-infographic-form />
                 </div>
             </div> --}}
+
+            {{-- Gallery Images Form --}}
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+                <div class="max-w-xl">
+                    <livewire:profile.add-image-form />
+                </div>
+            </div>
 
             {{-- Delete Account --}}
             {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">

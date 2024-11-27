@@ -19,15 +19,6 @@ new class extends Component {
     public $subcategories = [];
     public $showNewSubcategoryInput = false;
 
-    // protected $rules = [
-    //     'doc_name' => 'required|string|max:255',
-    //     'thumbnail' => 'nullable|image|max:10240',
-    //     'file' => 'required|mimes:pdf|max:1024000',
-    //     'doc_category' => 'required|exists:categories,id',
-    //     'doc_sub_category' => 'nullable|exists:sub_categories,id',
-    //     'new_subcategory' => 'nullable|string|max:255',
-    // ];
-
     public function mount(): void
     {
         $this->categories = Category::all();
@@ -79,7 +70,7 @@ new class extends Component {
         if ($this->doc_sub_category === '999' && $this->new_subcategory) {
             $this->validate([
                 'new_subcategory' => 'required|string|max:255',
-        ]);
+            ]);
 
             $new_subcategory = SubCategory::create([
                 'category_id' => $this->doc_category,
@@ -90,7 +81,7 @@ new class extends Component {
         } else {
             $this->validate([
                 'doc_sub_category' => 'nullable|exists:sub_categories,id',
-        ]);
+            ]);
 
             $subCategoryId = $this->doc_sub_category;
         }
@@ -140,7 +131,7 @@ new class extends Component {
         <div>
             <x-input-label for="doc_category" :value="__('Kategori')" />
             <select wire:model.live='doc_category' name="doc_category" id="doc_category" required
-                class="w-full *:rounded-xs shadow-sm rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
+                class="w-full shadow-sm rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
                 <option value="" @readonly(true) class="text-gray-600 bg-gray-200">-- Pilih Kategori --</option>
                 @foreach ($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->name }}</option>
