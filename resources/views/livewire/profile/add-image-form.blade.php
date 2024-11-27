@@ -67,7 +67,13 @@ new class extends Component {
             'album_id' => $albumId,
         ]);
 
-        $this->reset(['image_name', 'image_album', 'image', 'image_date']);
+        $this->reset([
+            'image_name',
+            'image_album',
+            'image',
+            'image_date',
+            'new_album'
+        ]);
 
         $this->dispatch('new-image-added');
     }

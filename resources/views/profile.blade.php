@@ -69,6 +69,13 @@
                 </div>
             </div>
 
+            {{-- Gallery Images Form --}}
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+                <div class="max-w-xl">
+                    <livewire:profile.add-video-form />
+                </div>
+            </div>
+
             {{-- Delete Account --}}
             {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
