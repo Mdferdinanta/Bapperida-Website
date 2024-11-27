@@ -28,7 +28,7 @@ new class extends Component {
 
             <div class="flex">
                 <!-- Navigation Links -->
-                <div class="hidden space-x-4 lg:flex">
+                <div class="hidden space-x-3 lg:flex">
                     {{-- Dashboard --}}
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Beranda') }}
@@ -110,12 +110,18 @@ new class extends Component {
                         {{ __('Indeks') }}
                     </x-nav-link>
 
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </x-nav-link> --}}
-                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </x-nav-link> --}}
+                    <x-nav-link :href="route('buletin')" :active="request()->routeIs('buletin')" wire:navigate>
+                        {{ __('Buletin') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
+                        {{ __('Gallery') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
+                        {{ __('Etalase Inovasi') }}
+                    </x-nav-link>
+
                 </div>
 
                 <!-- Interchangeable Options -->
