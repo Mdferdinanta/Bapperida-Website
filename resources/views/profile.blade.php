@@ -4,7 +4,8 @@
         <div class="mx-auto space-y-6 max-w-7xl sm:px-6 lg:px-8">
             <div class="p-4 bg-white shadow sm:rounded-md">
                 <div class="flex justify-center w-full">
-                    <h1 class="font-black tracking-widest text-center uppercase font-display text-subtitle lg:text-headline">
+                    <h1
+                        class="font-black tracking-widest text-center uppercase font-display text-subtitle lg:text-headline">
                         <span class="text-primary-600">Admin </span>
                         <span class="text-primary-800">Dashboard</span>
                     </h1>
@@ -12,53 +13,61 @@
             </div>
 
             {{-- Account Information Forms --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.update-profile-information-form />
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- Password Form --}}
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.update-password-form />
                 </div>
-            </div>
+            </div> --}}
 
             {{-- ===== Database Forms ===== --}}
             {{-- Staff Form --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-staff-form />
                 </div>
-            </div>
+            </div> --}}
 
             {{-- News Form --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-news-form />
                 </div>
-            </div>
+            </div> --}}
+
+            {{-- Documents Form --}}
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+                <div class="max-w-xl">
+                    <livewire:profile.add-document-form />
+                </div>
+            </div> --}}
 
             {{-- Documents Form --}}
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
-                    <livewire:profile.add-document-form />
+                    <livewire:profile.add-innovation-form />
                 </div>
             </div>
 
             {{-- Infographics Form --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-infographic-form />
                 </div>
-            </div>
+            </div> --}}
 
             {{-- Delete Account --}}
-            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.delete-user-form />
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
