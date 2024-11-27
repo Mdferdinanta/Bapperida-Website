@@ -18,4 +18,10 @@ class Schedule extends Model
         'time_start',
         'time_finish',
     ];
+
+    protected $casts = [
+        'date' => 'datetime',
+        'time_start' => 'datetime',
+        'time_finish' => 'datetime',
+    ];
 }

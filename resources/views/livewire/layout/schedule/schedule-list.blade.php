@@ -5,13 +5,15 @@
 
     @forelse ($events as $event)
         <div
-            class="{{ $loop->first ? 'border-t border-gray-300' : '' }} {{ $loop->last ? 'border-b border-gray-300' : '' }} {{ $loop->odd ? 'bg-primary-50' : '' }}">
+            class="group {{ $loop->first ? 'border-t border-gray-300' : '' }} {{ $loop->last ? 'border-b border-gray-300' : '' }} {{ $loop->odd ? 'bg-primary-50' : '' }}">
             <div class="flex items-center justify-between w-full">
                 <div class="flex flex-col w-3/4 p-2">
-                    <h3 class="font-bold tracking-wide text-subtitle xl:text-headline text-primary-700 line-clamp-1">{{ $event->title }}</h3>
-                    <p class="mt-2 font-medium line-clamp-1">{{ $event->description }}</p>
-                    <p class="font-semibold tracking-wider text-gray-600 text-tiny line-clamp-1">
-                        <i class="mr-2 ri-map-pin-2-line"></i>{{ $event->location }}</p>
+                    <h3 class="font-bold tracking-wide text-subtitle xl:text-headline text-primary-700 line-clamp-1 group-hover:line-clamp-none">
+                        {{ $event->title }}</h3>
+                    <p class="mt-2 font-medium line-clamp-1 group-hover:line-clamp-none">{{ $event->description }}</p>
+                    <p class="font-semibold tracking-wider text-gray-600 text-tiny line-clamp-1 group-hover:line-clamp-none">
+                        <i class="mr-2 ri-map-pin-2-line"></i>{{ $event->location }}
+                    </p>
                 </div>
                 <div
                     class="flex flex-col lg:flex-row w-1/4 text-center justify-center items-center p-2 rounded-2xs font-semibold {{ $loop->odd ? 'text-primary-600' : 'text-primary-500' }}">
@@ -19,8 +21,6 @@
                     <span class="mx-2">-</span>
                     <span>{{ $event->time_finish ? \Carbon\Carbon::parse($event->time_finish)->format('H:i') : 'selesai' }}</span>
                 </div>
-
-
             </div>
         </div>
     @empty

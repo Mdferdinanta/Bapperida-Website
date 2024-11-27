@@ -1,10 +1,13 @@
 <?php
 
+use App\Livewire\Layout\Documents\DocumentList;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Pages\News\BogorNews;
 use App\Livewire\Pages\Profiles\Staff;
 use App\Livewire\Pages\Profiles\Schedule;
+use App\Livewire\Pages\Documents\Document;
 use App\Livewire\Layout\News\NewsContentPreview;
+use App\Livewire\Layout\Documents\DocumentPreview;
 
 Route::view('/', 'dashboard')
     ->name('dashboard');
@@ -25,7 +28,19 @@ Route::view('agenda-kegiatan', 'livewire.pages.profiles.schedule')
 Route::view('berita-bapperida', 'livewire.pages.news.bogor-news')
     ->name('news');
 
+Route::view('indeks', 'livewire.pages.news.bogor-news')
+    ->name('index');
+
 require __DIR__.'/auth.php';
 
 Route::get('berita-bapperida/{id}', [NewsContentPreview::class, 'render'] )
     ->name('news-preview');
+
+Route::get('dokumen/{category}', [Document::class, 'render'])
+    ->name('document');
+
+Route::get('dokumen/{category}/{id}', [DocumentPreview::class, 'render'])
+    ->name('document-preview');
+
+Route::get('dokumen/{category}/{id}/download', [DocumentList::class, 'download'])
+    ->name('document-download');

@@ -4,7 +4,8 @@
         <div class="owl-carousel owl-theme" wire:ignore>
             @foreach ($infographics as $infographic)
                 <div class="flex flex-col items-center item">
-                    <img src="{{ asset('storage/' . $infographic->image) }}" alt="{{ $infographic->name }}">
+                    <img src="{{ asset('storage/' . $infographic->image) }}" alt="{{ $infographic->name }}"
+                        class="shadow-lg shadow-slate-300">
                     <div class="p-2 mt-4">
                         <span class="font-semibold tracking-wide text-gray-700 sm:text-subtitle">{{ $infographic->name }}</span>
                     </div>

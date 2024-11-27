@@ -2,10 +2,10 @@
     <div class="flex flex-col items-end justify-end gap-6 md:flex-row">
         {{-- Search bar --}}
         <div class="relative w-full md:w-1/2">
-            <div class="w-full overflow-hidden bg-yellow-300 rounded-xs">
+            <div class="w-full overflow-hidden rounded-xs">
                 <input wire:model.live.debounce.300ms="search" type="search" placeholder="Cari..."
                     aria-label="Cari nama atau jabatan"
-                    class="w-full border border-mist-300 rounded-xs focus:border-primary-300">
+                    class="w-full shadow-sm border-mist-300 rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400">
             </div>
         </div>
     </div>

@@ -15,12 +15,12 @@ new class extends Component {
     }
 }; ?>
 
-<nav x-data="{ open: false }" class="bg-white sticky top-0 z-50 w-full shadow-md">
+<nav x-data="{ open: false }" class="sticky top-0 z-50 w-full bg-white shadow-md">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6">
         <div class="flex justify-between">
             <!-- Logo -->
-            <div class="flex items-center shrink-0 py-4">
+            <div class="flex items-center py-4 shrink-0">
                 <a href="{{ route('dashboard') }}" wire:navigate>
                     <x-application-logo class="block w-auto text-gray-800 fill-current" />
                 </a>
@@ -69,7 +69,7 @@ new class extends Component {
                     <div class="hidden lg:flex lg:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <x-nav-link class="h-full" :active="request()->routeIs('structure', 'schedule')">
+                                <x-nav-link class="h-full" :active="request()->routeIs('document', 'document-preview')">
                                     {{ __('Dokumen') }}
                                     <i :class="{ 'rotate-180': open }"
                                         class="transition-transform ms-1 ri-arrow-down-s-line"></i>
@@ -78,27 +78,27 @@ new class extends Component {
 
                             <x-slot name="content">
                                 {{-- Perencanaan Pembangunan --}}
-                                <x-dropdown-link :href="route('structure')" :active="request()->routeIs('structure')" wire:navigate>
+                                <x-dropdown-link :href="route('document', ['category' => 'perencanaan pembangunan'])" :active="request()->is('dokumen/perencanaan pembangunan*')" wire:navigate>
                                     {{ __('Perencanaan Pembangunan') }}
                                 </x-dropdown-link>
 
                                 {{-- Penelitian Pengembangan --}}
-                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                <x-dropdown-link :href="route('document', ['category' => 'penelitian pengembangan'])" :active="request()->is('dokumen/penelitian pengembangan*')" wire:navigate>
                                     {{ __('Penelitian Pengembangan') }}
                                 </x-dropdown-link>
 
                                 {{-- Standar Pelayanan --}}
-                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                <x-dropdown-link :href="route('document', ['category' => 'standar pelayanan'])" :active="request()->is('dokumen/standar pelayanan*')" wire:navigate>
                                     {{ __('Standar Pelayanan') }}
                                 </x-dropdown-link>
 
                                 {{-- Peraturan --}}
-                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                <x-dropdown-link :href="route('document', ['category' => 'peraturan'])" :active="request()->is('dokumen/peraturan*')" wire:navigate>
                                     {{ __('Peraturan') }}
                                 </x-dropdown-link>
 
                                 {{-- Rencana Kerja --}}
-                                <x-dropdown-link :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                                <x-dropdown-link :href="route('document', ['category' => 'rencana kerja'])" :active="request()->is('dokumen/rencana kerja*')" wire:navigate>
                                     {{ __('Rencana Kerja') }}
                                 </x-dropdown-link>
 
@@ -106,13 +106,14 @@ new class extends Component {
                         </x-dropdown>
                     </div>
 
+                    <x-nav-link :href="route('index')" :active="request()->routeIs('index')" wire:navigate>
+                        {{ __('Indeks') }}
+                    </x-nav-link>
+
                     {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    </x-nav-link> --}}
+                    {{-- <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link> --}}
                 </div>

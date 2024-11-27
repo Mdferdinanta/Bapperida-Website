@@ -28,39 +28,39 @@
 
             {{-- ===== Database Forms ===== --}}
             {{-- Staff Form --}}
-            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-staff-form />
                 </div>
-            </div> --}}
+            </div>
 
             {{-- News Form --}}
-            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-news-form />
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Documents Form --}}
-            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-document-form />
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Innovations Index Form --}}
-            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-innovation-form />
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Infographics Form --}}
-            {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
+            <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
                     <livewire:profile.add-infographic-form />
                 </div>
-            </div> --}}
+            </div>
 
             {{-- Gallery Images Form --}}
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
