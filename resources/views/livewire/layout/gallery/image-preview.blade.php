@@ -4,18 +4,22 @@
     <x-container>
 
         {{-- Content --}}
-        <div class="p-6 space-y-4 bg-white xl:w-3/4 max-xl:shadow-md shadow-slate-300">
-            <div>
-                <h1 id="imageTitle"
-                    class="mb-2 font-bold text-subtitle xl:text-headline text-primary-600">
-                    {{ $album->first()->name }}
-                </h1>
-                <p class="text-detail xl:text-body text-stone-500">
-                    <span id="imageDate">{{ $album->first()->created_at->format('d F Y') }}</span>
-                </p>
+        <div class="p-6 space-y-2 bg-white xl:w-3/4 max-xl:shadow-md shadow-slate-300">
+            <div class="flex flex-col">
+                <div class="flex justify-between items-center">
+                    <h2 class="mb-2 font-bold text-subtitle xl:text-headline text-primary-700">
+                        {{ $album->name }}
+                    </h2>
+                    <small class="text-detail tracking-wide xl:text-body text-gray-500">
+                        <span id="imageDate">{{ $images->first()->created_at->format('d F Y') }}</span>
+                    </small>
+                </div>
+                <span id="imageTitle" class="font-medium">
+                    {{ $images->first()->name }}
+                </span>
             </div>
             <div class="text-white ">
-                <div class="container py-8 mx-auto">
+                <div class="container py-4 mx-auto">
                     <div class="relative">
                         <div class="flex items-center justify-between">
                             <!-- Previous Button -->
@@ -27,8 +31,8 @@
 
                             <!-- Main Image -->
                             <div class="flex justify-center w-full border-y-2 border-mist-300">
-                                <img alt="{{ $album->first()->name }}" class="object-contain rounded h-[480px]"
-                                    id="mainImage" src="{{ asset('storage/' . $album->first()->image) }}"
+                                <img alt="{{ $images->first()->name }}" class="object-contain rounded h-[480px] transition-opacity duration-500 opacity-100"
+                                    id="mainImage" src="{{ asset('storage/' . $images->first()->image) }}"
                                     width="1200" />
                             </div>
 
@@ -43,12 +47,12 @@
 
                     <!-- Previews -->
                     <div class="mt-4 overflow-x-auto border-mist-300">
-                        <div class="flex space-x-2">
-                            @foreach ($album as $index => $img)
-                                <div class="flex-shrink-0 w-40 h-40 py-2 px-1 thumbnail {{ $index === 0 ? 'active' : '' }}"
+                        <div class="flex px-4">
+                            @foreach ($images as $index => $img)
+                                <div class="flex-shrink-0 w-40 h-40 p-4 thumbnail transition-all duration-150 ease-in-out {{ $index === 0 ? 'active' : '' }}"
                                     data-index="{{ $index }}">
                                     <img alt="{{ $img->name }}"
-                                        class="object-cover w-full h-full cursor-pointer rounded-xs"
+                                        class="object-cover w-full h-full cursor-pointer rounded-xs shadow-md shadow-slate-300"
                                         src="{{ asset('storage/' . $img->image) }}" />
                                 </div>
                             @endforeach
@@ -61,7 +65,7 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const album = @json($album);
+                const album = @json($images);
                 let currentIndex = 0;
 
                 const mainImage = document.getElementById('mainImage');
@@ -73,13 +77,22 @@
                 const thumbnailContainer = document.querySelector('.mt-4 .flex');
 
                 function updateImage(index) {
-                    mainImage.src = `/storage/${album[index].image}`;
-                    imageTitle.textContent = album[index].name;
-                    imageDate.textContent = new Date(album[index].created_at).toLocaleDateString('id-ID', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
+                    mainImage.classList.add('fade-out');
+                    setTimeout(() => {
+                        mainImage.src = `/storage/${album[index].image}`;
+                        imageTitle.textContent = album[index].name;
+                        imageDate.textContent = new Date(album[index].created_at).toLocaleDateString('id-ID', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        mainImage.classList.remove('fade-out');
+                        mainImage.classList.add('fade-in');
+                    }, 300);
+
+                    setTimeout(() => {
+                        mainImage.classList.remove('fade-in');
+                    }, 300);
 
                     thumbnails.forEach((thumbnail, i) => {
                         if (i === index) {
@@ -115,9 +128,18 @@
         </script>
 
         <style>
-            .thumbnail.active img {
+            .thumbnail.active {
                 padding: 0px;
-                border: 2px solid #2563EB;
+            }
+
+            .fade-in {
+                opacity: 1;
+                transition: opacity 0.5s;
+            }
+
+            .fade-out {
+                opacity: 0;
+                transition: opacity 0.5s;
             }
         </style>
 

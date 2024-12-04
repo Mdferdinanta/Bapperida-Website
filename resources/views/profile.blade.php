@@ -51,7 +51,7 @@
             {{-- Innovations Index Form --}}
             <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">
-                    <livewire:profile.add-innovation-form />
+                    <livewire:profile.add-index-form />
                 </div>
             </div>
 

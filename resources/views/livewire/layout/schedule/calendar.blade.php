@@ -42,7 +42,7 @@
                 }
             @endphp
             <div wire:click="selectDate('{{ $date->toDateString() }}')"
-                class="p-2 cursor-pointer hover:bg-primary-100 rounded-xs {{ $class }}">
+                class="p-2 cursor-pointer hover:bg-primary-100 rounded-2xs {{ $class }}">
                 <div>{{ $i }}</div>
             </div>
         @endfor

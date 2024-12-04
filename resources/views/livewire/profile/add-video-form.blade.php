@@ -3,13 +3,17 @@
 use App\Models\Video;
 use App\Models\Playlist;
 use Livewire\Volt\Component;
+use Livewire\WithFileUploads;
 
 new class extends Component {
+
+    use WithFileUploads;
 
     public $video_title;
     public $video_url;
     public $url_type;
     public $description;
+    public $thumbnail;
     public $video_playlist;
     public $playlists;
     public $new_playlist;
@@ -34,6 +38,7 @@ new class extends Component {
             'video_title' => 'required|string|max:255',
             'video_url' => 'required|string|max:255',
             'url_type' => 'required|string|max:255',
+            'thumbnail' => 'required|image|max:102400',
             'description' => 'required|string|max:255',
         ]);
 
@@ -56,10 +61,15 @@ new class extends Component {
             $playlistId = $this->video_playlist;
         }
 
+        if ($this->thumbnail) {
+            $this->thumbnail = $this->thumbnail->store('images/video_thumbnail', 'public');
+        }
+
         Video::create([
             'title' => $this->video_title,
             'url' => $this->video_url,
             'linkType' => $this->url_type,
+            'thumbnail' => $this->thumbnail,
             'description' => $this->description,
             'playlist_id' => $playlistId,
         ]);
@@ -68,6 +78,7 @@ new class extends Component {
             'video_title',
             'video_url',
             'url_type',
+            'thumbnail',
             'description',
             'video_playlist',
             'new_playlist',
@@ -107,6 +118,13 @@ new class extends Component {
                 <option value="youtube">Youtube</option>
             </select>
             <x-input-error :messages="$errors->get('url_type')" class="mt-2" />
+        </div>
+
+        <div>
+            <x-input-label for="thumbnail" :value="__('Thumbnail')" />
+            <x-file-input wire:model="thumbnail" id="thumbnail" name="thumbnail" required class="block w-full mt-1" />
+            <div wire:loading wire:target="thumbnail">Uploading...</div>
+            <x-input-error :messages="$errors->get('thumbnail')" class="mt-2" />
         </div>
 
         <div>

@@ -36,8 +36,8 @@ class BuletinList extends Component
                 $query->where('name', 'LIKE', '%' . $this->search . '%')
                       ->orWhere('originalName', 'LIKE', '%' . $this->search . '%');
             })
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->orderBy('id', 'desc')
+            ->paginate(8);
 
         // dd($this->category->id, $buletins);
         return view('livewire.layout.buletin.buletin-list', [

@@ -10,12 +10,13 @@ class ImagePreview extends Component
 {
     public function render($id)
     {
-        $image = Image::findOrFail($id);
-        $album = Image::where('album_id', $image->album_id)->get();
+        $imageId = Image::findOrFail($id);
+        $images = Image::where('album_id', $imageId->album_id)->get();
+        $album = Album::findOrFail($imageId->album_id);
 
         // dd($image, $album);
         return view('livewire.layout.gallery.image-preview', [
-            'image' => $image,
+            'images' => $images,
             'album' => $album
         ]);
     }

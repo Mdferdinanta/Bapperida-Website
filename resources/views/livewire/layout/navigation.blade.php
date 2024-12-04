@@ -115,10 +115,10 @@ new class extends Component {
                     </x-nav-link>
 
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
-                        {{ __('Gallery') }}
+                        {{ __('Galeri') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
+                    <x-nav-link :href="route('innovation')" :active="request()->routeIs('innovation')" wire:navigate>
                         {{ __('Etalase Inovasi') }}
                     </x-nav-link>
 

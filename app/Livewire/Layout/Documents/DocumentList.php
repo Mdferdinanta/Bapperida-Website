@@ -43,7 +43,7 @@ class DocumentList extends Component
                 $query->where('name', 'LIKE', '%' . $this->search . '%')
                       ->orWhere('originalName', 'LIKE', '%' . $this->search . '%');
             })
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(10);
 
         // dd($this->category->id, $this->subcategories, $documents);

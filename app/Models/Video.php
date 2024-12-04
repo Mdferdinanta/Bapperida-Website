@@ -14,6 +14,7 @@ class Video extends Model
         'title',
         'url',
         'linkType',
+        'thumbnail',
         'description',
         'playlist_id',
     ];

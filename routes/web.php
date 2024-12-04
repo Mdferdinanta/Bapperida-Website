@@ -18,7 +18,7 @@ use App\Livewire\Layout\Documents\DocumentPreview;
 Route::view('/', 'dashboard')
     ->name('dashboard');
 
-Route::view('profile', 'profile')
+Route::view('admin', 'profile')
     ->middleware(['auth', 'verified'])
     ->name('profile');
 
@@ -63,7 +63,10 @@ Route::get('buletin/{id}/download', [BuletinList::class, 'download'])
 Route::get('galeri', [Gallery::class, 'render'])
     ->name('gallery');
 
-Route::get('galeri/album/{id}', [ImagePreview::class, 'render'])
+Route::get('inovasi', [Gallery::class, 'render'])
+    ->name('innovation');
+
+Route::get('galeri/foto/{id}', [ImagePreview::class, 'render'])
     ->name('image-preview');
 
 Route::get('galeri/video/{id}', [VideoPreview::class, 'render'])

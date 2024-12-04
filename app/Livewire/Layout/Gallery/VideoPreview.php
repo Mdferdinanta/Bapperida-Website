@@ -2,12 +2,23 @@
 
 namespace App\Livewire\Layout\Gallery;
 
+use App\Models\Video;
 use Livewire\Component;
 
 class VideoPreview extends Component
 {
-    public function render()
+    public function render($id)
     {
-        return view('livewire.layout.gallery.video-preview');
+        $video = Video::findOrFail($id);
+
+        $video->increment('click_count');
+
+        $recommended = Video::orderBy('click_count', 'desc')->take(3)->get();
+
+        // dd($recommended, $video);
+        return view('livewire.layout.gallery.video-preview', [
+            'video' => $video,
+            'recommended' => $recommended,
+        ]);
     }
 }

@@ -3,17 +3,6 @@
         <x-hero-home></x-hero-home>
     </x-slot:header>
 
-    {{-- Tabs --}}
-    <div class="py-12">
-        <div class="mx-auto overflow-hidden bg-white max-w-7xl xl:rounded-md xl:shadow-md shadow-slate-300">
-            <div class="">
-                <div class="p-6">
-                    {{ __('Tabs') }}
-                </div>
-            </div>
-        </div>
-    </div>
-
     {{-- Bapperida News --}}
     <livewire:layout.news.home-news />
 
@@ -35,15 +24,8 @@
     <livewire:layout.home.home-schedule />
 
     {{-- Activity Gallery --}}
-    <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
-        <div class="mx-auto overflow-hidden bg-red-200 max-w-7xl">
-            <div class="">
-                <div class="p-6">
-                    {{ __('Activity Gallery') }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <livewire:layout.home.home-gallery />
+
 
     {{-- Social Media --}}
     <div class="py-12">

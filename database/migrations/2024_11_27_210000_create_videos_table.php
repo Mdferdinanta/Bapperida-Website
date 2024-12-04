@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('url');
             $table->string('linkType');
+            $table->string('thumbnail');
             $table->string('description');
+            $table->unsignedBigInteger('click_count')->default(0);
             $table->foreignId('playlist_id')->constrained();
             $table->timestamps();
         });

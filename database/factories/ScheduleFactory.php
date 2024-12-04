@@ -20,9 +20,9 @@ class ScheduleFactory extends Factory
             'title' => $this->faker->sentence(3),
             'description' => $this->faker->sentence(10),
             'location' => $this->faker->city,
-            'date' => $this->faker->dateTimeBetween('-1 day', '+1 day')->format('Y-m-d'),
+            'date' => $this->faker->dateTimeBetween('-1 day', '+1 week')->format('Y-m-d'),
             'time_start' => $this->faker->time('H:i'),
-            'time_finish' => $this->faker->boolean(70) ? $this->faker->time('H:i') : null,
+            'time_finish' => $this->faker->boolean(75) ? $this->faker->time('H:i') : null,
         ];
     }
 }
