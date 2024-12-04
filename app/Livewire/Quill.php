@@ -9,7 +9,6 @@ class Quill extends Component
     const EVENT_VALUE_UPDATED = 'quill_value_updated';
 
     public $value;
-
     public $quillId;
 
     public function mount($value = ''){

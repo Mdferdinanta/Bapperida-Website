@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('video_type');
             $table->string('url');
-            $table->string('linkType');
+            $table->string('link_type');
             $table->string('thumbnail');
-            $table->string('description');
+            $table->text('description');
+            $table->string('department')->nullable();
+            $table->date('date');
             $table->unsignedBigInteger('click_count')->default(0);
             $table->foreignId('playlist_id')->constrained();
             $table->timestamps();

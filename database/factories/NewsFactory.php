@@ -38,6 +38,7 @@ class NewsFactory extends Factory
 
         return [
             'title' => $this->faker->sentence,
+            'author' => $this->faker->name,
             'content' => $this->faker->paragraphs(3, true),
             'image' => 'images/news/' . $filename,
         ];

@@ -13,11 +13,11 @@
                 <a href="{{ route('news-preview', ['id' => $item->id]) }}" wire:navigate
                     class="relative w-full h-64 overflow-hidden rounded-xs xl:h-48 group">
                     <img src="{{ asset('storage/' . $item->image) }}" class="object-cover w-full h-full">
-                    <div class="absolute bottom-0 flex flex-col w-full gap-2 px-4 py-2 duration-100 ease-in-out bg-gray-900 group-hover:py-4 bg-opacity-80">
-                        <small
-                            class="tracking-wide text-yellow-200 text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small>
+                    <div class="absolute bottom-0 flex flex-col w-full gap-1 px-4 py-4 duration-100 ease-in-out bg-gradient-to-t from-gray-900/100 to-gray-900/0 group-hover:py-6">
                         <span
                             class="font-semibold text-justify text-white capitalize truncate">{{ $item->title }}</span>
+                        <small
+                            class="tracking-wide text-amber-200 text-shadow-sm shadow-black text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small>
                     </div>
                 </a>
             @endforeach

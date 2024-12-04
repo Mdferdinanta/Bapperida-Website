@@ -7,15 +7,15 @@
                 <div class="absolute top-0 right-0 flex items-center justify-center h-full px-4 text-white transition-transform duration-300 ease-in-out transform translate-x-full bg-gray-900 bg-opacity-80 group-hover:translate-x-0">
                     Lihat Selengkapnya &raquo;</div>
             </a>
-            <div class="flex flex-col justify-center w-full gap-2 py-4 ms-4 max-md:mt-2">
+            <div class="flex flex-col justify-center w-full gap-2 py-4 md:ms-4">
                 <small
-                    class="tracking-wide text-yellow-500 text-shadow text-tiny sm:text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small>
+                    class="tracking-wide text-yellow-500 font-medium text-tiny sm:text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small>
                 <a href="{{ route('news-preview', ['id' => $item->id]) }}" wire:navigate
                     class="font-bold tracking-wide capitalize line-clamp-1 text-subtitle sm:text-headline">{{ $item->title }}</a>
                 <div class="">
                     <p class="text-justify text-gray-700 text-wrap">{!! Str::limit($item->content, 255) !!}
                         <a href="{{ route('news-preview', ['id' => $item->id]) }}" wire:navigate
-                            class="underline text-primary-500 hover:text-primary-700 active:text-primary-800">Selengkapnya
+                            class="underline text-gray-500 hover:text-primary-700 active:text-primary-800">Selengkapnya
                             &raquo;</a>
                     </p>
                 </div>

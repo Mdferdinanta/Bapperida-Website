@@ -13,10 +13,14 @@ class Video extends Model
     protected $fillable = [
         'title',
         'url',
-        'linkType',
+        'link_type',
         'thumbnail',
         'description',
         'playlist_id',
+        'date',
+        'click_count',
+        'video_type',
+        'department',
     ];
 
     public function playlist()
