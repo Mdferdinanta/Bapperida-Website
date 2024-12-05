@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
 {
+    /** @use HasFactory<\Database\Factories\StaffFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'nip',
-        'nama',
-        'foto',
-        'jabatan'
+        'name',
+        'role',
     ];
 }

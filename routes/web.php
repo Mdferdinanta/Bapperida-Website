@@ -1,12 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewsController;
-use App\Http\Controllers\StaffController;
-use App\Http\Controllers\GaleriController;
-use App\Livewire\Layout\Home\NewsBapperida;
-use App\Http\Controllers\DocumentController;
-use App\Livewire\Layout\Pages\Videos\VideoList;
+use App\Livewire\Pages\News\BogorNews;
+use App\Livewire\Pages\Buletin\Buletin;
+use App\Livewire\Pages\Gallery\Gallery;
+use App\Livewire\Layout\News\NewsPreview;
+use App\Livewire\Pages\Documents\Document;
+use App\Livewire\Layout\Buletin\BuletinList;
+use App\Livewire\Layout\Gallery\ImagePreview;
+use App\Livewire\Layout\Gallery\VideoPreview;
+use App\Livewire\Pages\Innovation\Innovation;
+use App\Livewire\Layout\Buletin\BuletinPreview;
+use App\Livewire\Layout\Documents\DocumentList;
+use App\Livewire\Layout\Documents\DocumentPreview;
+use App\Livewire\Layout\Innovation\InnovationPreview;
 
 Route::view('/', 'dashboard')
     ->name('dashboard');
@@ -15,56 +22,58 @@ Route::view('admin', 'profile')
     ->middleware(['auth', 'verified'])
     ->name('profile');
 
-Route::view('struktur-organisasi', 'livewire.layout.pages.profiles.structure')
-    ->name('page-structure');
+Route::view('struktur-organisasi', 'livewire.pages.profiles.structure')
+    ->name('structure');
 
-Route::view('agenda', 'livewire.layout.pages.profiles.schedules')
-    ->name('page-schedules');
+Route::view('pejabat-bapperida', 'livewire.pages.profiles.staff')
+    ->name('staff');
 
+Route::view('agenda-kegiatan', 'livewire.pages.profiles.schedule')
+    ->name('schedule');
 
-// Get Routes
+Route::view('berita-bapperida', 'livewire.pages.news.news')
+    ->name('news');
 
-Route::get('berita-bapperida', [NewsController::class, 'show'])
-    ->name('page-news-bapperida');
+Route::view('indeks', 'livewire.pages.documents.index-page')
+    ->name('index');
 
-Route::get('pejabat-bapperida', [StaffController::class, 'show'])
-    ->name('page-profile');
-
-Route::get('berita/{id}', [NewsBapperida::class, 'show'])
-    ->name('news-preview');
-
-Route::get('video/inovasi', [VideoList::class, 'showInovasi'])
-    ->name('video-inovasi');
-
-Route::get('video/2', [VideoList::class, 'showTwo'])
-    ->name('video-2');
-
-Route::get('video/3', [VideoList::class, 'showThree'])
-    ->name('video-3');
-
-Route::get('video/inovasi/{id}', [VideoList::class, 'show'])
-    ->name('video-preview');
-
-Route::get('dokumen/{category}', [DocumentController::class, 'showByCategory'])
-    ->name('doc-category');
-
-Route::get('dokumen/{category}/{id}', [DocumentController::class, 'previewDocPDF'])
-    ->name('doc-preview');
-
-Route::get('dokumen/{category}/{id}/download', [DocumentController::class, 'downloadPDF'])
-    ->name('doc-download');
-
-Route::get('buletin', [DocumentController::class, 'showBuletin'])
-    ->name('buletin');
-
-Route::get('buletin/{id}', [DocumentController::class, 'previewPDF'])
-    ->name('buletin-preview');
-
-Route::get('galeri-kegiatan', [GaleriController::class, 'show'])
-    ->name('galeri');
-
-Route::get('galeri-kegiatan/{id}', [GaleriController::class, 'previewImg'])
-    ->name('galeri-preview');
-
+Route::view('form-kunjungan', 'livewire.pages.visit.visit')
+    ->name('visit');
 
 require __DIR__.'/auth.php';
+
+Route::get('berita-bapperida/{id}', [NewsPreview::class, 'render'] )
+    ->name('news-preview');
+
+Route::get('dokumen/{category}', [Document::class, 'render'])
+    ->name('document');
+
+Route::get('dokumen/{category}/{id}', [DocumentPreview::class, 'render'])
+    ->name('document-preview');
+
+Route::get('dokumen/{category}/{id}/download', [DocumentList::class, 'download'])
+    ->name('document-download');
+
+Route::get('buletin', [Buletin::class, 'render'])
+    ->name('buletin');
+
+Route::get('buletin/{id}', [BuletinPreview::class, 'render'])
+    ->name('buletin-preview');
+
+Route::get('buletin/{id}/download', [BuletinList::class, 'download'])
+    ->name('buletin-download');
+
+Route::get('galeri', [Gallery::class, 'render'])
+    ->name('gallery');
+
+Route::get('inovasi', [Innovation::class, 'render'])
+    ->name('innovation');
+
+Route::get('inovasi/{id}', [InnovationPreview::class, 'render'])
+    ->name(name: 'innovation-preview');
+
+Route::get('foto/{id}', [ImagePreview::class, 'render'])
+    ->name('image-preview');
+
+Route::get('video/{id}', [VideoPreview::class, 'render'])
+    ->name('video-preview');

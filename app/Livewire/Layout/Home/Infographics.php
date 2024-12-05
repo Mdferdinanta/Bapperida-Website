@@ -3,21 +3,14 @@
 namespace App\Livewire\Layout\Home;
 
 use Livewire\Component;
-use App\Models\Infografis;
+use App\Models\Infographic;
 
 class Infographics extends Component
 {
-    public $infographics;
-
-    public function mount()
-    {
-        $this->infographics = Infografis::orderByDesc('id')->get();
-    }
-
     public function render()
     {
-        return view('livewire.layout.home.infographics', [
-            'infographics' => $this->infographics
-        ]);
+        $infographics = Infographic::orderBy('id', 'desc')->get();
+
+        return view('livewire.layout.home.infographics', compact('infographics'));
     }
 }

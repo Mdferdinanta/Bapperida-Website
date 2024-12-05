@@ -1,53 +1,22 @@
-<div>
+<div class="py-12">
+    {{-- Title --}}
+    <x-home-section-title>
+        {{ __('Infografis') }}
+    </x-home-section-title>
 
-    <div class="max-w-full">
-        <div class="flex flex-col items-center justify-center px-8 py-4 mx-auto overflow-hidden shadow-sm bg-mist-100">
-
-            {{-- Section Title --}}
-            <x-section-title href="">{{ __('Infografis') }}</x-section-title>
-
-            <div class="w-full my-8 sm:my-8 owl-carousel owl-theme">
-                <!-- Slides -->
-                @foreach ($infographics as $infographic)
-                    <div class="p-2 sm:p-4">
-                        <img src="{{ asset('storage/' . $infographic->thumbnail) }}" alt=""
-                            class="w-full shadow-lg">
-                        <div>
-                            <h5 class="mt-2 font-semibold text-center">{{ $infographic->judul }}</h5>
-                        </div>
+    {{-- Content --}}
+    <div class="mx-auto max-w-7xl">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel infograph-carousel owl-theme">
+            @foreach ($infographics as $infographic)
+                <div class="flex flex-col items-center item">
+                    <img src="{{ asset('storage/' . $infographic->image) }}" alt="{{ $infographic->name }}"
+                        class="shadow-lg shadow-slate-300 rounded-xs">
+                    <div class="p-2 mt-4">
+                        <span class="font-semibold tracking-wide text-gray-700 sm:text-subtitle">{{ $infographic->name }}</span>
                     </div>
-                @endforeach
-            </div>
-
+                </div>
+            @endforeach
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            $('.owl-carousel').owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: false,
-                center: true,
-                loop: true,
-                margin: 10,
-                responsiveClass: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                        nav: false
-                    },
-                    620: {
-                        items: 2,
-                        nav: false
-                    },
-                    1280: {
-                        items: 3,
-                        nav: false,
-                    }
-                }
-            })
-        });
-    </script>
-
 </div>

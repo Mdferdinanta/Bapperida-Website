@@ -4,15 +4,18 @@
     $classes =
         $active ?? false
             ? 'inline-flex items-center
-            px-1 pt-1
-            border-b-2 border-primary-400
-            font-medium text-primary-800
+            px-2 border-y-2
+            border-t-transparent border-b-primary-400
+            text-body font-semibold
+            text-gray-900
             transition duration-150 ease-in-out'
             : 'inline-flex items-center
-            px-1 pt-1
-            border-b-2 border-transparent
-            font-normal text-neutral-700
-            hover:text-neutral-950 hover:border-neutral-300
+            px-2
+            border-y-2 border-transparent
+            text-body
+            text-gray-700
+            hover:text-gray-900
+            hover:border-b-mist-300
             transition duration-150 ease-in-out';
 @endphp
 

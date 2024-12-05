@@ -9,16 +9,15 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     ],
 
     darkMode: 'class',
 
     theme: {
         fontFamily: {
+            serif: ['Playfair Display', ...defaultTheme.fontFamily.serif],
+            display: ['Lovelo', ...defaultTheme.fontFamily.sans],
             sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
-            display: ['Playfair Display', ...defaultTheme.fontFamily.serif],
-            logo: ['Lovelo', ...defaultTheme.fontFamily.sans],
         },
         fontSize: {
             'display': ['61px', { lineHeight: '91.5px' }],
@@ -52,7 +51,6 @@ export default {
             '3xl': '128px',
             'full': '9999px'
         },
-
         extend: {
             textShadow: {
                 sm: '0 1px 2px var(--tw-shadow-color)',
@@ -92,6 +90,7 @@ export default {
 
     plugins: [
         forms,
+        require('@tailwindcss/forms'),
         plugin(function ({ matchUtilities, theme }) {
             matchUtilities(
                 {
@@ -104,41 +103,3 @@ export default {
         }),
     ],
 };
-
-
-
-
-
-
-
-
-
-// =============================== //
-// primary: {
-//     50: '#EEFAFA',
-//     100: '#D8F4F4',
-//     200: '#B2E9EA',
-//     300: '#8ADDDF',
-//     400: '#62D2D4',
-//     500: '#3AC6C9',
-//     600: '#2DA1A3',
-//     700: '#248183',
-//     800: '#1B6263',
-//     900: '#134243',
-//     950: '#0E3233',
-// },
-
-// ===== BLUE ===== //
-// primary: {
-//     50: '#eff6ff',
-//     100: '#dbeafe',
-//     200: '#bfdbfe',
-//     300: '#93c5fd',
-//     400: '#60a5fa',
-//     500: '#3b82f6',
-//     600: '#2563eb',
-//     700: '#1d4ed8',
-//     800: '#1e40af',
-//     900: '#1e3a8a',
-//     950: '#172554',
-// },

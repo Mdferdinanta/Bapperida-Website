@@ -3,9 +3,9 @@
 <input @disabled($disabled)
     {{ $attributes->merge([
         'type' => 'text',
-        'class' => 'px-4 py-3
-                    border border-mist-300
+        'class' => 'border-mist-300
                     rounded-xs shadow-sm
-                    focus:border-primary-300
-                    focus:ring-primary-300',
+                    focus:border-primary-600
+                    focus:ring-1
+                    focus:ring-primary-400'
     ]) }}>

@@ -2,20 +2,33 @@
 
 namespace App\Models;
 
-use Database\Factories\VideoFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Video extends Model
 {
+    /** @use HasFactory<\Database\Factories\VideoFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'embed', 'type', 'kategori', 'deskripsi', 'thumbnail', 'click_count'
+        'title',
+        'url',
+        'link_type',
+        'thumbnail',
+        'description',
+        'playlist_id',
+        'date',
+        'click_count',
+        'video_type',
+        'department',
     ];
 
-    protected static function newFactory()
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
+    public function playlist()
     {
-        return VideoFactory::new();
+        return $this->belongsTo(Playlist::class);
     }
 }

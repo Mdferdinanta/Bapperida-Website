@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Video;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -15,15 +14,10 @@ class VideoFactory extends Factory
      *
      * @return array<string, mixed>
      */
-
-    protected $model = Video::class;
     public function definition(): array
     {
         return [
-            'judul' => fake()->sentence(),
-            'embed' => fake()->randomElement(),
-            'deskripsi' => fake()->paragraph(),
-            'thumbnail' => 'thumbnail/' . $this->faker->image('public/storage/thumbnail/video', 1280, 720, null, false),
+            //
         ];
     }
 }

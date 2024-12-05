@@ -1,78 +1,86 @@
-<div>
-    <div class="flex flex-col items-center justify-center w-full px-8 pt-12 mx-auto bg-white xl:px-40">
-        {{-- Container --}}
-        <div class="flex flex-col justify-between border-b lg:gap-40 2xl:gap-72 lg:flex-row border-mist-500">
+<?php
 
-            <div class="flex flex-row max-lg:justify-between lg:flex-col">
-                {{-- Logo --}}
+use App\Livewire\Actions\Logout;
+use Livewire\Volt\Component;
+
+new class extends Component {
+    /**
+     * Log the current user out of the application.
+     */
+// public function logout(Logout $logout): void
+// {
+//     $logout();
+//     $this->redirect('/', navigate: true);
+// }
+}; ?>
+
+<footer class="bg-white">
+    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6">
+        <div class="flex flex-col justify-between lg:flex-row border-b-2 border-mist-300">
+            <div class="flex lg:flex-col lg:items-start items-center justify-between max-w-full py-2">
                 <div>
-                    <div class="flex items-center gap-4 p-4">
-                        <img src="{{ asset('assets/logo/bapperida.png') }}" alt="" class="h-16">
-                        <h3 class="font-black tracking-wide lg:text-headline font-logo text-sky-900">BAPPERIDA KOTA BOGOR</h3>
+                    <div class="h-20"><img src="{{ asset('assets/images/logo/Logo.png') }}" alt="Logo BAPPERIDA" class="h-full">
                     </div>
-                    <ul class="px-4 space-y-2 text-tiny lg:text-detail">
-                        <li><a><i class="mr-2 ri-government-fill"></i>Jl. Kapten Muslihat No.21 - Bogor 16121</a></li>
-                        <li><a><i class="mr-2 ri-mail-fill"></i>bapperida@kotabogor.go.id</a></li>
-                        <li><a><i class="mr-2 ri-phone-fill"></i>0251-8338052</a></li>
-                        <li><a><i class="mr-2 ri-global-line"></i>bapperida.kotabogor.go.id</a></li>
+                    <div class="px-4 py-2">
+                        <ul class="text-detail tracking-wide space-y-1">
+                            <li><a class="hover:underline" href="https://bapperida.kotabogor.go.id/website">BAPPERIDA
+                                    KOTA BOGOR</a></li>
+                            <li><a class="hover:underline" href="">Jl. Kapten Muslihat No.21 - Bogor 16121</a>
+                            </li>
+                            <li class="cursor-default">0251-8338052</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="px-4 py-2 space-y-4 max-w-full flex flex-col">
+                    <span class="text-subtitle font-bold tracking-wide">Media</span>
+                    <ul class="flex gap-3 py-3">
+                        <li><a class="p-3 bg-primary-700 rounded-full hover:bg-primary-800 text-white"
+                                href="https://www.instagram.com/bapperida.kotabogor"><i
+                                    class="ri-xl ri-instagram-line"></i></a></li>
+                        <li><a class="p-3 bg-primary-700 rounded-full hover:bg-primary-800 text-white"
+                                href="https://youtube.com/@bapperidakotabogor?si=mv2YUYsbGHLiKKay"><i
+                                    class="ri-xl ri-youtube-fill"></i></a></li>
+                        <li><a class="p-3 bg-primary-700 rounded-full hover:bg-primary-800 text-white"
+                                href="https://bapperida.kotabogor.go.id"><i class="ri-xl ri-global-line"></i></a></li>
                     </ul>
                 </div>
-
-                {{-- Socials --}}
-                <div class="flex flex-col items-end justify-center p-4 lg:my-4 lg:items-start">
-                    <h5 class="mb-4 font-bold uppercase">Media Sosial</h5>
-                    <ul class="flex gap-2">
-                        <li><a href="https://youtube.com/@bapperidakotabogor?si=mv2YUYsbGHLiKKay"><i
-                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-youtube-fill"></i></a>
+            </div>
+            <div class="px-4 py-2 space-y-4">
+                <span class="text-subtitle font-bold tracking-wide">Site Map</span>
+                <div class="flex w-full lg:gap-6 xl:gap-16 justify-between text-detail md:text-body tracking-wide">
+                    <ul class="space-y-1">
+                        <li class="hover:underline"><a wire:navigate href="{{ route('structure') }}">Struktur
+                                Organisasi</a></li>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('staff') }}">Pejabat BAPPERIDA</a>
                         </li>
-                        <li><a href="https://www.instagram.com/bapperida.kotabogor"><i
-                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-instagram-line"></i></a>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('schedule') }}">Agenda Kegiatan</a>
                         </li>
-                        <li><a href="https://x.com/bappeda3271"><i
-                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-twitter-x-fill"></i></a>
-                        </li>
-                        <li><a href="https://bapperida.kotabogor.go.id/"><i
-                                    class="p-1 text-center text-white rounded-full bg-sky-900 lg:p-2 lg:text-headline ri-global-line"></i></a>
-                        </li>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('index') }}">Indeks Inovasi</a></li>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('gallery') }}">Galeri</a></li>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('innovation') }}">Etalase
+                                Inovasi</a></li>
+                    </ul>
+                    <ul class="space-y-1">
+                        <li class="hover:underline"><a wire:navigate
+                                href="{{ route('document', ['category' => 'perencanaan pembangunan']) }}">Perencanaan Pembangunan</a></li>
+                        <li class="hover:underline"><a wire:navigate
+                                href="{{ route('document', ['category' => 'penelitian pengembangan']) }}">Penelitian Pengembangan</a></li>
+                        <li class="hover:underline"><a wire:navigate
+                                href="{{ route('document', ['category' => 'standar pelayanan']) }}">Standar Pelayanan</a></li>
+                        <li class="hover:underline"><a wire:navigate
+                                href="{{ route('document', ['category' => 'rencana kerja']) }}">Rencana Kerja</a></li>
+                        <li class="hover:underline"><a wire:navigate
+                                href="{{ route('document', ['category' => 'peraturan']) }}">Peraturan</a></li>
+                        <li class="hover:underline"><a wire:navigate href="{{ route('buletin') }}">Buletin</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="flex justify-between gap-20">
-                {{-- Links --}}
-                <div class="m-4">
-                    <h5 class="mb-4 font-bold uppercase">Statistik Pengunjung</h5>
-                    <ul class="flex flex-col gap-4 text-detail">
-                        <li class="flex"><span class="w-1/3">Hari ini</span><span class="w-1/6 text-center">:</span><span class="w-1/3">0000</span></li>
-                        <li class="flex"><span class="w-1/3">Bulan ini</span><span class="w-1/6 text-center">:</span><span class="w-1/3">0000</span></li>
-                        <li class="flex"><span class="w-1/3">Tahun ini</span><span class="w-1/6 text-center">:</span><span class="w-1/3">0000</span></li>
-                    </ul>
-                    <h6 class="mt-8">Total Pengunjung</h6>
-                    <h6 class="mt-2 font-bold text-headline">000000</h6>
-                </div>
-
-                <div class="m-4 text-end">
-                    <h5 class="mb-4 font-bold uppercase">Site Map</h5>
-                    <ul class="flex flex-col gap-4 text-detail">
-                        <li>Beranda</li>
-                        <li>Profil</li>
-                        <li>Dokumen</li>
-                        <li>Buletin</li>
-                        <li>Galeri Kegiatan</li>
-                        <li>Video</li>
-                        <li>Kontak</li>
-                    </ul>
-                </div>
-            </div>
-
+            <livewire:layout.footer.visitor-stats />
         </div>
-
-        {{-- Copyright --}}
-        <div class="flex items-center justify-center w-full h-24 text-center text-detail">
-            <h5>
-                <i class="ri-copyright-fill"></i> 2024 <span class="font-bold">Badan Perencanaan Pembangunan Riset Dan
-                    Inovasi Daerah</span> Kota Bogor
-            </h5>
+        <div class="text-tiny lg:text-detail p-4 text-center w-full">
+            <span><i class="ri-copyright-line"></i> 2024 <span class="font-bold">Badan Perencanaan Pembangunan Riset dan
+                Inovasi Daerah</span> Kota Bogor</span>
         </div>
     </div>
-</div>
+</footer>
