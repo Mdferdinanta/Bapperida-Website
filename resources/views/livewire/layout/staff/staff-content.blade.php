@@ -14,12 +14,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($staff as $index => $member)
-                    <tr class="{{ $loop->even ? 'bg-primary-50' : 'bg-white' }} border-t border-mist-200">
-                        <td class="px-6 py-3 capitalize text-wrap">{{ $member->name }}</td>
-                        <td class="px-6 py-3 text-wrap">{{ $member->role }}</td>
+                @forelse ($staff as $index => $member)
+                    <tr class="{{ $loop->even ? 'bg-primary-50' : 'bg-white' }} border-t border-mist-200 font-medium">
+                        <td class="sm:px-6 sm:py-3 px-4 py-2 capitalize text-wrap">{{ $member->name }}</td>
+                        <td class="sm:px-6 sm:py-3 px-4 py-2 text-wrap">{{ $member->role }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td class="px-6 py-4 text-center" colspan="2">Tidak ada data.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

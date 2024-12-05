@@ -151,13 +151,6 @@ new class extends Component {
             <x-input-error :messages="$errors->get('thumbnail')" class="mt-2" />
         </div>
 
-        {{-- <div>
-            <x-input-label for="description" :value="__('Deskripsi Video')" />
-            <x-textarea-input wire:model="description" id="description" name="description" required
-                class="block w-full mt-1" />
-            <x-input-error :messages="$errors->get('description')" class="mt-2" />
-        </div> --}}
-
         <div>
             <x-input-label for="description" :value="__('Deskripsi Video')" />
             <div wire:ignore>
@@ -176,7 +169,6 @@ new class extends Component {
         <div>
             <x-input-label for="video_playlist" :value="__('Playlist Kegiatan')" />
             <select wire:model.live='video_playlist' name="video_playlist" id="video_playlist" required
-                onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();"
                 class="w-full shadow-sm rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
                 <option value="" @readonly(true) class="text-gray-600 bg-gray-200">-- Pilih Playlist --</option>
                 <option value="999">++ Tambah Baru ++</option>
@@ -200,7 +192,7 @@ new class extends Component {
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             <x-action-message class="me-3" on="new-video-added">
-                {{ __('Video baru telah ditambahkan.') }}
+                {{ __('Video baru telah ditambahkan. Refresh halaman jika menambahkan Playlist baru.') }}
             </x-action-message>
         </div>
     </form>

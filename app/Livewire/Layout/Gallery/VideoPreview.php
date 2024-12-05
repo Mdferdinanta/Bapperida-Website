@@ -15,7 +15,6 @@ class VideoPreview extends Component
 
         $recommended = Video::orderBy('click_count', 'desc')->take(3)->get();
 
-        // dd($recommended, $video);
         return view('livewire.layout.gallery.video-preview', [
             'video' => $video,
             'recommended' => $recommended,

@@ -5,15 +5,6 @@
 
         <div class="p-6 bg-white xl:w-3/4 max-xl:shadow-md shadow-slate-300">
             <div class="flex justify-start mb-4">
-                {{-- Search bar
-                <div class="relative w-full md:w-1/2">
-                    <div class="w-full overflow-hidden bg-yellow-300 rounded-xs">
-                        <input wire:model.live.debounce.300ms="search" type="search" placeholder="Cari..."
-                            aria-label="Cari nama atau jabatan"
-                            class="w-full border border-mist-300 rounded-xs focus:border-primary-300">
-                    </div>
-                </div> --}}
-
                 {{-- Navigate Link --}}
                 <a href="{{ route('news') }}" class="justify-start text-gray-500 hover:text-primary-700 hover:underline" wire:navigate>&laquo; kembali</a>
             </div>

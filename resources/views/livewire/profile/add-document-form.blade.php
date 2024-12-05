@@ -180,7 +180,7 @@ new class extends Component {
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             <x-action-message class="me-3" on="new-document-added">
-                {{ __('Dokumen telah ditambahkan.') }}
+                {{ __('Dokumen telah ditambahkan. Refresh halaman jika menambahkan Kategori baru.') }}
             </x-action-message>
         </div>
     </form>

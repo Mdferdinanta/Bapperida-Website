@@ -6,8 +6,8 @@
     </div>
 
     {{-- Card List --}}
-    <div class="grid-cols-4 gap-6 grid">
-        @foreach ($buletins as $buletin)
+    <div class="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 grid">
+        @forelse ($buletins as $buletin)
             <a href="{{ route('buletin-preview', ['id' => $buletin->id]) }}" wire:navigate
                 class="col-span-1 overflow-hidden hover:shadow-md transform duration-300 ease-in-out transition-transform hover:-translate-y-2 shadow-slate-300 rounded-xs border border-mist-300">
                 <div class="h-60">
@@ -19,7 +19,11 @@
                         {{ $buletin->name }}</h5>
                 </div>
             </a>
-        @endforeach
+        @empty
+            <div class="col-span-2 md:col-span-3 lg:col-span-4">
+                <h4 class="text-gray-500 text-center">Tidak ada data.</h4>
+            </div>
+        @endforelse
     </div>
 
     {{-- Pagination --}}

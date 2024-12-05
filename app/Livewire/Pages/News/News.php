@@ -4,10 +4,10 @@ namespace App\Livewire\Pages\News;
 
 use Livewire\Component;
 
-class BogorNews extends Component
+class News extends Component
 {
     public function render()
     {
-        return view('livewire.pages.news.bogor-news');
+        return view('livewire.pages.news.news');
     }
 }

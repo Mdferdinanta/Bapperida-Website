@@ -15,16 +15,10 @@ new class extends Component {
     public $index_description;
     public $categories;
     public $new_category;
-    public $showNewCategoryInput;
 
     public function mount()
     {
         $this->categories = IndexCategories::all();
-    }
-
-    public function updatedIndexCategory()
-    {
-        $this->showNewCategoryInput = $this->index_category === '999';
     }
 
     /**
@@ -73,7 +67,7 @@ new class extends Component {
             'information' => $this->index_information,
         ]);
 
-        $this->reset(['index_name', 'index_category', 'index_year', 'index_score', 'index_grade', 'index_rank', 'index_information']);
+        $this->reset(['index_name', 'index_category', 'index_year', 'index_score', 'index_grade', 'index_rank', 'index_information', 'new_category', 'index_description']);
 
         $this->dispatch('new-index-added');
     }
@@ -163,7 +157,7 @@ new class extends Component {
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             <x-action-message class="me-3" on="new-index-added">
-                {{ __('Indeks Inovasi telah ditambahkan.') }}
+                {{ __('Indeks Inovasi telah ditambahkan. Refresh halaman jika menambahkan Kategori baru.') }}
             </x-action-message>
         </div>
     </form>

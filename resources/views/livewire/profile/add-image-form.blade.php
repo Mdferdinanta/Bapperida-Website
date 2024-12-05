@@ -133,7 +133,7 @@ new class extends Component {
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             <x-action-message class="me-3" on="new-image-added">
-                {{ __('Foto baru telah ditambahkan.') }}
+                {{ __('Foto baru telah ditambahkan. Refresh halaman jika menambahkan Album baru.') }}
             </x-action-message>
         </div>
     </form>

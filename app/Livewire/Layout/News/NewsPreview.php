@@ -5,7 +5,7 @@ namespace App\Livewire\Layout\News;
 use App\Models\News;
 use Livewire\Component;
 
-class NewsContentPreview extends Component
+class NewsPreview extends Component
 {
     public $newsId;
     public $news;
@@ -16,7 +16,7 @@ class NewsContentPreview extends Component
 
         $this->news = News::findOrFail($id);
 
-        return view('livewire.layout.news.news-content-preview', [
+        return view('livewire.layout.news.news-preview', [
             'news' => $this->news
         ]);
     }

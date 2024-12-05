@@ -9,11 +9,13 @@ new class extends Component {
     use WithFileUploads;
 
     public $news_title;
+    public $news_author;
     public $news_image;
     public $news_content;
 
     protected $rules = [
         'news_title' => 'required|string|max:255',
+        'news_author' => 'required|string|max:255',
         'news_image' => 'required|image|max:102400',
         'news_content' => 'required|string',
     ];
@@ -40,11 +42,12 @@ new class extends Component {
 
         News::create([
             'title' => $this->news_title,
+            'author' => $this->news_author,
             'image' => $this->news_image,
             'content' => $this->news_content,
         ]);
 
-        $this->reset('news_title', 'news_image', 'news_content');
+        $this->reset('news_title', 'news_image', 'news_content', 'news_author');
 
         $this->dispatch('new-article-published');
     }
@@ -62,6 +65,13 @@ new class extends Component {
             <x-text-input wire:model="news_title" id="news_title" name="news_title" type="text" required
                 class="block w-full mt-1" />
             <x-input-error :messages="$errors->get('news_title')" class="mt-2" />
+        </div>
+
+        <div>
+            <x-input-label for="news_author" :value="__('Penulis Berita')" />
+            <x-text-input wire:model="news_author" id="news_author" name="news_author" type="text" required
+                class="block w-full mt-1" />
+            <x-input-error :messages="$errors->get('news_author')" class="mt-2" />
         </div>
 
         <div>

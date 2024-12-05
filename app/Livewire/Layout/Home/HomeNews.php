@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Layout\News;
+namespace App\Livewire\Layout\Home;
 
 use App\Models\News;
 use Livewire\Component;
@@ -13,7 +13,7 @@ class HomeNews extends Component
 
         $rightNews = News::orderBy('id', 'desc')->skip(1)->take(4)->get();
 
-        return view('livewire.layout.news.home-news', [
+        return view('livewire.layout.home.home-news', [
             'leftNews' => $leftNews,
             'rightNews' => $rightNews,
         ]);

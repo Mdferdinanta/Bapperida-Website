@@ -12,11 +12,21 @@ class GalleryList extends Component
 {
     use WithPagination, WithoutUrlPagination;
 
+    public $search;
+
     public function render()
     {
-        $albums = Album::orderBy('id', 'desc')->paginate(6);
+        $albums = Album::where('name', 'like', '%'.$this->search.'%')
+        ->orderBy('id', 'desc')
+        ->paginate(6);
 
-        $videos = Video::orderBy('id', 'desc')->paginate(6);
+        $videos = Video::where('video_type', 2)
+        ->where(function($query){
+            $query->where('title', 'like', '%'.$this->search.'%')
+            ->orWhere('description', 'like', '%'.$this->search.'%');
+        })
+        ->orderBy('id', 'desc')
+        ->paginate(6);
 
         return view('livewire.layout.gallery.gallery-list', [
             'albums' => $albums,

@@ -33,7 +33,7 @@
                     Berikut adalah bagan struktur organisasi Bapperida.
                 </p>
                 <img loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a411d338892821fab349f751f53334720d95f63aa822fd7eb26bd63c379372f?placeholderIfAbsent=true&apiKey=2561d9ef1c114cdd865425c4e3e51264"
+                    src="{{ asset('assets/images/placeholder/bapperida/struktur.png') }}"
                     alt="Bagan struktur organisasi Bapperida" class="object-contain mt-4 w-full max-md:max-w-full" />
             </div>
         </div>

@@ -1,4 +1,10 @@
 <div class="py-12 bg-white xl:shadow-md shadow-slate-300">
+    {{-- Title --}}
+    <x-home-section-title>
+        {{ __('Galeri Kegiatan') }}
+    </x-home-section-title>
+
+    {{-- Content --}}
     <div class="mx-auto overflow-hidden max-w-7xl px-4 md:max-xl:px-8">
         <div class="grid items-center justify-center grid-cols-6 gap-2 md:gap-4 md:grid-cols-8">
             @foreach ($images as $index => $image)
@@ -15,7 +21,7 @@
                     $class = $classes[$index % count($classes)];
                 @endphp
                 <div
-                    class="relative col-span-2 aspect-[4/3] w-full shadow-sm shadow-slate-300 rounded-xs overflow-hidden group {{ $class }}">
+                    class="relative col-span-2 aspect-[4/3] w-full shadow-md shadow-slate-300 rounded-xs overflow-hidden group {{ $class }}">
                     <img src="{{ asset('storage/' . $image->image) }}" alt="{{ $image->name }}"
                         class="w-full h-full object-cover">
                     {{-- Hovered Information --}}

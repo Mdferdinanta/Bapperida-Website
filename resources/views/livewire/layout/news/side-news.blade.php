@@ -1,7 +1,7 @@
 <div class="py-6 xl:bg-white xl:w-1/4">
     <div class="px-6 border-l border-mist-300 h-full">
         {{-- Section Title --}}
-        <a href="{{ route('news') }}" class="font-bold tracking-wider uppercase text-subtitle" wire.navigate>
+        <a href="{{ route('news') }}" class="font-bold tracking-wider uppercase text-subtitle" wire:navigate>
             <i class="ri-arrow-right-s-line ri-lg text-primary-500"></i>
             {{ __('Berita Terbaru') }}
         </a>

@@ -2,9 +2,9 @@
     <div class="flex flex-col items-end justify-end gap-4 md:flex-row">
         {{-- Subcategory Selector --}}
         <div class="max-sm:w-full">
-            <select wire:model.live='cat_filter' name="cat_filter" id="cat_filter"
-                class="w-full rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
-                <option value="" @readonly(true) disabled class="text-gray-600 bg-gray-200">-- Pilih Kategori --</option>
+            <select wire:model.live='cat_filter' name="cat_filter" id="cat_filter" {{-- onfocus="this.size=5;" onblur="this.size=1;" onchange="this.size=1; this.blur();" --}}
+                class="appearance-none w-full rounded-xs focus:border-primary-600 focus:ring-1 focus:ring-primary-400 border-mist-300">
+                <option value="" @readonly(true) class="text-gray-600 bg-gray-200">-- Pilih Sub Kategori --</option>
                 @foreach ($subcategories as $subcategory)
                     <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                 @endforeach
@@ -12,12 +12,13 @@
         </div>
 
         {{-- Search bar --}}
-        <x-search-input wire:model.live.debounce.300ms="search" placeholder="Cari..." aria-label="Cari dokumen"></x-search-input>
+        <x-search-input wire:model.live.debounce.300ms="search" placeholder="Cari..."
+            aria-label="Cari dokumen"></x-search-input>
     </div>
 
     {{-- Card List --}}
     <div class="overflow-hidden border-mist-300">
-        @foreach ($documents as $document)
+        @forelse ($documents as $document)
             <a href="{{ route('document-preview', ['category' => $document->category->name, 'id' => $document->id]) }}"
                 class="cursor-pointer" wire:navigate>
                 <div
@@ -39,7 +40,11 @@
                     </a>
                 </div>
             </a>
-        @endforeach
+        @empty
+            <div class="w-full">
+                <h4 class="text-gray-500 text-center">Tidak ada data.</h4>
+            </div>
+        @endforelse
 
         {{-- pagination --}}
         <div class="mt-4">

@@ -23,6 +23,10 @@ class Video extends Model
         'department',
     ];
 
+    protected $casts = [
+        'date' => 'datetime',
+    ];
+
     public function playlist()
     {
         return $this->belongsTo(Playlist::class);

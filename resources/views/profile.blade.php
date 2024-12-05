@@ -12,6 +12,13 @@
                 </div>
             </div>
 
+            {{-- Visitors --}}
+            <div class="p-4 bg-white shadow sm:rounded-md">
+                <div class="w-full">
+                    <livewire:layout.visit.visitor-table />
+                </div>
+            </div>
+
             {{-- Account Information Forms --}}
             {{-- <div class="p-4 bg-white shadow sm:p-8 sm:rounded-md">
                 <div class="max-w-xl">

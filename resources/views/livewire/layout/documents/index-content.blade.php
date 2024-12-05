@@ -35,7 +35,7 @@
                 <div class="lg:px-4 py-4 mt-4 border-y border-mist-300">
                     <div class="overflow-x-auto rounded-xs border border-mist-300">
                         <table class="w-full text-center table-auto text-tiny md:text-detail xl:text-body">
-                            <thead class="bg-primary-50">
+                            <thead class="bg-primary-50 uppercase">
                                 <tr>
                                     <th class="px-4 py-2 border-b">Inovasi</th>
                                     <th class="px-4 py-2 border-b">Tahun</th>

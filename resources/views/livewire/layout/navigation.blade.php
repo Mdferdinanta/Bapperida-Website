@@ -106,18 +106,22 @@ new class extends Component {
                         </x-dropdown>
                     </div>
 
+                    {{-- Index --}}
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')" wire:navigate>
                         {{ __('Indeks') }}
                     </x-nav-link>
 
+                    {{-- Buletin --}}
                     <x-nav-link :href="route('buletin')" :active="request()->routeIs('buletin')" wire:navigate>
                         {{ __('Buletin') }}
                     </x-nav-link>
 
+                    {{-- Gallery --}}
                     <x-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
                         {{ __('Galeri') }}
                     </x-nav-link>
 
+                    {{-- Innovation --}}
                     <x-nav-link :href="route('innovation')" :active="request()->routeIs('innovation')" wire:navigate>
                         {{ __('Etalase Inovasi') }}
                     </x-nav-link>
@@ -126,7 +130,6 @@ new class extends Component {
 
                 <!-- Interchangeable Options -->
                 @auth
-
                     <!-- Admin's Option -->
                     <div class="hidden lg:flex lg:-my-px lg:items-center lg:ms-6">
                         <x-dropdown>
@@ -155,11 +158,27 @@ new class extends Component {
                         </x-dropdown>
                     </div>
                 @else
-                    <!-- Button -->
-                    <x-primary-button class="my-4 ms-6">
+                    <!-- Form Button -->
+                    <a href="{{ route('visit') }}"
+                        class="inline-flex
+                                items-center px-4 py-2
+                                bg-primary-500
+                                rounded-xs font-semibold
+                                text-detail text-white
+                                tracking-wider uppercase
+                                hover:bg-primary-700
+                                focus:bg-primary-700
+                                active:bg-primary-900
+                                focus:outline-none
+                                focus:ring-2
+                                focus:ring-primary-500
+                                focus:ring-offset-1
+                                transition ease-in-out
+                                duration-150 my-4 max-md:px-2
+                                max-md:text-tiny ms-6"
+                        wire:navigate>
                         {{ __('Form Kunjungan') }}
-                    </x-primary-button>
-
+                    </a>
                 @endauth
             </div>
 
@@ -184,8 +203,75 @@ new class extends Component {
 
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden lg:hidden">
         <div class="pt-2 pb-3 space-y-1">
+            {{-- Dashboard --}}
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                {{ __('Dashboard') }}
+                {{ __('Beranda') }}
+            </x-responsive-nav-link>
+
+            {{-- Profiles --}}
+            <div x-data="{ dropdownOpen: false }">
+                <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
+                    class="flex items-center justify-between w-full" :active="request()->routeIs('structure', 'staff', 'schedule')">
+                    <span>{{ __('Profil') }}</span>
+                    <i :class="{ 'rotate-180': dropdownOpen }" class="transition-transform ri-arrow-down-s-line"></i>
+                </x-responsive-nav-link>
+                <div x-show="dropdownOpen" class="text-detail">
+                    <x-responsive-nav-link class="pl-12" :href="route('structure')" :active="request()->routeIs('structure')" wire:navigate>
+                        {{ __('Struktur Organisasi') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('staff')" :active="request()->routeIs('staff')" wire:navigate>
+                        {{ __('Pejabat BAPPERIDA') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('schedule')" :active="request()->routeIs('schedule')" wire:navigate>
+                        {{ __('Agenda Kegiatan') }}
+                    </x-responsive-nav-link>
+                </div>
+            </div>
+
+            {{-- Documents --}}
+            <div x-data="{ dropdownOpen: false }">
+                <x-responsive-nav-link @click="dropdownOpen = ! dropdownOpen"
+                    class="flex items-center justify-between w-full" :active="request()->routeIs('document', 'document-preview')">
+                    <span>{{ __('Dokumen') }}</span>
+                    <i :class="{ 'rotate-180': dropdownOpen }" class="transition-transform ri-arrow-down-s-line"></i>
+                </x-responsive-nav-link>
+                <div x-show="dropdownOpen" class="text-detail">
+                    <x-responsive-nav-link class="pl-12" :href="route('document', ['category' => 'perencanaan pembangunan'])" :active="request()->is('dokumen/perencanaan pembangunan*')" wire:navigate>
+                        {{ __('Perencanaan Pembangunan') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('document', ['category' => 'penelitian pengembangan'])" :active="request()->is('dokumen/penelitian pengembangan*')" wire:navigate>
+                        {{ __('Penelitian Pengembangan') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('document', ['category' => 'standar pelayanan'])" :active="request()->is('dokumen/standar pelayanan*')" wire:navigate>
+                        {{ __('Standar Pelayanan') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('document', ['category' => 'peraturan'])" :active="request()->is('dokumen/peraturan*')" wire:navigate>
+                        {{ __('Peraturan') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link class="pl-12" :href="route('document', ['category' => 'rencana kerja'])" :active="request()->is('dokumen/rencana kerja*')" wire:navigate>
+                        {{ __('Rencana Kerja') }}
+                    </x-responsive-nav-link>
+                </div>
+            </div>
+
+            {{-- Index --}}
+            <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')" wire:navigate>
+                {{ __('Indeks') }}
+            </x-responsive-nav-link>
+
+            {{-- Buletin --}}
+            <x-responsive-nav-link :href="route('buletin')" :active="request()->routeIs('buletin')" wire:navigate>
+                {{ __('Buletin') }}
+            </x-responsive-nav-link>
+
+            {{-- Gallery --}}
+            <x-responsive-nav-link :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
+                {{ __('Galeri') }}
+            </x-responsive-nav-link>
+
+            {{-- Innovation --}}
+            <x-responsive-nav-link :href="route('innovation')" :active="request()->routeIs('innovation')" wire:navigate>
+                {{ __('Etalase Inovasi') }}
             </x-responsive-nav-link>
         </div>
 
