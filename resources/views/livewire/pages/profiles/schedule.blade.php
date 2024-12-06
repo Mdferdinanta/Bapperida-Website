@@ -1,4 +1,10 @@
 <x-app-layout>
+    {{-- Hero --}}
+    <x-slot:header>
+        <x-hero-pages>
+            {{ __('Agenda Kegiatan') }}
+        </x-hero-pages>
+    </x-slot:header>
 
     {{-- Container --}}
     <x-container>

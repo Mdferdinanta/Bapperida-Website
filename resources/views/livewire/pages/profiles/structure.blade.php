@@ -1,10 +1,16 @@
 <x-app-layout>
+    {{-- Hero --}}
+    <x-slot:header>
+        <x-hero-pages>
+            {{ __('Struktur Organisasi') }}
+        </x-hero-pages>
+    </x-slot:header>
 
-    {{-- Tabs --}}
+    {{-- Container --}}
     <x-container>
 
-        <div class="bg-white p-6 xl:w-3/4 space-y-4 lg:space-y-6 max-xl:shadow-md shadow-slate-300">
-            <h3 class="text-headline xl:text-h3 text-center font-black tracking-wider">
+        <div class="p-6 space-y-4 bg-white xl:w-3/4 lg:space-y-6 max-xl:shadow-md shadow-slate-300">
+            <h3 class="font-black tracking-wider text-center text-headline xl:text-h3">
                 Selamat datang di situs resmi
                 <span class="text-primary-500">
                     BAPPERIDA
@@ -32,9 +38,8 @@
                 <p class="indent-0">
                     Berikut adalah bagan struktur organisasi Bapperida.
                 </p>
-                <img loading="lazy"
-                    src="{{ asset('assets/images/placeholder/bapperida/struktur.png') }}"
-                    alt="Bagan struktur organisasi Bapperida" class="object-contain mt-4 w-full max-md:max-w-full" />
+                <img loading="lazy" src="{{ asset('assets/images/placeholder/bapperida/struktur.png') }}"
+                    alt="Bagan struktur organisasi Bapperida" class="object-contain w-full mt-4 max-md:max-w-full" />
             </div>
         </div>
 
