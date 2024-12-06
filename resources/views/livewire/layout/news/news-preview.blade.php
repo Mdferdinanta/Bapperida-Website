@@ -1,4 +1,10 @@
 <x-app-layout>
+    {{-- Hero --}}
+    <x-slot:header>
+        <x-hero-pages>
+            {{ __('Berita BAPPERIDA') }}
+        </x-hero-pages>
+    </x-slot:header>
 
     {{-- Container --}}
     <x-container>
@@ -18,12 +24,12 @@
                         <small class="text-gray-500 text-tiny md:text-detail">Author: {{ $news->author }}. {{ $news->created_at->format('d/m/Y, H:i') }} WIB</small>
                     </div>
                     {{-- Image --}}
-                    <div class="w-full mx-auto px-8 md:px-12 lg:px-16 py-4">
+                    <div class="w-full px-8 py-4 mx-auto md:px-12 lg:px-16">
                         <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->title }}"
                             class="object-cover w-full rounded-xs aspect-video">
                     </div>
                     {{-- Text --}}
-                    <div class="indent-8 tracking-wide text-justify text-wrap">
+                    <div class="tracking-wide text-justify indent-8 text-wrap">
                         {!! $news->content !!}
                     </div>
                 @endif

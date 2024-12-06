@@ -16,7 +16,7 @@
         <h2 class="font-bold text-headline text-primary-800">Foto Kegiatan</h2>
     </div>
     <div>
-        <div class="grid grid-cols-1 gap-4 md:gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 mt-6 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($albums as $album)
                 <div class="group">
                     {{-- Use first image as the album cover --}}
@@ -25,15 +25,15 @@
                         $firstImage = $images->first();
                     @endphp
 
-                    <a href="{{ route('image-preview', ['id' => $firstImage->id]) }}">
+                    <a href="{{ route('image-preview', ['id' => $firstImage->id]) }}" wire:navigate>
                         <div>
                             <img src="{{ asset('storage/' . $firstImage->image) }}"
-                                class="object-cover group-hover:shadow-md group-hover:-translate-y-2 transform transition-transform duration-300 ease-in-out rounded-xs shadow-sm shadow-slate-300 w-full aspect-video"
+                                class="object-cover w-full transition-transform duration-300 ease-in-out transform shadow-sm group-hover:shadow-md group-hover:-translate-y-2 rounded-xs shadow-slate-300 aspect-video"
                                 alt="album {{ $firstImage->album->name }}">
                             <div
-                                class="flex sm:flex-col justify-between sm:justify-center sm:items-start items-center p-2">
+                                class="flex items-center justify-between p-2 sm:flex-col sm:justify-center sm:items-start">
                                 <h3
-                                    class="sm:mb-2 font-bold text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
+                                    class="font-bold sm:mb-2 text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
                                     {{ $firstImage->album->name }}
                                 </h3>
                                 <small class="text-gray-500 text-detail">
@@ -45,7 +45,7 @@
                 </div>
             @empty
                 <div class="w-full sm:col-span-2 lg:col-span-3">
-                    <h4 class="text-gray-500 text-center">Tidak ada hasil yang sesuai.</h4>
+                    <h4 class="text-center text-gray-500">Tidak ada hasil yang sesuai.</h4>
                 </div>
             @endforelse
         </div>
@@ -57,23 +57,23 @@
     </div>
 
     {{-- Videos --}}
-    <div class="mt-6 pt-6 border-t border-mist-300">
+    <div class="pt-6 mt-6 border-t border-mist-300">
         <h2 class="font-bold text-headline text-primary-800">Video Kegiatan</h2>
     </div>
 
     <div>
-        <div class="grid grid-cols-1 gap-4 md:gap-6 mt-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 mt-6 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($videos as $video)
                 <div class="group">
-                    <a href="{{ route('video-preview', ['id' => $video->id]) }}">
+                    <a href="{{ route('video-preview', ['id' => $video->id]) }}" wire:navigate>
                         <div>
                             <img src="{{ $video->thumbnail ? asset('storage/' . $video->thumbnail) : asset('assets/logo/Logo.png') }}"
-                                class="object-cover group-hover:shadow-md group-hover:-translate-y-2 transform transition-transform duration-300 ease-in-out rounded-xs shadow-sm shadow-slate-300 w-full aspect-video"
+                                class="object-cover w-full transition-transform duration-300 ease-in-out transform shadow-sm group-hover:shadow-md group-hover:-translate-y-2 rounded-xs shadow-slate-300 aspect-video"
                                 alt="playlist {{ $video->title }}">
                             <div
-                                class="flex sm:flex-col justify-between sm:justify-center sm:items-start items-center p-2">
+                                class="flex items-center justify-between p-2 sm:flex-col sm:justify-center sm:items-start">
                                 <h3
-                                    class="sm:mb-2 font-bold text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
+                                    class="font-bold sm:mb-2 text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
                                     {{ $video->title }}
                                 </h3>
                             </div>
@@ -82,7 +82,7 @@
                 </div>
             @empty
                 <div class="w-full sm:col-span-2 lg:col-span-3">
-                    <h4 class="text-gray-500 text-center">Tidak ada hasil yang sesuai.</h4>
+                    <h4 class="text-center text-gray-500">Tidak ada hasil yang sesuai.</h4>
                 </div>
             @endforelse
         </div>
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    {{-- <div class="grid grid-cols-1 gap-1 md:gap-6 my-8 sm:grid-cols-3">
+    {{-- <div class="grid grid-cols-1 gap-1 my-8 md:gap-6 sm:grid-cols-3">
         @foreach ($playlists as $video)
             <div class="group"> --}}
     {{-- Use only the first image of the album as the album cover --}}
@@ -104,11 +104,11 @@
     {{-- <a href="{{ route('image-preview', ['id' => $coverVideo->id]) }}">
                     <div>
                         <img src="{{ $coverVideo->thumbnail ? asset('storage/' . $coverVideo->thumbnail) : asset('assets/logo/Logo.png') }}"
-                            class="object-cover group-hover:shadow-lg group-hover:-translate-y-2 transform transition-transform duration-300 ease-in-out rounded-xs shadow-sm shadow-slate-300 w-full aspect-video"
+                            class="object-cover w-full transition-transform duration-300 ease-in-out transform shadow-sm group-hover:shadow-lg group-hover:-translate-y-2 rounded-xs shadow-slate-300 aspect-video"
                             alt="album {{ $video->first()->title }}">
                         <div
-                            class="flex sm:flex-col justify-between sm:justify-center sm:items-start items-center py-2">
-                            <h3 class="sm:mb-2 font-bold text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
+                            class="flex items-center justify-between py-2 sm:flex-col sm:justify-center sm:items-start">
+                            <h3 class="font-bold sm:mb-2 text-body group-hover:underline md:text-subtitle group-hover:text-primary-700">
                                 {{ $video->first()->title }}
                             </h3>
                             <small class="text-gray-500 text-detail">
