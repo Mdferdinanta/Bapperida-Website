@@ -2,7 +2,7 @@
     {{-- Hero --}}
     <x-slot:header>
         <x-hero-pages>
-            {{ __('Indeks Inovasi') }}
+            {{ __('Indeks Daerah Kota Bogor') }}
         </x-hero-pages>
     </x-slot:header>
 

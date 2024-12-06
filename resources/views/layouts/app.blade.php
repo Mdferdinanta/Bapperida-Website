@@ -67,6 +67,9 @@
         <livewire:layout.footer />
 
         <!-- Script -->
+        <!-- Include the Quill library -->
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
         <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
         <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
         <script>
