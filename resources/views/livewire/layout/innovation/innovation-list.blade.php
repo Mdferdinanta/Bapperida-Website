@@ -8,7 +8,7 @@
         @forelse ($innovations as $item)
             <div class="flex flex-col w-full rounded-xs md:flex-row border-mist-300">
                 <a href="{{ route('innovation-preview', ['id' => $item->id]) }}" wire:navigate
-                    class="relative w-full overflow-hidden rounded-xs md:basis-1/2 group">
+                    class="relative w-full overflow-hidden shadow-sm rounded-xs shadow-slate-300 md:basis-1/2 group">
                     <img src="{{ asset('storage/' . $item->thumbnail) }}"
                         class="object-cover w-full h-full border-none aspect-video">
                     <div
@@ -17,13 +17,13 @@
                 </a>
                 <div class="flex flex-col justify-center w-full gap-2 py-4 md:ms-4">
                     {{-- <small
-                        class="tracking-wide text-yellow-500 font-medium text-tiny sm:text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small> --}}
+                        class="font-medium tracking-wide text-yellow-500 text-tiny sm:text-detail">{{ $item->created_at->format('d F Y | H:i') }}</small> --}}
                     <a href="{{ route('innovation-preview', ['id' => $item->id]) }}" wire:navigate
                         class="font-bold tracking-wide capitalize line-clamp-1 text-subtitle sm:text-headline">{{ $item->title }}</a>
                     <div class="">
                         <p class="text-justify text-gray-700 text-wrap">{!! Str::limit($item->description, 100) !!}
                             <a href="{{ route('innovation-preview', ['id' => $item->id]) }}" wire:navigate
-                                class="underline text-gray-500 hover:text-primary-700 active:text-primary-800">Selengkapnya
+                                class="text-gray-500 underline hover:text-primary-700 active:text-primary-800">Selengkapnya
                                 &raquo;</a>
                         </p>
                     </div>
@@ -31,13 +31,13 @@
             </div>
         @empty
             <div class="w-full">
-                <h4 class="text-gray-500 text-center">Tidak ada data.</h4>
+                <h4 class="text-center text-gray-500">Tidak ada data.</h4>
             </div>
         @endforelse
 
         {{-- Pagination --}}
         <div class="mt-2">
-            {{-- {{ $innovations->links('vendor.livewire.tailwind', ['scrollTo' => false]) }} --}}
+            {{ $innovations->links('vendor.livewire.tailwind', ['scrollTo' => false]) }}
         </div>
     </div>
 </div>
