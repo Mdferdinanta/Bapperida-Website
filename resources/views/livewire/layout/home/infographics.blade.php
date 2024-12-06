@@ -9,7 +9,7 @@
         <!-- Set up your HTML -->
         <div class="owl-carousel infograph-carousel owl-theme">
             @foreach ($infographics as $infographic)
-                <div class="flex flex-col items-center item">
+                <div class="flex flex-col items-center max-sm:p-4 item">
                     <img src="{{ asset('storage/' . $infographic->image) }}" alt="{{ $infographic->name }}"
                         class="shadow-lg shadow-slate-300 rounded-xs">
                     <div class="p-2 mt-4">
