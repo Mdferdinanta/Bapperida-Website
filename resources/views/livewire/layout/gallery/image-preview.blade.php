@@ -1,4 +1,10 @@
 <x-app-layout>
+    {{-- Hero --}}
+    <x-slot:header>
+        <x-hero-pages>
+            {{ __('Foto Kegiatan') }}
+        </x-hero-pages>
+    </x-slot:header>
 
     {{-- Container --}}
     <x-container>
@@ -6,11 +12,11 @@
         {{-- Content --}}
         <div class="p-6 space-y-2 bg-white xl:w-3/4 max-xl:shadow-md shadow-slate-300">
             <div class="flex flex-col">
-                <div class="flex justify-between items-center">
+                <div class="flex items-center justify-between">
                     <h2 class="mb-2 font-bold text-subtitle xl:text-headline text-primary-700">
                         {{ $album->name }}
                     </h2>
-                    <small class="text-detail tracking-wide xl:text-body text-gray-500">
+                    <small class="tracking-wide text-gray-500 text-detail xl:text-body">
                         <span id="imageDate">{{ $images->first()->created_at->format('d F Y') }}</span>
                     </small>
                 </div>
@@ -52,7 +58,7 @@
                                 <div class="flex-shrink-0 w-40 h-40 p-4 thumbnail transition-all duration-150 ease-in-out {{ $index === 0 ? 'active' : '' }}"
                                     data-index="{{ $index }}">
                                     <img alt="{{ $img->name }}"
-                                        class="object-cover w-full h-full cursor-pointer rounded-xs shadow-md shadow-slate-300"
+                                        class="object-cover w-full h-full shadow-md cursor-pointer rounded-xs shadow-slate-300"
                                         src="{{ asset('storage/' . $img->image) }}" />
                                 </div>
                             @endforeach

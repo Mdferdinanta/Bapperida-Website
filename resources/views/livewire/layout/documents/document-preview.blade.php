@@ -1,4 +1,14 @@
 <x-app-layout>
+    {{-- Hero --}}
+    <x-slot:header>
+        <x-hero-pages>
+            @if ($document)
+                {{ $document->category->name }}
+            @else
+                {{ __('Dokumen') }}
+            @endif
+        </x-hero-pages>
+    </x-slot:header>
 
     {{-- Container --}}
     <x-container>
