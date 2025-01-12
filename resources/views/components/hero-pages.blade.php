@@ -1,6 +1,6 @@
-<div class="relative w-full h-40 sm:h-56 xl:h-64 overflow-hidden flex flex-col justify-center items-center">
+<div class="relative flex flex-col items-center justify-center w-full h-40 overflow-hidden sm:h-56 xl:h-64">
     <div class="absolute inset-0 object-cover max-w-full min-h-screen overflow-hidden bg-center bg-cover brightness-50 aspect-auto"
-        style="background-image: url({{ asset('assets/hero/hero-1.jpg') }});">
+        style="background-image: url({{ asset('assets/images/hero/hero-1.jpg') }});">
     </div>
     <div class="z-10 content-center w-full h-full">
         <div class="flex flex-col items-center justify-center w-full px-4 text-center text-shadow shadow-black md:px-0">
@@ -12,8 +12,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const images = [
-                "{{ asset('assets/hero/hero-1.jpg') }}",
-                "{{ asset('assets/hero/hero-2.jpg') }}"
+                "{{ asset('assets/images/hero/hero-1.jpg') }}",
+                "{{ asset('assets/images/hero/hero-2.jpg') }}"
             ];
             let currentIndex = 0;
             const bgElement = document.querySelector('.brightness-50');
